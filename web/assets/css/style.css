@@ -1,0 +1,73 @@
+//Global Styles
+
+//navbar component
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", arial, sans-serif;
+}
+body,
+html {
+  height: 100%;
+  
+}
+body{
+    background-image: url(../img/bg.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #FFF;
+    overflow: hidden;
+}
+.navbar {
+  width: 100%;
+  -webkit-box-shadow: 0px 10px 16px -9px rgba(128, 128, 128, 1);
+  -moz-box-shadow: 0px 10px 16px -9px rgba(128, 128, 128, 1);
+  box-shadow: 0px 10px 16px -9px rgba(128, 128, 128, 1);
+}
+.nav-item,
+.nav-link{
+  padding: 10px;
+  text-transform: uppercase;
+  color: #000 !important;
+}
+.nav-link.account:hover{
+  color:rgb(110, 109, 109);
+}
+img.icon {
+  width: 15px;
+  margin: 0px 5px;
+}
+img.logo {
+  width: 70px;
+  height: 100%;
+  margin: 0 50px;
+}
+
+/* navbar effect */
+nav ul li a,
+nav ul > li > .fill:after,
+nav ul > li > .fill:before {
+  transition: all 0.5s;
+}
+nav ul > li > .fill{
+  position: relative;
+}
+nav ul > li > .fill:after{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: ".";
+  color: transparent;
+  background: rgb(197, 173, 129);
+  height: 2px;
+}
+
+nav ul > li > .fill:hover:after{
+  width: 100%;
+}
+
