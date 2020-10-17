@@ -11,18 +11,20 @@ public class Product {
     private String name;
     private String description;
     private double price;
+    private boolean isActive;
     
     public Product() {}
 
-    public Product(int id, int supplierId, int productCategoryId, String name, String description, double price) {
+    public Product(int id, int supplierId, int productCategoryId, String name, String description, double price, boolean isActive) {
         this.id = id;
         this.supplierId = supplierId;
         this.productCategoryId = productCategoryId;
         this.name = name;
         this.description = description;
         this.price = price;
+        this.isActive = isActive;
     }
-
+    
     public int getId() {
         return id;
     }
@@ -69,6 +71,14 @@ public class Product {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public boolean isIsActive() {
+        return isActive;
+    }
+
+    public void setIsActive(boolean isActive) {
+        this.isActive = isActive;
     }
     
     

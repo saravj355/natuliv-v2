@@ -58,6 +58,7 @@ public class ProductDaoTest {
         product.setName("Loción");
         product.setDescription("mdjaada");
         product.setPrice(10.000);
+        product.setIsActive(true);
         
         
         ProductDao instance = new ProductDao();
