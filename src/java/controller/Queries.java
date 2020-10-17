@@ -1,6 +1,8 @@
-package Controller;
+package controller;
 
+import dao.ConnectionDB;
 import java.sql.*;
+import model.AppResponse;
 
 public class Queries extends ConnectionDB{
     

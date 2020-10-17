@@ -6,7 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import Controller.Queries;
+import controller.Queries;
 
 public class InicioSesion extends HttpServlet {
 
@@ -32,8 +32,74 @@ public class InicioSesion extends HttpServlet {
             response.sendRedirect("menu.jsp");
         else
             response.sendRedirect("index.jsp");
-        
+          
     }
+    
+    
+            
+            
+    class Survey{
+        int id;        
+        String name;
+        String description;
+    }
+    
+    class SurveyQuestion{
+        int id;
+        int surveyId;
+        String question;
+    }
+    
+    class UserSurveyQuestion{
+        int id;
+        int userId;
+        int surveyQuestionId;
+    }    
+    
+    class UserRole{
+        int id;
+        String name;
+    }
+    
+    class User{
+        int id;
+        String name;
+        String lastName;
+        String email;
+        String passwordHash;
+        int userRoleId;
+    }
+    
+    class UserProductRecomendation{
+        int id;
+        int productId;
+        int userId;
+    }
+    
+    class Supplier{
+        int id;
+        String name;
+        String address;
+        String contactNumber;
+    }
+    
+    class ProductCategory{
+        int id;
+        String name;
+    }
+    class Product{
+        int id;
+        int supplierId;
+        int productCategoryId;
+        String name;
+        String description;
+        Double price;
+    }
+    
+    
+    
+    
+    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

@@ -1,16 +1,20 @@
+package servlet;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
-import Controller.Queries;
+import controller.Queries;
+import dao.UserDao;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.User;
 import org.apache.commons.codec.digest.DigestUtils;
 
 /**
@@ -31,23 +35,26 @@ public class RegistrarUsuarios extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        
-        String name = request.getParameter("name");
-        String lastName = request.getParameter("lastName");
-        String email = request.getParameter("email");
-        String password = request.getParameter("password");
-        String confirmPassword = request.getParameter("confirmPassword");
-        
-        Queries qy = new Queries();
-        
-        if(password.equals(confirmPassword)){
-            if(qy.register(name, lastName, email, password)){
-                response.sendRedirect("index.jsp");
-            } 
-        }else{
-            response.sendRedirect("registro.jsp");
+        if(!request.getParameter("password").
+                equals(request.getParameter("confirmPassword"))){
+                response.sendRedirect("registro.jsp");        
         }
+        
+        String passwordHash = "1213";
+                
+        User user = new User(); 
+        
+        user.setName(request.getParameter("name"));
+        user.setLastName(request.getParameter("name"));
+        user.setEmail(request.getParameter("name"));
+        user.setPasswordHash(passwordHash);        
+        user.setUserRoleId(1);
+        
+        UserDao userDao = new UserDao();
+        userDao.insert(user);
+        
+        response.sendRedirect("index.jsp");  
+
     }
         
 
