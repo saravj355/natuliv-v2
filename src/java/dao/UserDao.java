@@ -69,21 +69,21 @@ public class UserDao{
         try {
             String query = "SELECT * FROM user WHERE email=?";
             PreparedStatement pst = this.conn.prepareStatement(query);
-            pst.setString(1, email);            
-
-            ResultSet rs = pst.executeQuery();
-            
+            pst.setString(1, email);           
+            ResultSet rs = pst.executeQuery();            
             while(rs.next()){
                 User user = new User();
+                user.setId(rs.getInt("id"));
+                user.setName(rs.getString("name"));
+                user.setLastName(rs.getString("lastName"));
                 user.setEmail(rs.getString("email"));
                 user.setPasswordHash(rs.getString("passwordHash"));
+                user.setUserRoleId(rs.getInt("userRoleId"));
                 return user;
             }
-
         } catch (SQLException e) {
-            System.err.println("Error " + e);
-        }
-        
+            throw new Error(e);
+        }        
         return null;  
     }
 }

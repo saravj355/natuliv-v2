@@ -10,21 +10,21 @@ public class ConnectionDB {
     private String DATABASE = "natulivdb";
     private String CLASSNAME = "com.mysql.jdbc.Driver";
     private String URL = "jdbc:mysql://" + HOST + ":" + PORT + "/" + DATABASE;
-    private Connection con;
+    private Connection conn = null;
     
     public ConnectionDB(){
         try {
             Class.forName(CLASSNAME);
-            con = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+            this.conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
         } catch (ClassNotFoundException e) {
-            System.err.println("Error " + e);
+            throw new Error(e);
         }catch(SQLException e){
-            System.err.println("Error " + e);
+          throw new Error(e);
         }
     }
     
     public Connection getConnectionDB(){
-        return con;
+        return this.conn;
     }
     
 }
