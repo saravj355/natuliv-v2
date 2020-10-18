@@ -2,7 +2,9 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import model.User;
 /**
  *
@@ -63,4 +65,25 @@ public class UserDao{
         return false;
     }
     
+    public User findUserByEmail(String email){            
+        try {
+            String query = "SELECT * FROM user WHERE email=?";
+            PreparedStatement pst = this.conn.prepareStatement(query);
+            pst.setString(1, email);            
+
+            ResultSet rs = pst.executeQuery();
+            
+            while(rs.next()){
+                User user = new User();
+                user.setEmail(rs.getString("email"));
+                user.setPasswordHash(rs.getString("passwordHash"));
+                return user;
+            }
+
+        } catch (SQLException e) {
+            System.err.println("Error " + e);
+        }
+        
+        return null;  
+    }
 }

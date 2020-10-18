@@ -1,27 +1,26 @@
-package servlet;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package servlet;
 
-import controller.Queries;
-import dao.UserDao;
+import controller.Auth;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.User;
-import org.apache.commons.codec.digest.DigestUtils;
 
 /**
  *
  * @author sarav
  */
-public class RegistrarUsuarios extends HttpServlet {
+@WebServlet(name = "Authentication", urlPatterns = {"/login"})
+public class Authentication extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,28 +34,24 @@ public class RegistrarUsuarios extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        if(!request.getParameter("password").
-                equals(request.getParameter("confirmPassword"))){
-                response.sendRedirect("registro.jsp");        
+        PrintWriter out = response.getWriter();
+        
+        String email = request.getParameter("email");
+        String password = request.getParameter("passwordHash");
+        
+        Auth auth = new Auth();       
+        User user = auth.login(email, password);
+        
+        // user not found. redirect to index page
+        if (user == null){
+            response.sendRedirect("index.jsp");   
+            return;
         }
         
-        String passwordHash = "1213";
-                
-        User user = new User(); 
-        
-        user.setName(request.getParameter("name"));
-        user.setLastName(request.getParameter("name"));
-        user.setEmail(request.getParameter("name"));
-        user.setPasswordHash(passwordHash);        
-        user.setUserRoleId(1);
-        
-        UserDao userDao = new UserDao();
-        userDao.insert(user);
-        
-        response.sendRedirect("index.jsp");  
-
+        // user found. redirect to menu page           
+        response.sendRedirect("menu.jsp");
+       
     }
-        
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -96,7 +91,5 @@ public class RegistrarUsuarios extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
-   
 
 }

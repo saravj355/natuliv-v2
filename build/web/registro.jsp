@@ -13,7 +13,7 @@
     </head>
     <body>
         <h1>Registro</h1>
-        <form action="registrar" method="POST">
+        <form action="signUp" method="POST">
             <input type="text" placeholder="Nombre" name="name"/><br>
             <input type="text" placeholder="Apellido" name="lastName"/><br>
             <input type="email" placeholder="Correo Electrónico" name="email"/><br>

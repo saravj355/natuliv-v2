@@ -5,6 +5,7 @@
  */
 package dao;
 
+import controller.Auth;
 import model.User;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -44,7 +45,12 @@ public class UserDaoTest {
     
     }
     
-     @Test
+    @Test
+    public void testLogin() {        
+        Auth.login("sara12@mail.com", "hola");        
+    }
+    
+    @Test
     public void testUpdate() {
         System.out.println("update");
         User user = new User(); 
@@ -54,7 +60,7 @@ public class UserDaoTest {
         user.setId(7);
         user.setName("Sara");
         user.setLastName("Valle");
-        user.setEmail("sara12@mail.co");
+        user.setEmail("sara12@mail.com");
         user.setPasswordHash(passHash);
         user.setUserRoleId(1);
         
@@ -72,7 +78,7 @@ public class UserDaoTest {
         
         user.setName("Sara");
         user.setLastName("Valle");
-        user.setEmail("sara@mail.co");
+        user.setEmail("sara@mail.com");
         user.setPasswordHash(passHash);
         user.setUserRoleId(1);
         
