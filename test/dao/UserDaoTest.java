@@ -46,12 +46,9 @@ public class UserDaoTest {
     }
     
     @Test
-    public void testLogin() {       
-        
-        User userIntace = new User();
-        
-        User user = Auth.login("sara12@mail.com", "1234"); 
-        
+    public void testLogin() { 
+        User userIntace = new User();        
+        User user = Auth.login("sara12@mail.com", "1234");         
         assertEquals(userIntace, user);
                
     }

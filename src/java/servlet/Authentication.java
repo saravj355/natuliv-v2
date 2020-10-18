@@ -34,13 +34,11 @@ public class Authentication extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
         
         String email = request.getParameter("email");
-        String password = request.getParameter("passwordHash");
-        
-        Auth auth = new Auth();       
-        User user = auth.login(email, password);
+        String password = request.getParameter("password");
+               
+        User user = Auth.login(email, password);
         
         // user not found. redirect to index page
         if (user == null){
