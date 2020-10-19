@@ -66,7 +66,8 @@ nav ul > li > .fill:after{
 nav ul > li > .fill:hover:after{
     width: 100%;
 }
-/*Login container*/
+/*Login component*/
+
 .card{
     margin-top:100px;
     padding:20px;
@@ -84,6 +85,10 @@ nav ul > li > .fill:hover:after{
 .brand-img{
     width:250px;
 }
+.toggle-password{
+    position:relative;
+    float:right;
+}
 .form-control:focus {
     box-shadow: none !important;
     border:none !important;
@@ -91,10 +96,6 @@ nav ul > li > .fill:hover:after{
 input{
     border:none !important;
     outline: none !important;
-}
-.toggle-password{
-    position:relative;
-    float:right;
 }
 .input-group{
     padding:15px;
@@ -135,3 +136,9 @@ input:focus + .line-box .line {
 .btn-submit:hover{
     opacity:0.8;
 }
+.invalidLogin{
+    padding:10px;
+    color:red;
+    font-size:14px;
+}
+

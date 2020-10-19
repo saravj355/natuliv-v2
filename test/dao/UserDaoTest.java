@@ -81,7 +81,7 @@ public class UserDaoTest {
         
         user.setName("Sara");
         user.setLastName("Valle");
-        user.setEmail("sara@mail.com");
+        user.setEmail("svj971@gmail.com");
         user.setPasswordHash(passHash);
         user.setUserRoleId(1);
         

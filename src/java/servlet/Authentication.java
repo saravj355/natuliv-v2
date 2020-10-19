@@ -6,7 +6,6 @@
 package servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.User;
 import controller.Auth;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -37,18 +37,30 @@ public class Authentication extends HttpServlet {
         
         String email = request.getParameter("email");
         String password = request.getParameter("password");
-               
+       
+                
+        if (email.isEmpty() || password.isEmpty()){
+           request.setAttribute("errorMessage", "Por favor rellene todos los campos.");
+           getServletContext().
+                   getRequestDispatcher("/index.jsp")
+                   .forward(request,response);           
+           return;
+        }  
+        
         User user = Auth.login(email, password);
         
         // user not found. redirect to index page
         if (user == null){
-            response.sendRedirect("index.jsp");   
+            request.setAttribute("errorMessage", "Credenciales inválidas.");
+            getServletContext().
+                   getRequestDispatcher("/index.jsp")
+                   .forward(request,response);      
             return;
         }
+        request.setAttribute("name",user.getName());
+        getServletContext().getRequestDispatcher("/menu.jsp").forward(request,response); 
         
-        // user found. redirect to menu page           
-        response.sendRedirect("menu.jsp");
-       
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

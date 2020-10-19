@@ -5,6 +5,11 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<% 
+    HttpSession objession = request.getSession(false);
+    String name = (String)objession.getAttribute("name");
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,6 +17,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello user!</h1>
+        <h1>Hola ${name}!</h1>
     </body>
 </html>
