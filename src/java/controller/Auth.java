@@ -23,6 +23,19 @@ public class Auth {
         // user found
         return user;      
     }
+    
+    public static User register(String name, String lastName, String email, String password){
+        UserDao userDao = new UserDao();
+        User user = userDao.findUserByEmail(email);
+        
+        if (user != null){
+            return null;
+        }
+        
+        return user;
+    }
+    
+    
 
    
     

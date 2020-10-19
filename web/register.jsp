@@ -20,6 +20,8 @@
             <input type="password" placeholder="Contraseña" name="password"/><br>
             <input type="password" placeholder="Confrimar Contraseña" name="confirmPassword"/><br>
             <input type="submit" value="Crear Cuenta"/>
+            
+            <h5 class="invalidLogin">${errorMessage}</h5>
         </form>
     </body>
 </html>

@@ -7,12 +7,13 @@ package servlet;
 
 import controller.Auth;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.User;
+
 
 /**
  *
@@ -33,7 +34,32 @@ public class Register extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
+        
+        String name = request.getParameter("name");
+        String lastName = request.getParameter("lastName");
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+        String confirmPassword = request.getParameter("confirmPassword");
+        
+        if(name.isEmpty() || lastName.isEmpty() ||
+           email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()){
+            request.setAttribute("errorMessage", "Por favor rellene todos los campos.");
+           getServletContext().
+                   getRequestDispatcher("/register.jsp")
+                   .forward(request,response);           
+           return;
+        }
+        
+        
+        User user = Auth.register(name, lastName, email, password);
+        
+        if (user  == null){
+            request.setAttribute("errorMessage", "Este correo ya está asociado a una cuenta");
+            
+         getServletContext().
+                   getRequestDispatcher("/register.jsp")
+                   .forward(request,response);   
+        }
         
         
     }

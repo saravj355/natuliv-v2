@@ -51,7 +51,8 @@ public class Authentication extends HttpServlet {
         
         // user not found. redirect to index page
         if (user == null){
-            request.setAttribute("errorMessage", "Credenciales inválidas.");
+            request.setAttribute("errorMessage", 
+                    "El correo electrónico o la contraseña que ingresaste no coincide con ninguna cuenta, Regístrate");
             getServletContext().
                    getRequestDispatcher("/index.jsp")
                    .forward(request,response);      
