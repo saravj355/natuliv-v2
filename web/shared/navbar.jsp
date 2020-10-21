@@ -1,4 +1,5 @@
- <header>
+<link rel="stylesheet" href="./assets/css/navbar.css">
+<header>
     <nav class="navbar stroke">
         <a class="navbar-brand" href="#">
             <img src="./assets/img/logo.png" class="d-inline-block align-top logo" alt="logo" loading="lazy">
@@ -22,9 +23,9 @@
                 <a class="nav-link account" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                    href="#">Cuenta<img class="icon" src="assets/img/iconUser.png"></a>
                 <ul class="dropdown-menu dropdown-menu-right">
-                    <li><a href="#" class="dropdown-item">Iniciar Sesión</a></li>
+                    <li><a href="index.jsp" class="dropdown-item">Iniciar Sesión</a></li>
                     <div class="dropdown-divider"></div>
-                    <li><a href="#" class="dropdown-item">Crear Cuenta</a></li>
+                    <li><a href="register.jsp" class="dropdown-item">Crear Cuenta</a></li>
                 </ul>
             </li>
         </ul>

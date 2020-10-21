@@ -7,7 +7,8 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <jsp:include page="./shared/root_head.jsp"/>   
+    <jsp:include page="./shared/root_head.jsp"/>
+    <link rel="stylesheet" href="./assets/css/register.css">
     <body>
         <jsp:include page="./shared/navbar.jsp"/>   
         
