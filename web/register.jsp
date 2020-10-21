@@ -7,11 +7,10 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Registro</title>
-    </head>
+    <jsp:include page="./shared/root_head.jsp"/>   
     <body>
+        <jsp:include page="./shared/navbar.jsp"/>   
+        
         <h1>Registro</h1>
         <form action="signUp" method="POST">
             <input type="text" placeholder="Nombre" name="name"/><br>
@@ -23,5 +22,6 @@
             
             <h5 class="invalidLogin">${errorMessage}</h5>
         </form>
+        <jsp:include page="./shared/footer.jsp"/>  
     </body>
 </html>

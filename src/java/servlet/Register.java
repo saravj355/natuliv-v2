@@ -6,6 +6,7 @@
 package servlet;
 
 import controller.Auth;
+import dao.UserDao;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -40,28 +41,52 @@ public class Register extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         String confirmPassword = request.getParameter("confirmPassword");
-        
-        if(name.isEmpty() || lastName.isEmpty() ||
-           email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()){
-            request.setAttribute("errorMessage", "Por favor rellene todos los campos.");
-           getServletContext().
-                   getRequestDispatcher("/register.jsp")
-                   .forward(request,response);           
+                
+        //checks empty inputs
+        if(name.isEmpty() || lastName.isEmpty() || email.isEmpty() || 
+           password.isEmpty() || confirmPassword.isEmpty())
+        {
+           request.setAttribute("errorMessage", "Por favor llene todos los campos.");
+           getServletContext().getRequestDispatcher("/register.jsp").forward(request,response);           
            return;
         }
         
-        
-        User user = Auth.register(name, lastName, email, password);
-        
-        if (user  == null){
-            request.setAttribute("errorMessage", "Este correo ya está asociado a una cuenta");
-            
-         getServletContext().
+        //Checks if password is different
+        if(!password.equals(confirmPassword)){
+             request.setAttribute("errorMessage", "La contraseña no coincide");
+             getServletContext().
                    getRequestDispatcher("/register.jsp")
-                   .forward(request,response);   
+                   .forward(request,response); 
+             return;
         }
         
+        UserDao userDao = new UserDao();
         
+        User user = userDao.findUserByEmail(email);
+        //Checks if email already exists
+        if (user != null){
+            request.setAttribute("errorMessage", "Este correo ya está asociado a una cuenta");
+            getServletContext().
+                   getRequestDispatcher("/register.jsp")
+                   .forward(request,response);   
+         return;
+        }
+                   
+        // user instance
+        // creates user
+        User newUser = Auth.register(name, lastName, email, password);
+        
+        // redirect to menu page when user is created
+        if(newUser != null){
+            request.setAttribute("name",user.getName());
+            getServletContext().
+                   getRequestDispatcher("/menu.jsp")
+                   .forward(request,response); 
+             return;
+        }
+
+        
+       
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -6,10 +6,6 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<% 
-    HttpSession objession = request.getSession(false);
-    String name = (String)objession.getAttribute("name");
-%>
 <!DOCTYPE html>
 <html>
     <head>

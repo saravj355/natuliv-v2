@@ -37,10 +37,9 @@ public class Authentication extends HttpServlet {
         
         String email = request.getParameter("email");
         String password = request.getParameter("password");
-       
-                
+                       
         if (email.isEmpty() || password.isEmpty()){
-           request.setAttribute("errorMessage", "Por favor rellene todos los campos.");
+           request.setAttribute("errorMessage","Por favor rellene todos los campos.");
            getServletContext().
                    getRequestDispatcher("/index.jsp")
                    .forward(request,response);           
@@ -51,8 +50,7 @@ public class Authentication extends HttpServlet {
         
         // user not found. redirect to index page
         if (user == null){
-            request.setAttribute("errorMessage", 
-                    "El correo electrónico o la contraseña que ingresaste no coincide con ninguna cuenta, Regístrate");
+            request.setAttribute("errorMessage","La contraseña o el correo electrónico son incorrectos ");
             getServletContext().
                    getRequestDispatcher("/index.jsp")
                    .forward(request,response);      

@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import model.User;
 /**
  *
@@ -84,7 +83,7 @@ public class UserDao{
         } catch (SQLException e) {
             throw new Error(e);
         }        
-        return null;  
+            return null;  
     }
     
     
