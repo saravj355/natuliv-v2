@@ -12,13 +12,17 @@
     <!-- navbar component -->
     <jsp:include page="./shared/navbar.jsp"/>
     <!-- login component -->
-    <div class="container">
+    <div class="container animate__animated animate__pulse">
         <div class="row justify-content-center">
             <div class="col mx-auto text-center">
                 <div class="card-group">
                     <div class="card">
                         <div class="card-body">
-                            <img class="img-fluid brand-img mx-auto d-block" src="./assets/img/logo.png">
+                            <div class="flip-container">
+                                <div class="flip-this">
+                                    <img class="img-fluid brand-img mx-auto d-block" src="./assets/img/logo.png">
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="card text-center">
@@ -46,7 +50,7 @@
                                         <span class="input-group-text"> <span toggle="#password-field" class="fa fa-fw fa-eye field_icon toggle-password"></span>  </span>
                                     </div>
                                 </div>
-                                <!--                                <%
+                                <!-- <%
                                     //                                    String errorMessage = (String) request.getParameter("errorMessage");
                                     //                                    if (errorMessage != null && errorMessage.isEmpty()) {
                                 %>
@@ -55,8 +59,7 @@
                                     <h5 class="">${errorMessage}</h5>
                                 </div>
                                 <% // }%>                                      -->
-
-                                <button type="submit" class="btn-submit">Iniciar Sesión</button>
+                                <button type="submit" id="btn" class="btn-submit">Iniciar Sesión</button>
                             </form>
                             <p>¿Aún no tienes cuenta? <a href="register.jsp">Regístrate</a></p>
                         </div>
@@ -65,6 +68,7 @@
             </div>
         </div>
     </div>    
+
     <jsp:include page="./shared/footer.jsp"/>
 </body>
 </html>

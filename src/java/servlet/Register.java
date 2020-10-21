@@ -78,7 +78,7 @@ public class Register extends HttpServlet {
         
         // redirect to menu page when user is created
         if(newUser != null){
-            request.setAttribute("name",user.getName());
+            request.setAttribute("name", newUser.getName());
             getServletContext().
                    getRequestDispatcher("/menu.jsp")
                    .forward(request,response); 
