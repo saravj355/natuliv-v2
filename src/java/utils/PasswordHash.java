@@ -5,8 +5,6 @@
  */
 package utils;
 
-import static org.apache.commons.codec.digest.DigestUtils.md5;
-
 /**
  *
  * @author sarav

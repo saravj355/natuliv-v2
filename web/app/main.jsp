@@ -12,7 +12,7 @@
     <body>
 
         <div class="alert alert-success" role="alert">
-            <p>Hola ${name}!, has iniciado correctamente</p>
+            <p>Hola ${name}! has iniciado correctamente</p>
         </div>
 
         <jsp:include page="../shared/footer.jsp"/>
