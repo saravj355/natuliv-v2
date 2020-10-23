@@ -70,23 +70,24 @@ body{
 }
 
 .btn-submit{
-    background:#000;
+    background: linear-gradient(90deg, rgba(2,141,96,1) 18%, rgba(101,156,96,1) 100%, rgba(2,141,104,1) 100%);
     color:#ffff;
     padding:10px;
     width:150px;
     text-align: center;
     text-decoration: none;
-    margin: 20px 15px;
     border-radius:20px;
     transition: ease 0.5s;
     border:none;
-    border:1px solid #000;
 }
 
 .btn-submit:hover{
-    background: #fff;
-    color: #000;
-    border:2px solid #000;
+    opacity: 0.8;
+}
+
+.errorMessage{
+    font-size:12px;
+    color: red;
 }
 
 

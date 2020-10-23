@@ -57,9 +57,8 @@ public class Authentication extends HttpServlet {
             return;
         }
         request.setAttribute("name",user.getName());
-        getServletContext().getRequestDispatcher("/menu.jsp").forward(request,response); 
-        
-        
+        getServletContext().getRequestDispatcher("/app/main.jsp").forward(request,response); 
+ 
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

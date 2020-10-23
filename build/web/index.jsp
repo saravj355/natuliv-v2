@@ -50,15 +50,7 @@
                                         <span class="input-group-text"> <span toggle="#password-field" class="fa fa-fw fa-eye field_icon toggle-password"></span>  </span>
                                     </div>
                                 </div>
-                                <!-- <%
-                                    //                                    String errorMessage = (String) request.getParameter("errorMessage");
-                                    //                                    if (errorMessage != null && errorMessage.isEmpty()) {
-                                %>
-
-                                <div class="alert alert-danger errorMessage" name="errorMessage" role="alert">
-                                    <h5 class="">${errorMessage}</h5>
-                                </div>
-                                <% // }%>                                      -->
+                                    <h5 class="errorMessage animate__animated animate__headShake">${errorMessage}</h5>
                                 <button type="submit" id="btn" class="btn-submit">Iniciar Sesión</button>
                             </form>
                             <p>¿Aún no tienes cuenta? <a href="register.jsp">Regístrate</a></p>

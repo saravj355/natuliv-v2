@@ -9,11 +9,6 @@
     letter-spacing: 0.10em;
 }
 
-form {
-    margin: 20px;
-    margin-left: 40px;
-}
-
 .brand-img{
     width:250px;
     margin: 40px auto;
@@ -43,4 +38,14 @@ p > a:hover{
 .flip-container:hover .flip-this {
     transition: 1s;
     transform: rotateY(360deg);
+}
+.alert{
+    padding:5px;
+    margin:10px;
+}
+.input-group{
+    margin-left:50px;
+}
+.btn-submit{
+    margin:30px auto;
 }

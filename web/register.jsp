@@ -13,7 +13,7 @@
         <jsp:include page="./shared/navbar.jsp"/>  
         <div class="container animate__animated animate__bounceInRight">
             <div class="card text-center">
-                    <img class="img-fluid brand-img mx-auto d-block" src="./assets/img/logo.png">
+                <img class="img-fluid brand-img mx-auto d-block" src="./assets/img/logo.png">
                 <form action="signUp" method="POST">
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
@@ -51,9 +51,9 @@
                         </div>
                         <div class="input-group-append">                     
                             <span class="input-group-text"> <span toggle="#password-field" class="fa fa-fw fa-eye field_icon toggle-password"></span>  </span>
-                        </div>
-                        <small>La contraseña debe contener como máximo 8 caracteres</small>
+                        </div> 
                     </div>
+                    <h5 class="errorMessage animate__animated animate__shakeX">${errorMessage}</h5>
                     <input type="submit" class="btn-submit" value="Crear Cuenta"/>
                 </form>
             </div>
