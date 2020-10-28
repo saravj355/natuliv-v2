@@ -80,7 +80,7 @@ public class Register extends HttpServlet {
         if(newUser != null){
             request.setAttribute("name", newUser.getName());
             getServletContext().
-                   getRequestDispatcher("/webapp/test.jsp")
+                   getRequestDispatcher("/webapp/main.jsp")
                    .forward(request,response); 
              return;
         }
