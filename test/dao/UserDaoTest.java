@@ -77,19 +77,11 @@ public class UserDaoTest {
         System.out.println("testInsertUser");
         User user = new User(); 
         
-        String passHash = PasswordHash.compute("saravalle12");
+        String passHash = PasswordHash.compute("123");
         
-        user.setName("Sara");
-        user.setLastName("Valle");
-        user.setEmail("saravj971@gmail.com");
-        user.setPasswordHash(passHash);
-        user.setUserRoleId(1);
+        System.out.println(passHash);
         
-        UserDao instance = new UserDao();
-        boolean expResult = true;
-        boolean result = instance.insert(user);
         
-        assertEquals(expResult, result);
     }
     
 }

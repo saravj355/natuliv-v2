@@ -1,32 +1,20 @@
 /*Login component*/
-.card{
-    padding:2em;
-}
-
-.card h5.card-title{
-    width: 150px;
-    color: #028D68;
-    letter-spacing: 0.10em;
-}
 
 .brand-img{
     width:250px;
     margin: 40px auto;
     display: block;
 }
-
 p > a {
     color:#659C6A !important;
 }
 p > a:hover{
     text-decoration:underline;
 }
-
 .flip-container {
     background: transparent;
     display: inline-block;
 }
-
 .flip-this {
     position: relative;
     width: 100%;
@@ -34,17 +22,9 @@ p > a:hover{
     transition: transform 0.6s;
     transform-style: preserve-3d;
 }
-
 .flip-container:hover .flip-this {
     transition: 1s;
     transform: rotateY(360deg);
-}
-.alert{
-    padding:5px;
-    margin:10px;
-}
-.input-group{
-    margin-left:50px;
 }
 .btn-submit{
     margin:30px auto;

@@ -12,54 +12,72 @@
     <body>
         <jsp:include page="./shared/navbar.jsp"/>  
         <div class="container animate__animated animate__bounceInRight">
-            <div class="card text-center">
-                <img class="img-fluid brand-img mx-auto d-block" src="./assets/img/logo.png">
-                <form action="signUp" method="POST">
-                    <div class="input-group form-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+            <div class="card text-center card-shadow m-4">
+                <h1 class="card-title">Regístrate</h1>
+                <form action="signUp" method="POST" >
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                </div>
+                                <input type="text" class="form-control input" name="name" placeholder="Nombre">   
+                                <div class="line-box">
+                                    <div class="line"></div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="input-line">
-                            <input type="text" class="form-control" name="name" placeholder="Nombre">   
-                            <span class="underline-animation"></span>
-                        </div>
-                        <div class="input-line">
-                            <input type="text" class="form-control" name="lastName" placeholder="Apellido">   
-                            <span class="underline-animation"></span>
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <input type="text" class="form-control input" name="lastName" placeholder="Apellido">   
+                                <div class="line-box">
+                                    <div class="line"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                        </div>
-                        <div class="input-line">
-                            <input type="email" class="form-control" name="email" placeholder="Correo Electrónico">   
-                            <span class="underline-animation"></span>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                </div>
+                                <input type="email" class="form-control input" name="email" placeholder="Correo Electrónico">   
+                                <div class="line-box email">
+                                    <div class="line email"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="input-group form-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                </div>
+                                <input type="password" class="form-control input password" name="password" placeholder="Contraseña">   
+                                <div class="line-box">
+                                    <div class="line"></div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="input-line">
-                            <input type="password" class="form-control password" name="password" placeholder="Contraseña">   
-                            <span class="underline-animation"></span>
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <input type="password" class="form-control input password" name="confirmPassword" placeholder="Confirmar Contraseña">   
+                                <div class="line-box">
+                                    <div class="line"></div>
+                                </div>
+                                <div class="input-group-append">                     
+                                    <span class="input-group-text"> <span toggle="#password-field" class="fa fa-fw fa-eye field_icon toggle-password"></span>  </span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="input-line">
-                            <input type="password" class="form-control password" name="confirmPassword" placeholder="Confirmar Contraseña">   
-                            <span class="underline-animation"></span>
-                        </div>
-                        <div class="input-group-append">                     
-                            <span class="input-group-text"> <span toggle="#password-field" class="fa fa-fw fa-eye field_icon toggle-password"></span>  </span>
-                        </div> 
                     </div>
                     <h5 class="errorMessage animate__animated animate__shakeX">${errorMessage}</h5>
-                    <input type="submit" class="btn-submit" value="Crear Cuenta"/>
+                    <input type="submit" class="btn btn-submit" value="Crear Cuenta"/>
                 </form>
             </div>
         </div>
-    </div>
-</div>
-<jsp:include page="./shared/footer.jsp"/>  
-</body>
+        <jsp:include page="./shared/footer.jsp"/>  
+    </body>
 </html>

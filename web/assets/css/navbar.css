@@ -4,42 +4,34 @@
     -webkit-box-shadow: 0px 10px 16px -9px rgba(128, 128, 128, 1);
     -moz-box-shadow: 0px 10px 16px -9px rgba(128, 128, 128, 1);
     box-shadow: 0px 10px 16px -9px rgba(128, 128, 128, 1);
+    height:70px;
 }
-
 .nav-item,
 .nav-link{
-    padding: 10px;
     text-transform: uppercase;
     color: #000 !important;
 }
-
-.nav-link.account:hover{
-    color:rgb(110, 109, 109);
-}
-
 img.icon {
     width: 15px;
     margin: 0px 5px;
 }
-
 img.logo {
-    width: 70px;
+    width: 60px;
     height: 100%;
     margin: 0 50px;
 }
-
+.account{
+    margin-right:50px;
+}
 /* navbar hover effect */
-
 nav ul li a,
 nav ul > li > .fill:after,
 nav ul > li > .fill:before {
-    transition: all 0.5s;
+    transition: all 1s;
 }
-
 nav ul > li > .fill{
     position: relative;
 }
-
 nav ul > li > .fill:after{
     position: absolute;
     bottom: 0;
