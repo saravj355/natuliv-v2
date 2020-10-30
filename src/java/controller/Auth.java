@@ -24,7 +24,7 @@ public class Auth {
         return user;      
     }
     
-    public static User register(String name, String lastName, String email, String password){
+    public static User register(String name, String lastName, String email, String password, String gender){
         
         // compute password hash
         String passwordHash = PasswordHash.compute(password);
@@ -35,6 +35,7 @@ public class Auth {
         user.setLastName(lastName);
         user.setEmail(email);        
         user.setPasswordHash(passwordHash);
+        user.setGender(gender); 
         user.setUserRoleId(2);
         
         // create userDao instance

@@ -1,9 +1,18 @@
 .card{
+    background:#cceefd;
     width:500px;
     margin-top:10%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.input-group{
+    margin:20px 0;
+}
+.btn-submit{
+    border:1px solid #000;
+    background:#fff;
+    margin-top:20px;
 }
 
 

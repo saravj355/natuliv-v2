@@ -10,16 +10,18 @@ public class User {
     private String lastName;
     private String email;
     private String passwordHash;
+    private String gender;
     private int userRoleId;
 
     public User() {} 
     
-    public User(int id, String name, String lastName, String email, String passwordHash, int userRoleId) {
+    public User(int id, String name, String lastName, String email, String passwordHash, String gender, int userRoleId) {
         this.id = id;
         this.name = name;
         this.lastName = lastName;
         this.email = email;
         this.passwordHash = passwordHash;
+        this.gender = gender;
         this.userRoleId = userRoleId;
     }
 
@@ -41,6 +43,10 @@ public class User {
 
     public void setPasswordHash(String passwordHash) {
         this.passwordHash = passwordHash;
+    }
+    
+     public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public void setUserRoleId(int userRoleId) {
@@ -67,6 +73,10 @@ public class User {
 
     public String getPasswordHash() {
         return passwordHash;
+    }
+    
+    public String getGender() {
+        return gender;
     }
 
     public int getUserRoleId() {

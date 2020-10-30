@@ -7,6 +7,7 @@ package servlet;
 
 import controller.Auth;
 import java.io.IOException;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -34,6 +35,10 @@ public class Authentication extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+                
+        RequestDispatcher rd = null;
+
+        HttpSession session = request.getSession(true);
         
         String email = request.getParameter("email");
         String password = request.getParameter("password");
@@ -56,10 +61,9 @@ public class Authentication extends HttpServlet {
                    .forward(request,response);       
             return;
         }
-        HttpSession sesion = request.getSession();
-        sesion.setAttribute("name",user.getName());
-        getServletContext().getRequestDispatcher("/app/index.jsp").forward(request,response); 
         
+        session.setAttribute("name",user.getName());
+        rd = request.getRequestDispatcher("/app/index.jsp");
         
       
     }

@@ -9,8 +9,8 @@
         <servlet-class>servlet.Register</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>Administration</servlet-name>
-        <servlet-class>servlet.Administration</servlet-class>
+        <servlet-name>UserList</servlet-name>
+        <servlet-class>servlet.UserList</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Authentication</servlet-name>
@@ -21,8 +21,8 @@
         <url-pattern>/signup</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>Administration</servlet-name>
-        <url-pattern>/admin</url-pattern>
+        <servlet-name>UserList</servlet-name>
+        <url-pattern>/list</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
