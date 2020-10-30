@@ -8,6 +8,7 @@ package servlet;
 import controller.Auth;
 import dao.UserDao;
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,12 +16,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.User;
 
-
 /**
  *
  * @author sarav
  */
-@WebServlet(name = "Register", urlPatterns = {"/signUp"})
+@WebServlet(name = "Register", urlPatterns = {"/signup"})
 public class Register extends HttpServlet {
 
     /**
@@ -36,57 +36,54 @@ public class Register extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
+        
         String name = request.getParameter("name");
         String lastName = request.getParameter("lastName");
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         String confirmPassword = request.getParameter("confirmPassword");
-                
+
         //checks empty inputs
-        if(name.isEmpty() || lastName.isEmpty() || email.isEmpty() || 
-           password.isEmpty() || confirmPassword.isEmpty())
-        {
-           request.setAttribute("errorMessage", "Por favor llene todos los campos.");
-           getServletContext().getRequestDispatcher("/register.jsp").forward(request,response);           
-           return;
+        if (name.isEmpty() || lastName.isEmpty() || email.isEmpty()
+                || password.isEmpty() || confirmPassword.isEmpty()) {
+            request.setAttribute("errorMessage", "Por favor llene todos los campos.");
+            getServletContext().getRequestDispatcher("/auth/register.jsp").forward(request, response);
+            return;
         }
-        
+
         //Checks if password is different
-        if(!password.equals(confirmPassword)){
-             request.setAttribute("errorMessage", "La contraseña no coincide");
-             getServletContext().
-                   getRequestDispatcher("/register.jsp")
-                   .forward(request,response); 
-             return;
+        if (!password.equals(confirmPassword)) {
+            request.setAttribute("errorMessage", "La contraseña no coincide");
+            getServletContext().
+                    getRequestDispatcher("/auth/register.jsp")
+                    .forward(request, response);
+            return;
         }
-        
+
         UserDao userDao = new UserDao();
-        
+
         User user = userDao.findUserByEmail(email);
         //Checks if email already exists
-        if (user != null){
+        if (user != null) {
             request.setAttribute("errorMessage", "Este correo ya está asociado a una cuenta");
             getServletContext().
-                   getRequestDispatcher("/register.jsp")
-                   .forward(request,response);   
-         return;
+                    getRequestDispatcher("/auth/register.jsp")
+                    .forward(request, response);
+            return;
         }
-                   
+
         // user instance
         // creates user
         User newUser = Auth.register(name, lastName, email, password);
-        
+
         // redirect to menu page when user is created
-        if(newUser != null){
+        if (newUser != null) {
             request.setAttribute("name", newUser.getName());
             getServletContext().
-                   getRequestDispatcher("/webapp/main.jsp")
-                   .forward(request,response); 
-             return;
+                    getRequestDispatcher("/app/index.jsp")
+                    .forward(request, response);
+            return;
         }
-
-        
-       
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

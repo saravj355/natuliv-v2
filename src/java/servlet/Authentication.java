@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import model.User;
 
 /**
@@ -40,7 +41,7 @@ public class Authentication extends HttpServlet {
         if (email.isEmpty() || password.isEmpty()){
            request.setAttribute("errorMessage","Por favor rellene todos los campos.");
            getServletContext().
-                   getRequestDispatcher("/index.jsp")
+                   getRequestDispatcher("/auth/login.jsp")
                    .forward(request,response);           
            return;
         }  
@@ -51,12 +52,14 @@ public class Authentication extends HttpServlet {
         if (user == null){
             request.setAttribute("errorMessage","La contraseña o el correo electrónico son incorrectos ");
             getServletContext().
-                   getRequestDispatcher("/index.jsp")
-                   .forward(request,response);      
+                   getRequestDispatcher("/auth/login.jsp")
+                   .forward(request,response);       
             return;
         }
-        request.setAttribute("name",user.getName());
-        getServletContext().getRequestDispatcher("/webapp/main.jsp").forward(request,response); 
+        HttpSession sesion = request.getSession();
+        sesion.setAttribute("name",user.getName());
+        getServletContext().getRequestDispatcher("/app/index.jsp").forward(request,response); 
+        
         
       
     }
