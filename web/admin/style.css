@@ -1,22 +1,9 @@
 .card{
-    background:#005591;
     width:500px;
     margin-top:10%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-.btn-submit{
-    border: 1px solid #000;
-    transition: 0.3s ease;
-    background: #fff;
-}
-.input-group{
-    padding:20px;
-}
-.form-control:focus
-{
-    box-shadow: none !important;
 }
 
 

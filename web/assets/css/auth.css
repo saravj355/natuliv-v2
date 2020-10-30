@@ -91,11 +91,6 @@ input,.form-control:focus,
     border:none !important;
 }
 
-.errorMessage{
-    font-size:13px;
-    color:rgb(221, 83, 83);
-}
-
 .btn-submit:hover{
     opacity: 0.8;
     color:#ffff;
