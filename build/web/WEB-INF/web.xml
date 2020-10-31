@@ -2,23 +2,23 @@
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
         <servlet-name>Authentication</servlet-name>
-        <servlet-class>servlet.Authentication</servlet-class>
+        <servlet-class>servlet.auth.Authentication</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Register</servlet-name>
-        <servlet-class>servlet.Register</servlet-class>
+        <servlet-class>servlet.auth.Register</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ListUsers</servlet-name>
-        <servlet-class>servlet.ListUsers</servlet-class>
+        <servlet-class>servlet.admin.ListUsers</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Authentication</servlet-name>
-        <url-pattern>/login</url-pattern>
+        <url-pattern>/auth/login</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>Register</servlet-name>
-        <url-pattern>/signup</url-pattern>
+        <url-pattern>/auth/signup</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ListUsers</servlet-name>

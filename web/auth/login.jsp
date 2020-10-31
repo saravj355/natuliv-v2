@@ -24,7 +24,7 @@
                     <div class="card text-center">
                         <h1 class="card-title mx-auto">BIENVENIDO</h1>
                         <div class="card-body">
-                            <form action="${pageContext.request.contextPath}/login" method="POST" class="form">
+                            <form action="${pageContext.request.contextPath}/auth/login" method="POST" class="form">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-envelope"></i></span>

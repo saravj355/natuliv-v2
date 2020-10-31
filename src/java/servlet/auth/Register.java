@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package servlet;
+package servlet.auth;
 
 import controller.Auth;
 import dao.UserDao;
@@ -19,7 +19,7 @@ import model.User;
  *
  * @author sarav
  */
-@WebServlet(name = "Register", urlPatterns = {"/signup"})
+@WebServlet(name = "Register", urlPatterns = {"/auth/signup"})
 public class Register extends HttpServlet {
 
     /**
