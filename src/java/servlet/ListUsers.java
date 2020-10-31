@@ -5,9 +5,9 @@
  */
 package servlet;
 
-import controller.TableUser;
 import java.io.IOException;
 import java.util.List;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,8 +20,8 @@ import model.User;
  *
  * @author sarav
  */
-@WebServlet(name = "UserList", urlPatterns = {"/list"})
-public class UserList extends HttpServlet {
+@WebServlet(name = "ListUsers", urlPatterns = {"admin/management/listUsers"})
+public class ListUsers extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,12 +35,17 @@ public class UserList extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        RequestDispatcher rd = null;
         
         HttpSession session = request.getSession();
-        TableUser list = new TableUser();
+        controller.UserController list = new controller.UserController();
         
-        List<User> listUsers = list.listUser();
+        List<User> listUsers = list.findUsers();
         session.setAttribute("LIST_ALL_USERS", listUsers);
+        
+        rd = request.getRequestDispatcher("/admin/management/listUsers.jsp");
+        
+        rd.forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

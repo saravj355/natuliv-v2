@@ -74,6 +74,14 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <input type="text" class="form-control input" name="gender" placeholder="Género">   
+                            <div class="line-box">
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <h5 class="errorMessage animate__animated animate__shakeX">${errorMessage}</h5>
                 <input type="submit" class="btn btn-submit" value="Crear Cuenta"/>

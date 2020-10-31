@@ -19,6 +19,7 @@
                         <th>Nombre</th>
                         <th>Apellido</th>
                         <th>Correo Electrónico</th>
+                        <th>Género</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,6 +31,7 @@
                                     <td><c:out value="${ user.getName() }"/></td>
                                     <td><c:out value="${ user.getLastName() }"/></td>
                                     <td><c:out value="${ user.getEmail() }"/></td>
+                                    <td><c:out value="${ user.getGender() }"/></td>
                                 </tr>
                             </c:forEach>                                           
                         </c:when>

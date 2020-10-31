@@ -112,7 +112,7 @@ public class UserDao {
             return users;
 
         } catch (SQLException e) {
-            System.out.println("Error: Clase UserDao, method:update");
+            System.out.println("Error: Clase UserDao, method:getUsers");
             e.printStackTrace();
         }
         return users;

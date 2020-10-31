@@ -46,11 +46,9 @@ public class Administrator extends HttpServlet {
             return;
         }
 
-       
-        UserList list = new UserList();
-        list.processRequest(request, response);
+        rd = request.getRequestDispatcher("/admin/managment/main.jsp");
+
         rd.forward(request, response);
-        rd = request.getRequestDispatcher("/admin/managment/index.jsp");
 
     }
 
