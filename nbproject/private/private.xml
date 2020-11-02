@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+        <file>
+            <url>web/admin/app/EditProducts.jsp</url>
+            <bookmark id="1">
+                <name/>
+                <line>35</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/SARA/Desktop/webapp/Natuliv/src/java/servlet/user/auth/Authentication.java</file>
-            <file>file:/D:/SARA/Desktop/webapp/Natuliv/web/WEB-INF/web.xml</file>
-            <file>file:/D:/SARA/Desktop/webapp/Natuliv/src/java/servlet/admin/app/Administration.java</file>
+            <file>file:/D:/SARA/Desktop/webapp/Natuliv/src/java/servlet/admin/actions/EditProduct.java</file>
+            <file>file:/D:/SARA/Desktop/webapp/Natuliv/web/admin/app/ListProducts.jsp</file>
             <file>file:/D:/SARA/Desktop/webapp/Natuliv/src/java/servlet/user/application/Application.java</file>
-            <file>file:/D:/SARA/Desktop/webapp/Natuliv/src/java/servlet/user/auth/Register.java</file>
         </group>
     </open-files>
 </project-private>
