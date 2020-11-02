@@ -5,6 +5,7 @@
  */
 package servlet.admin;
 
+import controller.Administrator;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,14 +13,16 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import model.User;
 
 /**
  *
  * @author sarav
  */
-@WebServlet(name = "Administrator", urlPatterns = {"/admin"})
-public class Administrator extends HttpServlet {
+@WebServlet(name = "Login", urlPatterns = {"/admin/login"})
+public class Login extends HttpServlet {
+
+    RequestDispatcher rd = null;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,22 +36,6 @@ public class Administrator extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-
-        RequestDispatcher rd = null;
-        HttpSession session = request.getSession(true);
-
-        String email = request.getParameter("email");
-        String password = request.getParameter("password");
-
-        if (email.isEmpty() || password.isEmpty()) {
-            request.setAttribute("errorMessage", "Por favor llene todos los campos.");
-            getServletContext().getRequestDispatcher("/admin/login.jsp").forward(request, response);
-            return;
-        }
-
-        rd = request.getRequestDispatcher("/admin/managment/main.jsp");
-
-        rd.forward(request, response);
 
     }
 
@@ -64,7 +51,12 @@ public class Administrator extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
+        rd = request.getRequestDispatcher("/admin/Login.jsp");
+        rd.include(request, response);
+
         processRequest(request, response);
+
     }
 
     /**
@@ -78,7 +70,31 @@ public class Administrator extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+                       
+        if (email.isEmpty() || password.isEmpty()){
+           request.setAttribute("errorMessage","Por favor llene todos los campos.");
+           getServletContext().
+                   getRequestDispatcher("/admin/Login.jsp")
+                   .forward(request,response);           
+           return;
+        }  
+        
+        User admin = Administrator.loginAdministrator(email, password);
+        
+        // user not found. redirect to index page
+        if (admin == null){
+            request.setAttribute("errorMessage","La contraseña o el correo electrónico son incorrectos.");
+            getServletContext().
+                   getRequestDispatcher("/admin/Login.jsp")
+                   .forward(request,response);       
+            return;
+        }
+        
+        response.sendRedirect(request.getContextPath() + "/admin/app");
+
     }
 
     /**

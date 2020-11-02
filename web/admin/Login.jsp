@@ -9,7 +9,7 @@
 <html>
     <jsp:include page="../shared/head.jsp"/>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/admin/style.css">
-
+    
     <body>
         <!-- ***** login Administration ***** --->
         <div class="container">
@@ -21,7 +21,7 @@
                             <small>Ingrese sus credenciales de administrador</small>
                         </div>
                         <div class="card-body">
-                            <form action="${pageContext.request.contextPath}/admin" method="POST">
+                            <form action="${pageContext.request.contextPath}/admin/login" method="POST">
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-lock"></i></span>
@@ -32,7 +32,13 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-key"></i></span>
                                     </div>
-                                    <input type="password" class="form-control" name="password" placeholder="Código Administrador">
+                                    <input type="password" class="form-control password input" name="password" id="password" placeholder="Contraseña">
+                                    <div class="line-box">
+                                        <div class="line"></div>
+                                    </div>
+                                    <div class="input-group-append">                     
+                                        <span class="input-group-text"> <span toggle="#password-field" class="fa fa-fw fa-eye field_icon toggle-password"></span>  </span>
+                                    </div>
                                 </div>
                                 <h5 class="errorMessage animate__animated animate__headShake">${errorMessage}</h5>
                                 <input type="submit" class="btn btn-submit" value="Ingresar">

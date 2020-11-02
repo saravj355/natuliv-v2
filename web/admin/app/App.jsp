@@ -9,8 +9,7 @@
 <html>
     <jsp:include page="../../shared/head.jsp"/>
     <body>
-        <a href="${pageContext.request.contextPath}/admin/managment/users.jsp" class="btn btn-primary">Listar Usuarios</a>
-
-        <jsp:include page="../../shared/footer.jsp"/>
+        <a href="${pageContext.request.contextPath}/admin/app/list-users" class="btn btn-primary">Usuarios</a>
+        <a href="${pageContext.request.contextPath}/admin/app" class="btn btn-dark">Productos</a>
     </body>
 </html>

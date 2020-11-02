@@ -8,13 +8,10 @@
 <!DOCTYPE html>
 <html>
     <jsp:include page="../shared/head.jsp"/>
-    <link rel="stylesheet" href="assets/style.css">
     <body>
-
         <div class="alert alert-success" role="alert">
             <p>Hola ${name}! has iniciado correctamente</p>
         </div>
-
         <jsp:include page="../shared/footer.jsp"/>
     </body>
 </html>

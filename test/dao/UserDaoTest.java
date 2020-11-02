@@ -77,14 +77,14 @@ public class UserDaoTest {
         System.out.println("testInsertUser");
         User user = new User(); 
         
-        String passHash = PasswordHash.compute("123");
+        String passHash = PasswordHash.compute("jimena12");
         
-        user.setId(7);
-        user.setName("Brayan");
-        user.setLastName("Valle");
-        user.setEmail("brayanvalle@gmail.com");
+        user.setId(1);
+        user.setName("Jimena");
+        user.setLastName("Saldarriaga");
+        user.setEmail("jimena@gmail.com");
         user.setPasswordHash(passHash);
-        user.setGender("Masculino");
+        user.setGender("Femenino");
         user.setUserRoleId(1);
         
         UserDao instance = new UserDao();

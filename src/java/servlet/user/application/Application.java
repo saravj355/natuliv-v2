@@ -3,25 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package servlet.admin;
+package servlet.user.application;
 
 import java.io.IOException;
-import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import model.User;
 
 /**
  *
  * @author sarav
  */
-@WebServlet(name = "ListUsers", urlPatterns = {"admin/management/listUsers"})
-public class ListUsers extends HttpServlet {
+@WebServlet(name = "Application", urlPatterns = {"/app"})
+public class Application extends HttpServlet {
+
+    RequestDispatcher rd;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,17 +34,6 @@ public class ListUsers extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        RequestDispatcher rd = null;
-        
-        HttpSession session = request.getSession();
-        controller.UserController list = new controller.UserController();
-        
-        List<User> listUsers = list.findUsers();
-        session.setAttribute("LIST_ALL_USERS", listUsers);
-        
-        rd = request.getRequestDispatcher("/admin/management/listUsers.jsp");
-        
-        rd.forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -60,6 +48,11 @@ public class ListUsers extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        
+        rd = request.getRequestDispatcher("/application/Main.jsp");
+        rd.include(request, response);
+        
         processRequest(request, response);
     }
 

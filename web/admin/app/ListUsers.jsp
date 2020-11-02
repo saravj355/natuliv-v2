@@ -7,7 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <jsp:include page="../../shared/head.jsp" />
+    <jsp:include page="../../../shared/head.jsp"/>
     <body>
         <h1 class="text-center">Listado Usuarios</h1>
         <div class="container">
@@ -20,6 +20,7 @@
                         <th>Apellido</th>
                         <th>Correo Electrónico</th>
                         <th>Género</th>
+                        <th>Acción</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -32,6 +33,9 @@
                                     <td><c:out value="${ user.getLastName() }"/></td>
                                     <td><c:out value="${ user.getEmail() }"/></td>
                                     <td><c:out value="${ user.getGender() }"/></td>
+                                    <td>
+                                        <button class="btn btn-danger">Eliminar</button>
+                                    </td>
                                 </tr>
                             </c:forEach>                                           
                         </c:when>
@@ -44,6 +48,6 @@
                 </tbody>
             </table>
         </div>
-        <jsp:include page="../../shared/footer.jsp" />
+        <jsp:include page="../../../shared/footer.jsp"/>
     </body>
 </html>

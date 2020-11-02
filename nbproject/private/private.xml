@@ -3,8 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/sarav/Documents/NetBeansProjects/Natuliv/web/admin/login.jsp</file>
-            <file>file:/C:/Users/sarav/Documents/NetBeansProjects/Natuliv/web/admin/style.css</file>
+            <file>file:/D:/SARA/Desktop/webapp/Natuliv/src/java/servlet/user/auth/Authentication.java</file>
+            <file>file:/D:/SARA/Desktop/webapp/Natuliv/web/WEB-INF/web.xml</file>
+            <file>file:/D:/SARA/Desktop/webapp/Natuliv/src/java/servlet/admin/app/Administration.java</file>
+            <file>file:/D:/SARA/Desktop/webapp/Natuliv/src/java/servlet/user/application/Application.java</file>
+            <file>file:/D:/SARA/Desktop/webapp/Natuliv/src/java/servlet/user/auth/Register.java</file>
         </group>
     </open-files>
 </project-private>

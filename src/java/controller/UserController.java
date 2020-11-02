@@ -8,6 +8,7 @@ public class UserController {
 
     public UserController() {
     }
+    
     public List<User> findUsers() {        
         UserDao getUsersList = new UserDao();        
         return getUsersList.getUsers();

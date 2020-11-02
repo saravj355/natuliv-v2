@@ -24,7 +24,7 @@
                     <div class="card text-center">
                         <h1 class="card-title mx-auto">BIENVENIDO</h1>
                         <div class="card-body">
-                            <form action="${pageContext.request.contextPath}/auth/login" method="POST" class="form">
+                            <form action="${pageContext.request.contextPath}/login" method="POST" class="form">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-envelope"></i></span>
@@ -49,7 +49,7 @@
                                 <h5 class="errorMessage animate__animated animate__headShake">${errorMessage}</h5>
                                 <button type="submit" class="btn btn-submit">Iniciar Sesión</button>
                             </form>
-                            <p>¿Aún no tienes cuenta? <a href="register.jsp">Regístrate</a></p>
+                            <p>¿Aún no tienes cuenta? <a href="${pageContext.request.contextPath}/signup">Regístrate</a></p>
                         </div>
                     </div>
                 </div>

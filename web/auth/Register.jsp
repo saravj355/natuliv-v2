@@ -16,7 +16,7 @@
     <div class="container animate__animated animate__bounceInRight">
         <div class="card text-center card-shadow m-4">
             <h1 class="card-title">Regístrate</h1>
-            <form action="${pageContext.request.contextPath}/auth/signup" method="POST" >
+            <form action="${pageContext.request.contextPath}/signup" method="POST" >
                 <div class="row">
                     <div class="col-md-6">
                         <div class="input-group">
@@ -76,11 +76,11 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="gender" value="female">
+                            <input class="form-check-input" type="radio" name="gender" value="Female">
                             <label class="form-check-label">Femenino</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="gender" value="male">
+                            <input class="form-check-input" type="radio" name="gender" value="Male">
                             <label class="form-check-label">Masculino</label>
                         </div>
                     </div>

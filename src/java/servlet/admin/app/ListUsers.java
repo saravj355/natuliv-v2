@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package servlet.auth;
+package servlet.admin.app;
 
-import controller.Auth;
 import java.io.IOException;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,8 +20,8 @@ import model.User;
  *
  * @author sarav
  */
-@WebServlet(name = "Authentication", urlPatterns = {"/auth/login"})
-public class Authentication extends HttpServlet {
+@WebServlet(name = "ListUsers", urlPatterns = {"/admin/app/list-users"})
+public class ListUsers extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,39 +34,18 @@ public class Authentication extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-                
-        RequestDispatcher rd = null;
+                response.setContentType("text/html;charset=UTF-8");
 
-        HttpSession session = request.getSession(true);
-        
-        String email = request.getParameter("email");
-        String password = request.getParameter("password");
-                       
-        if (email.isEmpty() || password.isEmpty()){
-           request.setAttribute("errorMessage","Por favor rellene todos los campos.");
-           getServletContext().
-                   getRequestDispatcher("/auth/login.jsp")
-                   .forward(request,response);           
-           return;
-        }  
-        
-        User user = Auth.login(email, password);
-        
-        // user not found. redirect to index page
-        if (user == null){
-            request.setAttribute("errorMessage","La contraseña o el correo electrónico son incorrectos ");
-            getServletContext().
-                   getRequestDispatcher("/auth/login.jsp")
-                   .forward(request,response);       
-            return;
-        }
-        
-        session.setAttribute("name",user.getName());
-        rd = request.getRequestDispatcher("/app/index.jsp");
-        rd.forward(request,response);
-        
-      
+                HttpSession session = request.getSession();
+
+                controller.UserController list = new controller.UserController();
+
+                List<User> listUsers = list.findUsers();
+                session.setAttribute("LIST_ALL_USERS", listUsers);
+                
+                response.sendRedirect(request.getContextPath() + "/admin/app/list-users");
+                
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

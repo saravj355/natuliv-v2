@@ -13,7 +13,11 @@ public class Auth {
         // user not found
         if (user == null){
             return null;
-        }        
+        }       
+        
+        if(user.getUserRoleId() != 2){
+            return null;
+        } 
         
         // check if password is correct
         if (!PasswordHash.compare(password, user.getPasswordHash())){

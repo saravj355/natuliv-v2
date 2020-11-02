@@ -1,28 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <!-- user mapping -->
     <servlet>
         <servlet-name>Authentication</servlet-name>
-        <servlet-class>servlet.auth.Authentication</servlet-class>
+        <servlet-class>servlet.user.auth.Authentication</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Register</servlet-name>
-        <servlet-class>servlet.auth.Register</servlet-class>
+        <servlet-class>servlet.user.auth.Register</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Application</servlet-name>
+        <servlet-class>servlet.user.application.Application</servlet-class>
+    </servlet>
+    
+    
+    
+    
+    
+    <!-- admin mapping -->
+    <servlet>
+        <servlet-name>Login</servlet-name>
+        <servlet-class>servlet.admin.Login</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Administration</servlet-name>
+        <servlet-class>servlet.admin.app.Administration</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ListUsers</servlet-name>
-        <servlet-class>servlet.admin.ListUsers</servlet-class>
+        <servlet-class>servlet.admin.app.ListUsers</servlet-class>
     </servlet>
+    
+    
+    
+    
+    
+    <!-- user mapping routes -->
     <servlet-mapping>
         <servlet-name>Authentication</servlet-name>
-        <url-pattern>/auth/login</url-pattern>
+        <url-pattern>/login</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>Register</servlet-name>
-        <url-pattern>/auth/signup</url-pattern>
+        <url-pattern>/signup</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Application</servlet-name>
+        <url-pattern>/app</url-pattern>
+    </servlet-mapping>
+    
+    
+    
+    <!-- admin mapping routes -->
+    <servlet-mapping>
+        <servlet-name>Login</servlet-name>
+        <url-pattern>/admin/login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Administration</servlet-name>
+        <url-pattern>/admin/app</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ListUsers</servlet-name>
-        <url-pattern>/admin/management/listUsers</url-pattern>
+        <url-pattern>/admin/app/list-users</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
