@@ -95,7 +95,7 @@ public class UserDao {
     public List<User> getUsers() {
         List<User> users = new ArrayList<User>();
         try {
-            String query = "select id, name, lastName, email, gender from user";
+            String query = "select id, name, lastName, email, gender from user WHERE userRoleId = 2";
             PreparedStatement pst = this.conn.prepareStatement(query);
 
             ResultSet rs = pst.executeQuery();

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package servlet.admin.app;
+package servlet.admin.actions;
 
 import java.io.IOException;
 import java.util.List;
@@ -23,6 +23,8 @@ import model.User;
 @WebServlet(name = "ListUsers", urlPatterns = {"/admin/app/list-users"})
 public class ListUsers extends HttpServlet {
 
+    RequestDispatcher rs;
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -34,18 +36,16 @@ public class ListUsers extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-                response.setContentType("text/html;charset=UTF-8");
+        response.setContentType("text/html;charset=UTF-8");
 
-                HttpSession session = request.getSession();
+        HttpSession session = request.getSession();
 
-                controller.UserController list = new controller.UserController();
+        controller.UserController list = new controller.UserController();
 
-                List<User> listUsers = list.findUsers();
-                session.setAttribute("LIST_ALL_USERS", listUsers);
-                
-                response.sendRedirect(request.getContextPath() + "/admin/app/list-users");
-                
-
+        List<User> listUsers = list.findUsers();
+        session.setAttribute("LIST_ALL_USERS", listUsers);
+        rs = request.getRequestDispatcher("/admin/app/ListUsers.jsp");
+        rs.include(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

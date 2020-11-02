@@ -50,6 +50,13 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-md-6">
+                        <select class="custom-select" name="gender" required>
+                            <option value="" selected>Género</option>
+                            <option value="Femenino">Femenino</option>
+                            <option value="Masculino">Masculino</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
@@ -72,16 +79,6 @@
                             <div class="input-group-append">                     
                                 <span class="input-group-text"> <span toggle="#password-field" class="fa fa-fw fa-eye field_icon toggle-password"></span>  </span>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="gender" value="Female">
-                            <label class="form-check-label">Femenino</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="gender" value="Male">
-                            <label class="form-check-label">Masculino</label>
                         </div>
                     </div>
                 </div>

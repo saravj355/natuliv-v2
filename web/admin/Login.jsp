@@ -20,7 +20,7 @@
                             <h5 class="card-title mx-auto">ADMINISTRACIÓN</h5>
                             <small>Ingrese sus credenciales de administrador</small>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body bg-danger">
                             <form action="${pageContext.request.contextPath}/admin/login" method="POST">
                                 <div class="input-group">
                                     <div class="input-group-prepend">
@@ -41,7 +41,7 @@
                                     </div>
                                 </div>
                                 <h5 class="errorMessage animate__animated animate__headShake">${errorMessage}</h5>
-                                <input type="submit" class="btn btn-submit" value="Ingresar">
+                                <input type="submit" class="btn mt-4 btn-dark" value="Ingresar">
                             </form>
                         </div>
                     </div>

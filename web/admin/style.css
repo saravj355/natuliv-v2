@@ -9,12 +9,10 @@
 .input-group{
     margin:20px 0;
 }
-.btn-submit{
-    border:1px solid #000;
-    background:#fff;
-    margin-top:20px;
-}
 .toggle-password{
     cursor: pointer;
+}
+.errorMessage{
+    color:white;
 }
 

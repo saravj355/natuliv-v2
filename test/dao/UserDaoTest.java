@@ -5,7 +5,6 @@
  */
 package dao;
 
-import controller.Auth;
 import model.User;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -77,12 +76,12 @@ public class UserDaoTest {
         System.out.println("testInsertUser");
         User user = new User(); 
         
-        String passHash = PasswordHash.compute("jimena12");
+        String passHash = PasswordHash.compute("1234");
         
         user.setId(1);
-        user.setName("Jimena");
-        user.setLastName("Saldarriaga");
-        user.setEmail("jimena@gmail.com");
+        user.setName("Sara");
+        user.setLastName("Valle");
+        user.setEmail("saravj971@gmail.com");
         user.setPasswordHash(passHash);
         user.setGender("Femenino");
         user.setUserRoleId(1);

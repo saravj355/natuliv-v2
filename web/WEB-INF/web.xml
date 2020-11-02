@@ -13,11 +13,6 @@
         <servlet-name>Application</servlet-name>
         <servlet-class>servlet.user.application.Application</servlet-class>
     </servlet>
-    
-    
-    
-    
-    
     <!-- admin mapping -->
     <servlet>
         <servlet-name>Login</servlet-name>
@@ -25,17 +20,12 @@
     </servlet>
     <servlet>
         <servlet-name>Administration</servlet-name>
-        <servlet-class>servlet.admin.app.Administration</servlet-class>
+        <servlet-class>servlet.admin.actions.Administration</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ListUsers</servlet-name>
-        <servlet-class>servlet.admin.app.ListUsers</servlet-class>
+        <servlet-class>servlet.admin.actions.ListUsers</servlet-class>
     </servlet>
-    
-    
-    
-    
-    
     <!-- user mapping routes -->
     <servlet-mapping>
         <servlet-name>Authentication</servlet-name>
@@ -49,9 +39,6 @@
         <servlet-name>Application</servlet-name>
         <url-pattern>/app</url-pattern>
     </servlet-mapping>
-    
-    
-    
     <!-- admin mapping routes -->
     <servlet-mapping>
         <servlet-name>Login</servlet-name>

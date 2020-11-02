@@ -7,7 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <jsp:include page="../../../shared/head.jsp"/>
+    <jsp:include page="../../shared/head.jsp"/>
     <body>
         <h1 class="text-center">Listado Usuarios</h1>
         <div class="container">
@@ -48,6 +48,6 @@
                 </tbody>
             </table>
         </div>
-        <jsp:include page="../../../shared/footer.jsp"/>
+        <jsp:include page="../../shared/footer.jsp"/>
     </body>
 </html>

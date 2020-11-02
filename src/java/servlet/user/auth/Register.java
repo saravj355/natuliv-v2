@@ -48,6 +48,7 @@ public class Register extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
         rd = request.getRequestDispatcher("/auth/Register.jsp");
         rd.include(request, response);
 
@@ -65,7 +66,6 @@ public class Register extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
         HttpSession session = request.getSession(true);
 
         String name = request.getParameter("name");
@@ -77,7 +77,7 @@ public class Register extends HttpServlet {
 
         //checks empty inputs
         if (name.isEmpty() || lastName.isEmpty() || email.isEmpty()
-                || password.isEmpty() || confirmPassword.isEmpty() || gender.isEmpty()) {
+                || password.isEmpty() || confirmPassword.isEmpty() || gender == null) {
 
             request.setAttribute("errorMessage", "Por favor llene todos los campos.");
             getServletContext().getRequestDispatcher("/auth/Register.jsp").forward(request, response);
@@ -108,10 +108,11 @@ public class Register extends HttpServlet {
         // user instance
         // creates user
         User newUser = Auth.register(name, lastName, email, password, gender);
-
+        
+        
         // redirect to menu page when user is created
         if(newUser != null){
-            session.setAttribute("name", user.getName());
+            session.setAttribute("name",newUser.getName());
             response.sendRedirect(request.getContextPath() + "/app");
         }
     }
