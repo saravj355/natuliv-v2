@@ -23,7 +23,7 @@ import model.User;
 @WebServlet(name = "ListUsers", urlPatterns = {"/admin/app/list-users"})
 public class ListUsers extends HttpServlet {
 
-    RequestDispatcher rs;
+    RequestDispatcher rd;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -40,12 +40,12 @@ public class ListUsers extends HttpServlet {
 
         HttpSession session = request.getSession();
 
-        controller.UserController list = new controller.UserController();
+        controller.Administrator list = new controller.Administrator();
 
         List<User> listUsers = list.findUsers();
         session.setAttribute("LIST_ALL_USERS", listUsers);
-        rs = request.getRequestDispatcher("/admin/app/ListUsers.jsp");
-        rs.include(request, response);
+        rd = request.getRequestDispatcher("/admin/app/ListUsers.jsp");
+        rd.include(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

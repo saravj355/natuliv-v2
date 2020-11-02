@@ -5,7 +5,7 @@
  */
 package servlet.admin;
 
-import controller.Administrator;
+import controller.Auth;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -82,7 +82,7 @@ public class Login extends HttpServlet {
            return;
         }  
         
-        User admin = Administrator.loginAdministrator(email, password);
+        User admin = Auth.loginAdministrator(email, password);
         
         // user not found. redirect to index page
         if (admin == null){

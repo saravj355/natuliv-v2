@@ -1,24 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package servlet.admin.actions;
 
 import java.io.IOException;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import model.Product;
 
 /**
  *
  * @author sarav
  */
-@WebServlet(name = "Administration", urlPatterns = {"/admin/app"})
-public class Administration extends HttpServlet {
+public class ListProducts extends HttpServlet {
 
     RequestDispatcher rd;
 
@@ -34,10 +30,16 @@ public class Administration extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        
+        HttpSession session = request.getSession();
 
-        rd = request.getRequestDispatcher("/admin/app/App.jsp");
+        controller.Administrator list = new controller.Administrator();
+
+        List<Product> listProducts = list.findProducts();
+        session.setAttribute("LIST_ALL_PRODUCTS", listProducts);
+        
+        rd = request.getRequestDispatcher("/admin/app/ListProducts.jsp");
         rd.include(request, response);
-
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -66,7 +68,6 @@ public class Administration extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
         processRequest(request, response);
     }
 

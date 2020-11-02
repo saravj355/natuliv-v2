@@ -27,6 +27,14 @@
         <servlet-class>servlet.admin.actions.ListUsers</servlet-class>
     </servlet>
     <!-- user mapping routes -->
+    <servlet>
+        <servlet-name>ListProducts</servlet-name>
+        <servlet-class>servlet.admin.actions.ListProducts</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditProduct</servlet-name>
+        <servlet-class>servlet.admin.actions.EditProduct</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Authentication</servlet-name>
         <url-pattern>/login</url-pattern>
@@ -51,6 +59,14 @@
     <servlet-mapping>
         <servlet-name>ListUsers</servlet-name>
         <url-pattern>/admin/app/list-users</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListProducts</servlet-name>
+        <url-pattern>/admin/app/list-products</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditProduct</servlet-name>
+        <url-pattern>/admin/app/list-products/edit</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

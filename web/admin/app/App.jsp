@@ -10,6 +10,6 @@
     <jsp:include page="../../shared/head.jsp"/>
     <body>
         <a href="${pageContext.request.contextPath}/admin/app/list-users" class="btn btn-primary">Usuarios</a>
-        <a href="${pageContext.request.contextPath}/admin/app" class="btn btn-dark">Productos</a>
+        <a href="${pageContext.request.contextPath}/admin/app/list-products" class="btn btn-dark">Productos</a>
     </body>
 </html>

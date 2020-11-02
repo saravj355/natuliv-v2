@@ -24,7 +24,7 @@ public class Product {
         this.price = price;
         this.isActive = isActive;
     }
-    
+
     public int getId() {
         return id;
     }
@@ -80,6 +80,9 @@ public class Product {
     public void setIsActive(boolean isActive) {
         this.isActive = isActive;
     }
+  
+
+    
     
     
     
