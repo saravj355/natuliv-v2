@@ -7,8 +7,8 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <jsp:include page="../shared/head.jsp"/>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/admin/style.css">
+    <jsp:include page="../../shared/head.jsp"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/admin/assets/css/style.css">
     
     <body>
         <!-- ***** login Administration ***** --->
@@ -48,6 +48,6 @@
                 </div>
             </div>
         </div>  
-        <jsp:include page="../shared/footer.jsp"/>
+        <jsp:include page="../../shared/footer.jsp"/>
     </body>
 </html>

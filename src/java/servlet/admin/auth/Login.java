@@ -1,27 +1,23 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package servlet.admin.actions;
+package servlet.admin.auth;
 
-import controller.ProductController;
+import controller.Auth;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Product;
+import model.User;
 
 /**
  *
  * @author sarav
  */
-public class EditProduct extends HttpServlet {
+@WebServlet(name = "Login", urlPatterns = {"/admin/login"})
+public class Login extends HttpServlet {
 
-    RequestDispatcher rd;
+    RequestDispatcher rd = null;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,13 +28,10 @@ public class EditProduct extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
-        rd = request.getRequestDispatcher("/admin/app/EditProducts.jsp");
-        rd.include(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -53,9 +46,12 @@ public class EditProduct extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        
-        
+
+        rd = request.getRequestDispatcher("/admin/auth/login.jsp");
+        rd.include(request, response);
+
+        processRequest(request, response);
+
     }
 
     /**
@@ -69,23 +65,31 @@ public class EditProduct extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        String name = request.getParameter("name");
-//        String description = request.getParameter("description");
-//        String price = request.getParameter("price");
-//        String isActive = request.getParameter("isActive");
-//
-//        if (name.isEmpty() || description.isEmpty() || price.isEmpty()) {
-//            request.setAttribute("errorMessage", "Por favor llene todos los campos.");
-//            getServletContext().
-//                    getRequestDispatcher("/admin/app/EditProducts.jsp")
-//                    .forward(request, response);
-//            return;
-//        }
-        
-        Product product = new Product();
-        ProductController productId = product.findProductById();
 
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+                       
+        if (email.isEmpty() || password.isEmpty()){
+           request.setAttribute("errorMessage","Por favor llene todos los campos.");
+           getServletContext().
+                   getRequestDispatcher("/admin/auth/login.jsp")
+                   .forward(request,response);           
+           return;
+        }  
         
+        User admin = Auth.loginAdministrator(email, password);
+        
+        // user not found. redirect to index page
+        if (admin == null){
+            request.setAttribute("errorMessage","La contraseña o el correo electrónico son incorrectos.");
+            getServletContext().
+                   getRequestDispatcher("/admin/auth/login.jsp")
+                   .forward(request,response);       
+            return;
+        }
+        
+        response.sendRedirect(request.getContextPath() + "/admin");
+
     }
 
     /**

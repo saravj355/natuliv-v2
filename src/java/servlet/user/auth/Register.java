@@ -21,48 +21,14 @@ public class Register extends HttpServlet {
 
     RequestDispatcher rd = null;
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-
-    }
-
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        rd = request.getRequestDispatcher("/auth/Register.jsp");
-        rd.include(request, response);
 
-        processRequest(request, response);
+        rd = request.getRequestDispatcher("/auth/register.jsp");
+        rd.include(request, response);
     }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -80,7 +46,7 @@ public class Register extends HttpServlet {
                 || password.isEmpty() || confirmPassword.isEmpty() || gender == null) {
 
             request.setAttribute("errorMessage", "Por favor llene todos los campos.");
-            getServletContext().getRequestDispatcher("/auth/Register.jsp").forward(request, response);
+            getServletContext().getRequestDispatcher("/auth/register.jsp").forward(request, response);
             return;
         }
 
@@ -88,7 +54,7 @@ public class Register extends HttpServlet {
         if (!password.equals(confirmPassword)) {
             request.setAttribute("errorMessage", "La contraseña no coincide");
             getServletContext().
-                    getRequestDispatcher("/auth/Register.jsp")
+                    getRequestDispatcher("/auth/register.jsp")
                     .forward(request, response);
             return;
         }
@@ -100,28 +66,21 @@ public class Register extends HttpServlet {
         if (user != null) {
             request.setAttribute("errorMessage", "Este correo ya está asociado a una cuenta");
             getServletContext().
-                    getRequestDispatcher("/auth/Register.jsp")
+                    getRequestDispatcher("/auth/register.jsp")
                     .forward(request, response);
             return;
         }
 
-        // user instance
         // creates user
         User newUser = Auth.register(name, lastName, email, password, gender);
-        
-        
-        // redirect to menu page when user is created
-        if(newUser != null){
-            session.setAttribute("name",newUser.getName());
+
+        // redirect to app page when user is created
+        if (newUser != null) {
+            session.setAttribute("name", newUser.getName());
             response.sendRedirect(request.getContextPath() + "/app");
         }
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
     @Override
     public String getServletInfo() {
         return "Short description";

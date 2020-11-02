@@ -1,9 +1,3 @@
-<%-- 
-    Document   : singUp
-    Created on : Oct 15, 2020, 10:52:05 AM
-    Author     : sarav
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <jsp:include page="../shared/head.jsp" />

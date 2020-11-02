@@ -33,8 +33,7 @@
                                 <td><c:out value="${ product.getPrice() }"/>00</td>
                                 <td><c:out value="${ product.isIsActive() }"/></td>
                                 <td>
-                                    <a href="${pageContext.request.contextPath}/admin/app/list-products/edit/${product.getId()}"class="btn btn-warning">Editar</a>
-                                    
+                                    <a href="${pageContext.request.contextPath}/admin/app/list-products/edit?productId=${product.getId()}" class="btn btn-info">Editar</a>
                                 </td>
                             </tr>
                         </c:forEach>                                           

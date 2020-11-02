@@ -9,31 +9,31 @@
         <servlet-name>Register</servlet-name>
         <servlet-class>servlet.user.auth.Register</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>Application</servlet-name>
-        <servlet-class>servlet.user.application.Application</servlet-class>
-    </servlet>
     <!-- admin mapping -->
     <servlet>
         <servlet-name>Login</servlet-name>
-        <servlet-class>servlet.admin.Login</servlet-class>
+        <servlet-class>servlet.admin.auth.Login</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Administration</servlet-name>
-        <servlet-class>servlet.admin.actions.Administration</servlet-class>
+        <servlet-class>servlet.admin.AdminApp</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ListUsers</servlet-name>
-        <servlet-class>servlet.admin.actions.ListUsers</servlet-class>
+        <servlet-class>servlet.admin.user.ListUsers</servlet-class>
     </servlet>
-    <!-- user mapping routes -->
     <servlet>
         <servlet-name>ListProducts</servlet-name>
-        <servlet-class>servlet.admin.actions.ListProducts</servlet-class>
+        <servlet-class>servlet.admin.product.ListProducts</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>EditProduct</servlet-name>
-        <servlet-class>servlet.admin.actions.EditProduct</servlet-class>
+        <servlet-class>servlet.admin.product.EditProduct</servlet-class>
+    </servlet>
+    <!-- user mapping routes -->
+    <servlet>
+        <servlet-name>Application</servlet-name>
+        <servlet-class>servlet.user.Application</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Authentication</servlet-name>
@@ -43,10 +43,6 @@
         <servlet-name>Register</servlet-name>
         <url-pattern>/signup</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>Application</servlet-name>
-        <url-pattern>/app</url-pattern>
-    </servlet-mapping>
     <!-- admin mapping routes -->
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
@@ -54,19 +50,23 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>Administration</servlet-name>
-        <url-pattern>/admin/app</url-pattern>
+        <url-pattern>/admin</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ListUsers</servlet-name>
-        <url-pattern>/admin/app/list-users</url-pattern>
+        <url-pattern>/admin/users</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ListProducts</servlet-name>
-        <url-pattern>/admin/app/list-products</url-pattern>
+        <url-pattern>/admin/products</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>EditProduct</servlet-name>
-        <url-pattern>/admin/app/list-products/edit</url-pattern>
+        <url-pattern>/admin/products/edit</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Application</servlet-name>
+        <url-pattern>/app</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -20,7 +20,6 @@
                         <th>Apellido</th>
                         <th>Correo Electrónico</th>
                         <th>Género</th>
-                        <th>Acción</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -33,9 +32,6 @@
                                     <td><c:out value="${ user.getLastName() }"/></td>
                                     <td><c:out value="${ user.getEmail() }"/></td>
                                     <td><c:out value="${ user.getGender() }"/></td>
-                                    <td>
-                                        <button class="btn btn-danger">Eliminar</button>
-                                    </td>
                                 </tr>
                             </c:forEach>                                           
                         </c:when>
