@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import model.Product;
 import model.ProductCategory;
 
@@ -56,11 +58,33 @@ public class ProductCategoryDao {
         return false;
     }
     
-    public ProductCategory getProductCategory(){
-        
+    
+    public List<ProductCategory> getProductCategories(){
+        List<ProductCategory> productCategories = new ArrayList<ProductCategory>();        
         try {
-            String query = "SELECT * FROM product_category";
+            String query = "SELECT id, name FROM product_category";
             PreparedStatement pst = this.conn.prepareStatement(query);
+            ResultSet rs = pst.executeQuery();
+            while (rs.next()) {
+                ProductCategory productCategory = new ProductCategory();
+                productCategory.setId(rs.getInt("id"));
+                productCategory.setName(rs.getString("name"));
+                productCategories.add(productCategory);
+            }
+            return productCategories;
+        } catch (SQLException e) {
+            System.out.println("1");
+            throw new Error("Error: Class ProductCategoryDao. "
+                    + "method:getProductCategories" + e.toString());            
+        }       
+        
+    }
+    
+    public ProductCategory getProductCategoryById(int productCategoryId){        
+        try {
+            String query = "SELECT id,name FROM product_category where id = ?";
+            PreparedStatement pst = this.conn.prepareStatement(query);
+            pst.setInt(1, productCategoryId);
             ResultSet rs = pst.executeQuery();
             while (rs.next()) {
                 ProductCategory category = new ProductCategory();
@@ -69,8 +93,10 @@ public class ProductCategoryDao {
                 return category;
             }
         } catch (SQLException e) {
-            throw new Error(e);
+           throw new Error("Error: Class ProductCategoryDao. "
+                    + "method:getProductCategoryById" + e.toString());      
         }
+        
         return null;
     }
 

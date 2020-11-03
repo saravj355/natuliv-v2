@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import model.Product;
+import model.ProductCategory;
 
 /**
  *
@@ -77,14 +78,25 @@ public class ProductDao {
 
             ResultSet rs = pst.executeQuery();
 
+            ProductCategoryDao productCategoryDao = new ProductCategoryDao();
+
             while (rs.next()) {
                 Product product = new Product();
                 product.setId(rs.getInt("id"));
+                product.setSupplierId(rs.getInt("supplierId"));
+                product.setProductCategoryId(rs.getInt("productCategoryId"));
                 product.setName(rs.getString("name"));
                 product.setDescription(rs.getString("description"));
                 product.setPrice(rs.getDouble("price"));
                 product.setIsActive(rs.getBoolean("isActive"));
+
+                // enrich product category                
+                ProductCategory productCategory = productCategoryDao
+                        .getProductCategoryById(product.getProductCategoryId());
+                product.setProductCategory(productCategory);
                 products.add(product);
+
+                // enrich product brand
             }
             return products;
 
@@ -95,19 +107,30 @@ public class ProductDao {
         return products;
     }
 
-    public Product getProductsById(int id) {
+    public Product getProductById(int id) {
         try {
             String query = "SELECT * FROM product WHERE id=?";
             PreparedStatement pst = this.conn.prepareStatement(query);
             pst.setInt(1, id);
             ResultSet rs = pst.executeQuery();
+            ProductCategoryDao productCategoryDao = new ProductCategoryDao();
+
             while (rs.next()) {
                 Product product = new Product();
                 product.setId(rs.getInt("id"));
+                product.setSupplierId(rs.getInt("supplierId"));
+                product.setProductCategoryId(rs.getInt("productCategoryId"));
                 product.setName(rs.getString("name"));
                 product.setDescription(rs.getString("description"));
                 product.setPrice(rs.getDouble("price"));
                 product.setIsActive(rs.getBoolean("isActive"));
+
+                // enrich product category                
+                ProductCategory productCategory = productCategoryDao
+                        .getProductCategoryById(product.getProductCategoryId());
+                product.setProductCategory(productCategory);
+                // enrich product brand
+
                 return product;
             }
         } catch (SQLException e) {

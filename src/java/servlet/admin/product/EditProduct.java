@@ -5,8 +5,10 @@
  */
 package servlet.admin.product;
 
+import dao.ProductCategoryDao;
 import dao.ProductDao;
 import java.io.IOException;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -39,16 +41,19 @@ public class EditProduct extends HttpServlet {
 
         int productId = Integer.parseInt(request.getParameter("id"));
         
-        //Brings all the categories
-//        controller.Administrator productCategory = new controller.Administrator();
-//        ProductCategory category = productCategory.listCategories();
-//        session.setAttribute("Category", category);
+        // Get all the categories
+        ProductCategoryDao productCategoryDao = new ProductCategoryDao();
+        List<ProductCategory> productCategoryList = productCategoryDao.
+                getProductCategories();
+        session.setAttribute("productCategoryList", productCategoryList);
         
         //Brings the product data
-        controller.Administrator products = new controller.Administrator();
-        Product product = products.findProductsById(productId);
-        session.setAttribute("Product", product);
+        controller.Administrator productController = new controller.Administrator();
+        Product product = productController.findProductById(productId);
+                
+        session.setAttribute("product", product);
         
+       
         rd = request.getRequestDispatcher("/admin/product/EditProducts.jsp");
         rd.include(request, response);
     }
@@ -56,7 +61,10 @@ public class EditProduct extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        String name = request.getParameter("name");
+        int categoryId = Integer.parseInt(request.getParameter("category"));
+        String description = request.getParameter("description");
+        Double price = Double.parseDouble(request.getParameter("description"));
     }
 
     @Override

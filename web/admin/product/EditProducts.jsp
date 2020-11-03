@@ -4,7 +4,8 @@
     Author     : sarav
 --%>
 
-<%@ page contentType="text/html; charset=UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <jsp:include page="../../shared/head.jsp"/>
@@ -14,21 +15,19 @@
                 <div class="col-lg-7">
                     <div class="card mx-auto">
                         <c:choose>
-                            <c:when test="${ !empty sessionScope.Product}">
+                            <c:when test="${ !empty sessionScope.product}">
                                 <form action="${pageContext.servletContext.contextPath}/admin/products/edit" method="post">
                                     <div class="form-group">                                            
                                         <label >Nombre Producto:</label>
-                                        <input type="text" name="name" value="${Product.getName()}" class="form-control" readonly>
-                                    </div>
+                                        <input type="text" name="name" value="${product.getName()}" class="form-control" readonly>
+                                    </div>                                   
                                     <div class="form-group">                                            
                                         <label >Categoria:</label>
-                                        <select>
+                                        <select name="category">
                                             <c:choose>
-                                                <c:when test="${ !empty sessionScope.Category}">
-                                                    <c:forEach var="Category" items="${sessionScope.Category}">
-                                                        <option value="">
-                                                            <c:out value="${category.getName()}"/>
-                                                        </option> 
+                                                <c:when test="${ !empty sessionScope.productCategoryList}">
+                                                    <c:forEach var="productCategory" items="${sessionScope.productCategoryList}">
+                                                        <option value="${productCategory.getId()}">${productCategory.getName()}</option>
                                                     </c:forEach>                                           
                                                 </c:when>
                                             </c:choose>
@@ -36,11 +35,11 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Descripción:</label>
-                                        <textarea name="description" class="form-control">${Product.getDescription()}</textarea>
+                                        <textarea name="description" class="form-control">${product.getDescription()}</textarea>
                                     </div>  
                                     <div class="form-group">                                            
                                         <label >Precio:</label>
-                                        <input type="number" name="name" value="${Product.getPrice()}" class="form-control">
+                                        <input type="number" name="name" value="${product.getPrice()}" class="form-control">
                                     </div>
                                     <div class="form-group">
                                         <label>Está Dsiponible?</label>
