@@ -95,10 +95,11 @@ public class ProductDao {
         return products;
     }
 
-    public Product getProductById(int id) {
+    public Product getProductsById(int id) {
         try {
             String query = "SELECT * FROM product WHERE id=?";
             PreparedStatement pst = this.conn.prepareStatement(query);
+            pst.setInt(1, id);
             ResultSet rs = pst.executeQuery();
             while (rs.next()) {
                 Product product = new Product();

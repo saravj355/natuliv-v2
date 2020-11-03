@@ -2,7 +2,9 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import model.Product;
 import model.ProductCategory;
 
 /**
@@ -54,6 +56,23 @@ public class ProductCategoryDao {
         return false;
     }
     
+    public ProductCategory getProductCategory(){
+        
+        try {
+            String query = "SELECT * FROM product_category";
+            PreparedStatement pst = this.conn.prepareStatement(query);
+            ResultSet rs = pst.executeQuery();
+            while (rs.next()) {
+                ProductCategory category = new ProductCategory();
+                category.setId(rs.getInt("id"));
+                category.setName(rs.getString("name"));
+                return category;
+            }
+        } catch (SQLException e) {
+            throw new Error(e);
+        }
+        return null;
+    }
 
 
     

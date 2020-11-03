@@ -19,21 +19,23 @@ public class ListProducts extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
+
         HttpSession session = request.getSession();
 
         controller.Administrator list = new controller.Administrator();
 
         List<Product> listProducts = list.findProducts();
         session.setAttribute("LIST_ALL_PRODUCTS", listProducts);
-        
+
         rd = request.getRequestDispatcher("/admin/product/ListProducts.jsp");
         rd.include(request, response);
     }
-     @Override
+
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+        response.setContentType("text/html;charset=UTF-8");
+
         processRequest(request, response);
     }
 
@@ -43,7 +45,6 @@ public class ListProducts extends HttpServlet {
         processRequest(request, response);
     }
 
-   
     @Override
     public String getServletInfo() {
         return "Short description";

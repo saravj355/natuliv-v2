@@ -21,4 +21,10 @@ public class Administrator {
         return getProductsList.getProducts();
     }
     
+    public Product findProductsById(int id){        
+        ProductDao getProduct = new ProductDao();        
+        return getProduct.getProductsById(id);
+    }
+    
+    
 }

@@ -8,6 +8,7 @@ public class Product {
     private int id;
     private int supplierId;
     private int productCategoryId;
+    private ProductCategory productCategory;
     private String name;
     private String description;
     private double price;
@@ -24,7 +25,15 @@ public class Product {
         this.price = price;
         this.isActive = isActive;
     }
-
+    
+    public ProductCategory getProductCategory(){
+        return this.productCategory;
+    }
+    
+    public void setProductCategory(ProductCategory productCategory){
+        this.productCategory = productCategory;        
+    }  
+   
     public int getId() {
         return id;
     }

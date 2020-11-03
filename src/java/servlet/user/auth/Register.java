@@ -21,10 +21,17 @@ public class Register extends HttpServlet {
 
     RequestDispatcher rd = null;
 
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+
+    }
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+         response.setContentType("text/html;charset=UTF-8");
+         
         rd = request.getRequestDispatcher("/auth/register.jsp");
         rd.include(request, response);
     }
