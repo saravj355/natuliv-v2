@@ -26,5 +26,4 @@ public class Administrator {
         return productDao.getProductById(id);
     }
     
-    
 }

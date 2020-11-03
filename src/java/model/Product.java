@@ -7,6 +7,7 @@ package model;
 public class Product {
     private int id;
     private int supplierId;
+    private Supplier supplier;
     private int productCategoryId;
     private ProductCategory productCategory;
     private String name;
@@ -33,7 +34,15 @@ public class Product {
     public void setProductCategory(ProductCategory productCategory){
         this.productCategory = productCategory;        
     }  
-   
+    
+    public Supplier getSupplier(){
+        return this.supplier;
+    }
+    
+    public void setSupplier(Supplier supplier){
+        this.supplier = supplier;        
+    }  
+    
     public int getId() {
         return id;
     }

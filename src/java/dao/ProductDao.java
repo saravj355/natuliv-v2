@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import model.Product;
 import model.ProductCategory;
+import model.Supplier;
 
 /**
  *
@@ -80,6 +81,7 @@ public class ProductDao {
             ResultSet rs = pst.executeQuery();
 
             ProductCategoryDao productCategoryDao = new ProductCategoryDao();
+            SupplierDao supplierDao = new SupplierDao();
 
             while (rs.next()) {
                 Product product = new Product();
@@ -95,9 +97,12 @@ public class ProductDao {
                 ProductCategory productCategory = productCategoryDao
                         .getProductCategoryById(product.getProductCategoryId());
                 product.setProductCategory(productCategory);
-                products.add(product);
 
                 // enrich product brand
+                Supplier supplier = supplierDao
+                        .getSupplierById(product.getSupplierId());
+                product.setSupplier(supplier);
+                products.add(product);
             }
             return products;
         } catch (SQLException e) {
@@ -112,6 +117,7 @@ public class ProductDao {
             pst.setInt(1, id);
             ResultSet rs = pst.executeQuery();
             ProductCategoryDao productCategoryDao = new ProductCategoryDao();
+            SupplierDao supplierDao = new SupplierDao();
 
             while (rs.next()) {
                 Product product = new Product();
@@ -127,8 +133,11 @@ public class ProductDao {
                 ProductCategory productCategory = productCategoryDao
                         .getProductCategoryById(product.getProductCategoryId());
                 product.setProductCategory(productCategory);
-                // enrich product brand
 
+                // enrich product brand
+                Supplier supplier = supplierDao
+                        .getSupplierById(product.getSupplierId());
+                product.setSupplier(supplier);
                 return product;
             }
         } catch (SQLException e) {
