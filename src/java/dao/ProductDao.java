@@ -33,7 +33,7 @@ public class ProductDao {
             pst.setString(3, product.getName());
             pst.setString(4, product.getDescription());
             pst.setDouble(5, product.getPrice());
-            pst.setBoolean(6, product.isIsActive());
+            pst.setBoolean(6, product.isActive());
             pst.setInt(7, product.getId());
 
             if (pst.executeUpdate() == 1) {
@@ -58,7 +58,7 @@ public class ProductDao {
             pst.setString(3, product.getName());
             pst.setString(4, product.getDescription());
             pst.setDouble(5, product.getPrice());
-            pst.setBoolean(6, product.isIsActive());
+            pst.setBoolean(6, product.isActive());
             if (pst.executeUpdate() == 1) {
                 pst.close();
                 return true;
@@ -73,7 +73,8 @@ public class ProductDao {
     public List<Product> getProducts() {
         List<Product> products = new ArrayList<Product>();
         try {
-            String query = "select id, name, description, price, isActive from product";
+            String query = "select id, supplierId, productCategoryId,"
+                    + " name, description, price, isActive from product";
             PreparedStatement pst = this.conn.prepareStatement(query);
 
             ResultSet rs = pst.executeQuery();
@@ -99,12 +100,9 @@ public class ProductDao {
                 // enrich product brand
             }
             return products;
-
         } catch (SQLException e) {
-            System.out.println("Error: Clase ProductDao, method:getProducts");
-            e.printStackTrace();
+            throw new Error("Error: Clase ProductDao, method:getProducts" + e.toString());
         }
-        return products;
     }
 
     public Product getProductById(int id) {

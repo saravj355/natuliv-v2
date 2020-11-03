@@ -82,7 +82,7 @@ public class Product {
         this.price = price;
     }
 
-    public boolean isIsActive() {
+    public boolean isActive() {
         return isActive;
     }
 

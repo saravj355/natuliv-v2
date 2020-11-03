@@ -17,6 +17,7 @@
                     <th>Id</th>
                     <th>Nombre Producto</th>
                     <th>Descripción</th>
+                    <th>Categoría</th>
                     <th>$ Precio</th>
                     <th>Disponibilidad</th>
                     <th>Acción</th>
@@ -30,8 +31,9 @@
                                 <td><c:out value="${ product.getId() }"/></td>
                                 <td><c:out value="${ product.getName() }"/></td>
                                 <td><c:out value="${ product.getDescription() }"/></td>
-                                <td><c:out value="${ product.getPrice() }"/>00</td>
-                                <td><c:out value="${ product.isIsActive() }"/></td>
+                                <td><c:out value="${ product.getProductCategory().getName() }"/></td>
+                                <td>$ <c:out value="${ product.getPrice() }"/>00</td>
+                                <td><c:out value="${ (product.isActive()) ? 'Disponible':'No disponible'}"/></td>
                                 <td>
                                     <a href="${pageContext.request.contextPath}/admin/products/edit?id=${product.getId()}" class="btn btn-info">Editar</a>
                                 </td>

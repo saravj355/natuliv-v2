@@ -17,13 +17,16 @@
                         <c:choose>
                             <c:when test="${ !empty sessionScope.product}">
                                 <form action="${pageContext.servletContext.contextPath}/admin/products/edit" method="post">
+                                    
+                                    <input name="productId" value="${product.getId()}" type="hidden">
+                                    
                                     <div class="form-group">                                            
                                         <label >Nombre Producto:</label>
                                         <input type="text" name="name" value="${product.getName()}" class="form-control" readonly>
                                     </div>                                   
                                     <div class="form-group">                                            
                                         <label >Categoria:</label>
-                                        <select name="category">
+                                        <select name="categoryId">
                                             <c:choose>
                                                 <c:when test="${ !empty sessionScope.productCategoryList}">
                                                     <c:forEach var="productCategory" items="${sessionScope.productCategoryList}">
@@ -39,12 +42,12 @@
                                     </div>  
                                     <div class="form-group">                                            
                                         <label >Precio:</label>
-                                        <input type="number" name="name" value="${product.getPrice()}" class="form-control">
+                                        <input type="number" name="price" value="${product.getPrice()}00" class="form-control">
                                     </div>
                                     <div class="form-group">
                                         <label>Está Dsiponible?</label>
-                                        <label class="radio-inline"><input type="radio" name="isActive" value="true"> Si</label>
-                                        <label class="radio-inline"><input type="radio" name="isActive" value="false"> No</label>
+                                        <label class="radio-inline"><input type="radio" name="isActive" value="true" ${product.isActive() ? 'checked' :''} > Si</label>
+                                        <label class="radio-inline"><input type="radio" name="isActive" value="false" ${product.isActive() ? '' :'checked'} > No</label>
                                     </div>
                                     <button type="submit" class="btn btn-warning text-center">Guardar</button>
                                 </form>  

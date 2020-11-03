@@ -36,24 +36,23 @@ public class EditProduct extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
+
         HttpSession session = request.getSession();
 
         int productId = Integer.parseInt(request.getParameter("id"));
-        
+
         // Get all the categories
         ProductCategoryDao productCategoryDao = new ProductCategoryDao();
         List<ProductCategory> productCategoryList = productCategoryDao.
                 getProductCategories();
         session.setAttribute("productCategoryList", productCategoryList);
-        
-        //Brings the product data
+
+        //Get the product data
         controller.Administrator productController = new controller.Administrator();
         Product product = productController.findProductById(productId);
-                
+
         session.setAttribute("product", product);
-        
-       
+
         rd = request.getRequestDispatcher("/admin/product/EditProducts.jsp");
         rd.include(request, response);
     }
@@ -61,10 +60,29 @@ public class EditProduct extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String name = request.getParameter("name");
-        int categoryId = Integer.parseInt(request.getParameter("category"));
+
+        request.setCharacterEncoding("UTF-8");
+        int productId = Integer.parseInt(request.getParameter("productId"));
+        int categoryId = Integer.parseInt(request.getParameter("categoryId"));
         String description = request.getParameter("description");
-        Double price = Double.parseDouble(request.getParameter("description"));
+        String name = request.getParameter("name");
+        Double price = Double.parseDouble(request.getParameter("price"));
+        Boolean isActive = Boolean.parseBoolean(request.getParameter("isActive"));
+            
+        Product product = new Product();
+        product.setId(productId);
+        product.setName(name);
+        product.setProductCategoryId(categoryId);
+        product.setDescription(description);
+        product.setPrice(price);
+        product.setIsActive(isActive);
+        product.setSupplierId(1);
+        
+        ProductDao productDao = new ProductDao();
+        productDao.update(product);
+        
+        response.sendRedirect(request.getContextPath() + "/admin/products");
+        
     }
 
     @Override
