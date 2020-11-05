@@ -36,18 +36,15 @@ public class EditSupplier extends HttpServlet {
 
         HttpSession session = request.getSession();
 
-        int productId = Integer.parseInt(request.getParameter("id"));
+        int id = Integer.parseInt(request.getParameter("id"));
 
-        //Get the product data
-        controller.Administrator productController = new controller.Administrator();
-        Product product = productController.findProductById(productId);
+        //Get the supplier data
+        controller.Administrator supplierController = new controller.Administrator();
+        Supplier supplier = supplierController.findSupplierById(id);
 
-        session.setAttribute("product", product);
+        session.setAttribute("supplier", supplier);
         
-        
-        
-
-        rd = request.getRequestDispatcher("/admin/product/EditProduct.jsp");
+        rd = request.getRequestDispatcher("/admin/supplier/EditSupplier.jsp");
         rd.include(request, response);
     }
 
@@ -56,29 +53,21 @@ public class EditSupplier extends HttpServlet {
             throws ServletException, IOException {
 
         request.setCharacterEncoding("UTF-8");
-        int productId = Integer.parseInt(request.getParameter("productId"));
-        int categoryId = Integer.parseInt(request.getParameter("categoryId"));
         int supplierId = Integer.parseInt(request.getParameter("supplierId"));
-        String description = request.getParameter("description");
         String name = request.getParameter("name");
-        Double price = Double.parseDouble(request.getParameter("price"));
-        Boolean isActive = Boolean.parseBoolean(request.getParameter("isActive"));
+        String address = request.getParameter("address");
+        String contactNumber = request.getParameter("contactNumber");
             
-        Product product = new Product();
-        product.setId(productId);
-        product.setName(name);
-        product.setProductCategoryId(categoryId);
-        product.setDescription(description);
-        product.setPrice(price);
-        product.setIsActive(isActive);
-        product.setSupplierId(supplierId);
+        Supplier supplier = new Supplier();
+        supplier.setId(supplierId);
+        supplier.setName(name);
+        supplier.setAddress(address);
+        supplier.setContactNumber(contactNumber);
         
-        ProductDao productDao = new ProductDao();
-        productDao.update(product);
+        SupplierDao supplierDao = new SupplierDao();
+        supplierDao.update(supplier);
         
-        
-        response.sendRedirect(request.getContextPath() + "/admin/products");
-        
+        response.sendRedirect(request.getContextPath() + "/admin/suppliers");
     }
 
     @Override

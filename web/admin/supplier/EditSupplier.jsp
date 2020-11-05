@@ -1,38 +1,45 @@
-<%-- 
-    Document   : EditProducts
-    Created on : Nov 2, 2020, 1:56:25 PM
-    Author     : sarav
---%>
-
+<!-- imports -->
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
-<html>
-    <jsp:include page="../../shared/head.jsp"/>
-    <body>
-        <div class="container">
-            <div class="row">
-                <div class="card mx-auto w-50 mt-4">
-                    <h5 class="card-title mt-4 text-center">Registrar Empresa</h5>
-                    <form action="${pageContext.servletContext.contextPath}/admin/suppliers/add" method="post" class="p-4">
-                        <div class="form-group">                                            
-                            <label >Nombre Empresa:</label>
-                            <input type="text" name="name" class="form-control">
-                        </div> 
-                        <div class="form-group">
-                            <label>Address:</label>
-                            <input type="text" name="address" class="form-control">
-                        </div>  
-                        <div class="form-group">                                            
-                            <label >Número de contácto:</label>
-                            <input type="text" name="contactNumber" class="form-control">
-                        </div>
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-warning">Registrar</button>
-                        </div>
-                    </form>  
+<jsp:include page="../../shared/head.jsp"/>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/navbar.css">
+
+<body>
+    <jsp:include page="../navbar/navbar.jsp"/>
+    <div class="container">
+        <div class="row">
+            <div class="card mx-auto w-50 mt-4 bg-light border-dark">
+                <div class="card-header bg-dark text-white">
+                    <h5 class="card-title mt-4 text-center">Editar Empresa</h5>
                 </div>
+                <c:choose>
+                    <c:when test="${ !empty sessionScope.supplier}">
+                        <form action="${pageContext.servletContext.contextPath}/admin/suppliers/edit" method="post" class="p-4">
+                            <input name="supplierId" value="${supplier.getId()}" type="hidden">
+                            <div class="form-group">                                            
+                                <label >Nombre Empresa:</label>
+                                <input type="text" name="name" value="${supplier.getName()}" class="form-control" readonly>
+                            </div> 
+                            <div class="form-group">
+                                <label>Dirección:</label>
+                                <input type="text" name="address" value="${supplier.getAddress()}" class="form-control">
+                            </div>  
+                            <div class="form-group">                                            
+                                <label>Número de Contacto:</label>
+                                <input type="text" name="contactNumber" value="${supplier.getContactNumber()}" class="form-control">
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary">Guardar</button>
+                            </div>
+                        </form>  
+                    </c:when>
+                </c:choose>
             </div>
         </div>
-    </body>
-</html>
+        <a href="${pageContext.servletContext.contextPath}/admin/suppliers" class="text-dark"><i class="fas fa-arrow-circle-left arrow mr-1"></i>Volver</a>
+    </div>
+    <jsp:include page="../../shared/footer.jsp"/>
+</body>

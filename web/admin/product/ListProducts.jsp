@@ -1,19 +1,27 @@
-<%-- 
-    Document   : ListProducts
-    Created on : Nov 2, 2020, 12:53:40 PM
-    Author     : sarav
---%>
+<!-- imports -->
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <jsp:include page="../../shared/head.jsp"/>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/navbar.css">
+
 <body>
     <jsp:include page="../navbar/navbar.jsp"/>
-    <h1 class="text-center">Listado Productos</h1>
-    <div class="container">
+    <h1 class="text-center mt-5 text-dark">Productos</h1>
+    <hr>
+    <div class="ml-5 mr-5">
+<!--        <form action="${pageContext.request.contextPath}/admin/products" method="post">
+            <div class="input-group float-left w-25">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-search"></i></span>
+                </div>
+                <input type="text" class="form-control" name="searchProduct" placeholder="Buscar Nombre">   
+            </div>
+        </form>-->
         <a href="${pageContext.request.contextPath}/admin/products/add" class="btn btn-success float-right mb-3">+ Agregar Producto</a>
-        <table class="table table-striped text-center ">
+        <table class="table table-striped text-center">
             <thead class="thead-dark">
                 <tr>
                     <th>Id</th>
@@ -55,4 +63,3 @@
     </div>
     <jsp:include page="../../shared/footer.jsp"/>
 </body>
-</html>

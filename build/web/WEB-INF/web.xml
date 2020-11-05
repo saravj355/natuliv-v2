@@ -90,7 +90,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>AddSupplier</servlet-name>
-        <url-pattern>/admin/supplier/add</url-pattern>
+        <url-pattern>/admin/suppliers/add</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ListSupplier</servlet-name>
