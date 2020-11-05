@@ -14,7 +14,7 @@
             <div class="row">
                 <div class="card mx-auto w-50 mt-4">
                     <h5 class="card-title mt-4 text-center">Agregar Producto</h5>
-                    <form action="${pageContext.servletContext.contextPath}/admin/products/add-product" method="post" class="p-4">
+                    <form action="${pageContext.servletContext.contextPath}/admin/products/add" method="post" class="p-4">
                         <div class="form-group">                                            
                             <label >Nombre Producto:</label>
                             <input type="text" name="name" class="form-control">

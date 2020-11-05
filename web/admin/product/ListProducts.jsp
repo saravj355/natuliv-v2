@@ -12,7 +12,7 @@
     <jsp:include page="../navbar/navbar.jsp"/>
     <h1 class="text-center">Listado Productos</h1>
     <div class="container">
-        <a href="${pageContext.request.contextPath}/admin/products/add-product" class="btn btn-success float-right mb-3">+ Agregar Producto</a>
+        <a href="${pageContext.request.contextPath}/admin/products/add" class="btn btn-success float-right mb-3">+ Agregar Producto</a>
         <table class="table table-striped text-center ">
             <thead class="thead-dark">
                 <tr>
