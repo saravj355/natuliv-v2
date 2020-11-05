@@ -1,3 +1,13 @@
+.navbar-brand{
+    color:#fff;
+    letter-spacing:5px; 
+}
+h2{
+    margin-left:7em;
+}
+.navbar-brand:hover{
+    color:#cccccc;
+}
 .card{
     background:#cceefd;
     width:500px;

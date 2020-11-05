@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package servlet.admin.product;
 
 import dao.ProductCategoryDao;
@@ -24,14 +19,13 @@ import model.Supplier;
  *
  * @author sarav
  */
-public class EditProduct extends HttpServlet {
+public class AddProduct extends HttpServlet {
 
     RequestDispatcher rd = null;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-
     }
 
     @Override
@@ -40,8 +34,6 @@ public class EditProduct extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
 
         HttpSession session = request.getSession();
-
-        int productId = Integer.parseInt(request.getParameter("id"));
 
         // Get all the categories
         ProductCategoryDao productCategoryDao = new ProductCategoryDao();
@@ -53,17 +45,8 @@ public class EditProduct extends HttpServlet {
         SupplierDao supplierDao = new SupplierDao();
         List<Supplier> supplierList = supplierDao.getSuppliers();
         session.setAttribute("supplierList", supplierList);
-        
-        //Get the product data
-        controller.Administrator productController = new controller.Administrator();
-        Product product = productController.findProductById(productId);
 
-        session.setAttribute("product", product);
-        
-        
-        
-
-        rd = request.getRequestDispatcher("/admin/product/EditProduct.jsp");
+        rd = request.getRequestDispatcher("/admin/product/AddProduct.jsp");
         rd.include(request, response);
     }
 
@@ -72,29 +55,26 @@ public class EditProduct extends HttpServlet {
             throws ServletException, IOException {
 
         request.setCharacterEncoding("UTF-8");
-        int productId = Integer.parseInt(request.getParameter("productId"));
+
         int categoryId = Integer.parseInt(request.getParameter("categoryId"));
         int supplierId = Integer.parseInt(request.getParameter("supplierId"));
         String description = request.getParameter("description");
         String name = request.getParameter("name");
         Double price = Double.parseDouble(request.getParameter("price"));
         Boolean isActive = Boolean.parseBoolean(request.getParameter("isActive"));
-            
+
         Product product = new Product();
-        product.setId(productId);
         product.setName(name);
         product.setProductCategoryId(categoryId);
         product.setDescription(description);
         product.setPrice(price);
         product.setIsActive(isActive);
         product.setSupplierId(supplierId);
-        
+
         ProductDao productDao = new ProductDao();
-        productDao.update(product);
-        
-        
+        productDao.insert(product);
+
         response.sendRedirect(request.getContextPath() + "/admin/products");
-        
     }
 
     @Override

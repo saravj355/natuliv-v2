@@ -1,9 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package servlet.admin.product;
+package servlet.admin.supplier;
 
 import dao.ProductCategoryDao;
 import dao.ProductDao;
@@ -24,7 +19,7 @@ import model.Supplier;
  *
  * @author sarav
  */
-public class EditProduct extends HttpServlet {
+public class EditSupplier extends HttpServlet {
 
     RequestDispatcher rd = null;
 
@@ -43,17 +38,6 @@ public class EditProduct extends HttpServlet {
 
         int productId = Integer.parseInt(request.getParameter("id"));
 
-        // Get all the categories
-        ProductCategoryDao productCategoryDao = new ProductCategoryDao();
-        List<ProductCategory> productCategoryList = productCategoryDao.
-                getProductCategories();
-        session.setAttribute("productCategoryList", productCategoryList);
-
-        //Get all the suppliers
-        SupplierDao supplierDao = new SupplierDao();
-        List<Supplier> supplierList = supplierDao.getSuppliers();
-        session.setAttribute("supplierList", supplierList);
-        
         //Get the product data
         controller.Administrator productController = new controller.Administrator();
         Product product = productController.findProductById(productId);

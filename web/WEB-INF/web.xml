@@ -35,6 +35,22 @@
         <servlet-name>Application</servlet-name>
         <servlet-class>servlet.user.Application</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AddProduct</servlet-name>
+        <servlet-class>servlet.admin.product.AddProduct</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddSupplier</servlet-name>
+        <servlet-class>servlet.admin.supplier.AddSupplier</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ListSupplier</servlet-name>
+        <servlet-class>servlet.admin.supplier.ListSupplier</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditSupplier</servlet-name>
+        <servlet-class>servlet.admin.supplier.EditSupplier</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Authentication</servlet-name>
         <url-pattern>/login</url-pattern>
@@ -67,6 +83,22 @@
     <servlet-mapping>
         <servlet-name>Application</servlet-name>
         <url-pattern>/app</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddProduct</servlet-name>
+        <url-pattern>/admin/products/add</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddSupplier</servlet-name>
+        <url-pattern>/admin/supplier/add</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListSupplier</servlet-name>
+        <url-pattern>/admin/suppliers</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditSupplier</servlet-name>
+        <url-pattern>/admin/suppliers/edit</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

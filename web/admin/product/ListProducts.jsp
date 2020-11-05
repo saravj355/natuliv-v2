@@ -7,11 +7,13 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <jsp:include page="../../shared/head.jsp"/>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/navbar.css">
 <body>
+    <jsp:include page="../navbar/navbar.jsp"/>
     <h1 class="text-center">Listado Productos</h1>
     <div class="container">
-        <table class="table table-striped text-center
-               ">
+        <a href="${pageContext.request.contextPath}/admin/products/add-product" class="btn btn-success float-right mb-3">+ Agregar Producto</a>
+        <table class="table table-striped text-center ">
             <thead class="thead-dark">
                 <tr>
                     <th>Id</th>

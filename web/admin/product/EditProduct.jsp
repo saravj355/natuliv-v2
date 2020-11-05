@@ -53,7 +53,7 @@
                                     <textarea name="description" class="form-control">${product.getDescription()}</textarea>
                                 </div>  
                                 <div class="form-group">                                            
-                                    <label >Precio:</label>
+                                    <label>Precio:</label>
                                     <input type="number" name="price" value="${product.getPrice()}00" class="form-control">
                                 </div>
                                 <div class="form-group">

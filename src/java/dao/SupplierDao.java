@@ -81,6 +81,29 @@ public class SupplierDao {
         }       
         
     }
+     
+      public List<Supplier> getSuppliersList(){
+        List<Supplier> suppliers = new ArrayList<Supplier>();        
+        try {
+            String query = "SELECT id, name, address, contactNumber FROM supplier";
+            PreparedStatement pst = this.conn.prepareStatement(query);
+            ResultSet rs = pst.executeQuery();
+            while (rs.next()) {
+                Supplier supplier = new Supplier();
+                supplier.setId(rs.getInt("id"));
+                supplier.setName(rs.getString("name"));
+                supplier.setAddress(rs.getString("address"));
+                supplier.setContactNumber(rs.getString("contactNumber"));
+                
+                suppliers.add(supplier);
+            }
+            return suppliers;
+        } catch (SQLException e) {
+            throw new Error("Error: Class SupplierDao. "
+                    + "method:getSuppliers" + e.toString());            
+        }       
+        
+    }
 
     public Supplier getSupplierById(int supplierId) {
         try {
