@@ -40,6 +40,10 @@ public class EditProduct extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
 
         HttpSession session = request.getSession();
+        
+        if (session.getAttribute("name") == null) {
+            response.sendRedirect(request.getContextPath() + "/admin/login");
+        }
 
         int productId = Integer.parseInt(request.getParameter("id"));
 

@@ -7,12 +7,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet(name = "Application", urlPatterns = {"/app"})
 public class Application extends HttpServlet {
-    
+
     RequestDispatcher rd = null;
-    
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -21,10 +22,16 @@ public class Application extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
+        HttpSession session = request.getSession();
+
+        if (session.getAttribute("name") == null) {
+            response.sendRedirect(request.getContextPath() + "/login");
+        }
+
         rd = request.getRequestDispatcher("/mainApp/main.jsp");
         rd.include(request, response);
-        
+
         processRequest(request, response);
     }
 
@@ -34,7 +41,6 @@ public class Application extends HttpServlet {
         processRequest(request, response);
     }
 
-  
     @Override
     public String getServletInfo() {
         return "Short description";

@@ -36,6 +36,10 @@ public class EditSupplier extends HttpServlet {
 
         HttpSession session = request.getSession();
 
+        if (session.getAttribute("name") == null) {
+            response.sendRedirect(request.getContextPath() + "/admin/login");
+        }
+
         int id = Integer.parseInt(request.getParameter("id"));
 
         //Get the supplier data

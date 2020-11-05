@@ -30,6 +30,10 @@ public class ListUsers extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
 
         HttpSession session = request.getSession();
+        
+        if (session.getAttribute("name") == null) {
+            response.sendRedirect(request.getContextPath() + "/admin/login");
+        }
 
         controller.Administrator list = new controller.Administrator();
 
