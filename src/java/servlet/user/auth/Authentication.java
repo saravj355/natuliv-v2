@@ -63,7 +63,6 @@ public class Authentication extends HttpServlet {
 
         session.setAttribute("name", user.getName());
         response.sendRedirect(request.getContextPath() + "/app");
-
     }
 
     @Override
