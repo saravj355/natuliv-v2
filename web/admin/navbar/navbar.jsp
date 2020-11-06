@@ -5,10 +5,12 @@
         <a class="navbar-brand mx-auto" href="${pageContext.request.contextPath}/admin">
             <h2 class="align-top" id="logo-margin">NATULIV</h2>
         </a>
-        <ul class="nav justify-content-end account">
-            <li class="nav-item">
-                <a href="${pageContext.request.contextPath}/admin/login" class="btn btn-outline-light"><i class="fas fa-sign-in-alt mr-2"></i>Cerrar Sesión</a>
-            </li>
-        </ul>
+        <form action="${pageContext.request.contextPath}/admin/logout" method="post">
+            <ul class="nav justify-content-end account">
+                <li class="nav-item">
+                    <a href="${pageContext.request.contextPath}/admin/login" class="btn btn-outline-light"><i class="fas fa-sign-in-alt mr-2"></i>Cerrar Sesión</a>
+                </li>
+            </ul>
+        </form>
     </nav>
 </header>

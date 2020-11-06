@@ -27,6 +27,8 @@ public class Authentication extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
+        response.setHeader("Cache-Control", "no-cache, no store, must-revalidate");
+
         rd = request.getRequestDispatcher("/auth/login.jsp");
         rd.include(request, response);
     }

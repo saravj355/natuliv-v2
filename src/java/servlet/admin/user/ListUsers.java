@@ -30,7 +30,7 @@ public class ListUsers extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
 
         HttpSession session = request.getSession();
-        
+
         if (session.getAttribute("name") == null) {
             response.sendRedirect(request.getContextPath() + "/admin/login");
         }
@@ -39,14 +39,17 @@ public class ListUsers extends HttpServlet {
 
         List<User> listUsers = list.findUsers();
         session.setAttribute("LIST_ALL_USERS", listUsers);
-        
+
         rd = request.getRequestDispatcher("/admin/user/listusers.jsp");
         rd.include(request, response);
     }
-        @Override
+
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
+        response.setHeader("Cache-Control", "no-cache, no store, must-revalidate");
+
         processRequest(request, response);
     }
 
@@ -55,7 +58,6 @@ public class ListUsers extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
     }
-
 
     @Override
     public String getServletInfo() {

@@ -39,8 +39,10 @@ public class EditProduct extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
+        response.setHeader("Cache-Control", "no-cache, no store, must-revalidate");
+
         HttpSession session = request.getSession();
-        
+
         if (session.getAttribute("name") == null) {
             response.sendRedirect(request.getContextPath() + "/admin/login");
         }
@@ -57,15 +59,12 @@ public class EditProduct extends HttpServlet {
         SupplierDao supplierDao = new SupplierDao();
         List<Supplier> supplierList = supplierDao.getSuppliers();
         session.setAttribute("supplierList", supplierList);
-        
+
         //Get the product data
         controller.Administrator productController = new controller.Administrator();
         Product product = productController.findProductById(productId);
 
         session.setAttribute("product", product);
-        
-        
-        
 
         rd = request.getRequestDispatcher("/admin/product/EditProduct.jsp");
         rd.include(request, response);
@@ -83,7 +82,7 @@ public class EditProduct extends HttpServlet {
         String name = request.getParameter("name");
         Double price = Double.parseDouble(request.getParameter("price"));
         Boolean isActive = Boolean.parseBoolean(request.getParameter("isActive"));
-            
+
         Product product = new Product();
         product.setId(productId);
         product.setName(name);
@@ -92,13 +91,12 @@ public class EditProduct extends HttpServlet {
         product.setPrice(price);
         product.setIsActive(isActive);
         product.setSupplierId(supplierId);
-        
+
         ProductDao productDao = new ProductDao();
         productDao.update(product);
-        
-        
+
         response.sendRedirect(request.getContextPath() + "/admin/products");
-        
+
     }
 
     @Override

@@ -34,18 +34,20 @@ public class ListSupplier extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
+
+        response.setHeader("Cache-Control", "no-cache, no store, must-revalidate");
+
         HttpSession session = request.getSession();
 
         if (session.getAttribute("name") == null) {
-           response.sendRedirect(request.getContextPath() + "/admin/login");
+            response.sendRedirect(request.getContextPath() + "/admin/login");
         }
-        
+
         //Get all the suppliers
         SupplierDao supplierDao = new SupplierDao();
         List<Supplier> supplierList = supplierDao.getSuppliersList();
         session.setAttribute("LIST_ALL_SUPPLIERS", supplierList);
-        
+
         rd = request.getRequestDispatcher("/admin/supplier/ListSuppliers.jsp");
         rd.include(request, response);
     }

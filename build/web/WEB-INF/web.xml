@@ -51,6 +51,10 @@
         <servlet-name>EditSupplier</servlet-name>
         <servlet-class>servlet.admin.supplier.EditSupplier</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>logout</servlet-name>
+        <servlet-class>servlet.admin.auth.logout</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Authentication</servlet-name>
         <url-pattern>/login</url-pattern>
@@ -99,6 +103,10 @@
     <servlet-mapping>
         <servlet-name>EditSupplier</servlet-name>
         <url-pattern>/admin/suppliers/edit</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>logout</servlet-name>
+        <url-pattern>/admin/logout</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

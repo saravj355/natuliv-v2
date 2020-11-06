@@ -34,6 +34,8 @@ public class EditSupplier extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
+        response.setHeader("Cache-Control", "no-cache, no store, must-revalidate");
+        
         HttpSession session = request.getSession();
 
         if (session.getAttribute("name") == null) {
@@ -47,7 +49,7 @@ public class EditSupplier extends HttpServlet {
         Supplier supplier = supplierController.findSupplierById(id);
 
         session.setAttribute("supplier", supplier);
-        
+
         rd = request.getRequestDispatcher("/admin/supplier/EditSupplier.jsp");
         rd.include(request, response);
     }
@@ -61,16 +63,16 @@ public class EditSupplier extends HttpServlet {
         String name = request.getParameter("name");
         String address = request.getParameter("address");
         String contactNumber = request.getParameter("contactNumber");
-            
+
         Supplier supplier = new Supplier();
         supplier.setId(supplierId);
         supplier.setName(name);
         supplier.setAddress(address);
         supplier.setContactNumber(contactNumber);
-        
+
         SupplierDao supplierDao = new SupplierDao();
         supplierDao.update(supplier);
-        
+
         response.sendRedirect(request.getContextPath() + "/admin/suppliers");
     }
 
