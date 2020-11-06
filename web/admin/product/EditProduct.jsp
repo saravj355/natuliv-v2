@@ -41,7 +41,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">                                            
-                                        <label >Empresa:</label>
+                                        <label>Proveedor:</label>
                                         <select name="supplierId" class="form-control">
                                             <option value="${product.supplier.getId()}">${product.supplier.getName()}</option>
                                             <c:choose>

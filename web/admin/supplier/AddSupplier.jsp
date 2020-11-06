@@ -13,11 +13,11 @@
         <div class="row">
             <div class="card mx-auto w-50 mt-5 bg-light border-dark">
                 <div class="card-header bg-dark text-white">
-                    <h5 class="card-title mt-4 text-center fz-100">Registrar Empresa</h5>
+                    <h5 class="card-title mt-4 text-center fz-100">Registrar Proveedor</h5>
                 </div>
                 <form action="${pageContext.servletContext.contextPath}/admin/suppliers/add" method="post" class="p-4">
                     <div class="form-group">                                            
-                        <label >Nombre Empresa:</label>
+                        <label >Nombre Proveedor:</label>
                         <input type="text" name="name" class="form-control">
                     </div> 
                     <div class="form-group">
@@ -29,7 +29,7 @@
                         <input type="text" name="contactNumber" class="form-control">
                     </div>
                     <div class="text-center">
-                        <button type="submit" class="btn btn-success">Registrar Empresa</button>
+                        <button type="submit" class="btn btn-success">Registrar Proveedor</button>
                     </div>
                 </form>  
             </div>

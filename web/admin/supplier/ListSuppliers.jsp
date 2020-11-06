@@ -9,15 +9,15 @@
 
 <body>
     <jsp:include page="../navbar/navbar.jsp"/>
-    <h1 class="text-center mt-5 text-dark">Empresas</h1>
+    <h1 class="text-center mt-5 text-dark">Proveedores</h1>
     <hr>
     <div class="container mt-5">
-        <a href="${pageContext.request.contextPath}/admin/suppliers/add" class="btn btn-success float-right mb-3">+ Agregar Empresa</a>
+        <a href="${pageContext.request.contextPath}/admin/suppliers/add" class="btn btn-success float-right mb-3">+ Agregar Proveedor</a>
         <table class="table table-striped text-center ">
             <thead class="thead-dark">
                 <tr>
                     <th>Id</th>
-                    <th>Nombre Empresa</th>
+                    <th>Nombre Proveedor</th>
                     <th>Dirección</th>
                     <th>Número de contacto</th>
                     <th>Acción</th>
@@ -40,7 +40,7 @@
                     </c:when>
                     <c:otherwise>
                     <div class="alert alert-danger w-50 text-center mx-auto">
-                        No hay empresas registrados
+                        No hay proveedores registrados
                     </div>
                 </c:otherwise>
             </c:choose>

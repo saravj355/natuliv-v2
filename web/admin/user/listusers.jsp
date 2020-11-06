@@ -12,8 +12,7 @@
     <h1 class="text-center mt-5 text-dark">Usuarios</h1>
     <hr>
     <div class="container mt-5">
-        <table class="table table-striped text-center
-               ">
+        <table class="table table-striped text-center">
             <thead class="thead-dark">
                 <tr>
                     <th>Id</th>
@@ -21,6 +20,7 @@
                     <th>Apellido</th>
                     <th>Correo Electrónico</th>
                     <th>Género</th>
+                    <th>Acción</th>
                 </tr>
             </thead>
             <tbody>
@@ -33,6 +33,7 @@
                                 <td><c:out value="${ user.getLastName() }"/></td>
                                 <td><c:out value="${ user.getEmail() }"/></td>
                                 <td><c:out value="${ user.getGender() }"/></td>
+                                <td><a href="${pageContext.request.contextPath}/admin/users/edit?id=${user.getId()}" class="btn btn-info">Editar</a></td>
                             </tr>
                         </c:forEach>                                           
                     </c:when>

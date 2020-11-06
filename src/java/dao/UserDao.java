@@ -6,6 +6,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import model.Product;
+import model.ProductCategory;
+import model.Supplier;
 import model.User;
 
 /**
@@ -117,4 +120,27 @@ public class UserDao {
         }
         return users;
     }
+
+    public User getUserById(int id) {
+        try {
+            String query = "SELECT * FROM user WHERE id=?";
+            PreparedStatement pst = this.conn.prepareStatement(query);
+            pst.setInt(1, id);
+            ResultSet rs = pst.executeQuery();
+
+            while (rs.next()) {
+                User user = new User();
+                user.setId(rs.getInt("id"));
+                user.setName(rs.getString("name"));
+                user.setLastName(rs.getString("lastName"));
+                user.setEmail(rs.getString("email"));
+                user.setGender(rs.getString("gender"));
+                return user;
+            }
+        } catch (SQLException e) {
+            throw new Error(e);
+        }
+        return null;
+    }
+
 }

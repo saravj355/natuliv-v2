@@ -23,6 +23,11 @@ public class Administrator {
         return getProductsList.getProducts();
     }
     
+    public User findUserById(int id){        
+        UserDao userDao = new UserDao();        
+        return userDao.getUserById(id);
+    }
+    
     public Product findProductById(int id){        
         ProductDao productDao = new ProductDao();        
         return productDao.getProductById(id);

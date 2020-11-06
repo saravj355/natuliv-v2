@@ -13,14 +13,14 @@
         <div class="row">
             <div class="card mx-auto w-50 mt-4 bg-light border-dark">
                 <div class="card-header bg-dark text-white">
-                    <h5 class="card-title mt-4 text-center">Editar Empresa</h5>
+                    <h5 class="card-title mt-4 text-center">Editar Proveedor</h5>
                 </div>
                 <c:choose>
                     <c:when test="${ !empty sessionScope.supplier}">
                         <form action="${pageContext.servletContext.contextPath}/admin/suppliers/edit" method="post" class="p-4">
                             <input name="supplierId" value="${supplier.getId()}" type="hidden">
                             <div class="form-group">                                            
-                                <label >Nombre Empresa:</label>
+                                <label >Nombre Proveedor:</label>
                                 <input type="text" name="name" value="${supplier.getName()}" class="form-control" readonly>
                             </div> 
                             <div class="form-group">
