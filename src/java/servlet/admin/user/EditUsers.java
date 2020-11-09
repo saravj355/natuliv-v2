@@ -64,7 +64,7 @@ public class EditUsers extends HttpServlet {
         user.setLastName(lastName);
         user.setEmail(email);
         user.setGender(gender);
-
+        
         UserDao userDao = new UserDao();
         userDao.update(user);
 

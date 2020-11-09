@@ -20,20 +20,16 @@ public class UserDao {
         this.conn = new ConnectionDB().getConnectionDB();
     }
 
-    public boolean update(User user) {
+     public boolean update(User user) {
+        PreparedStatement pst = null;
         try {
-            String query = "update user set"
-                    + " name=?, lastName=?,"
-                    + " email=?, passwordHash=?, gender=?, userRoleId=?"
-                    + " where id=?";
-            PreparedStatement pst = this.conn.prepareStatement(query);
+            String query = "update user set name=?, lastName=?, email=?, gender=? where id=?";
+            pst = this.conn.prepareStatement(query);
             pst.setString(1, user.getName());
             pst.setString(2, user.getLastName());
             pst.setString(3, user.getEmail());
-            pst.setString(4, user.getPasswordHash());
-            pst.setString(5, user.getGender());
-            pst.setInt(6, user.getUserRoleId());
-            pst.setInt(7, user.getId());
+            pst.setString(4, user.getGender());
+            pst.setInt(5, user.getId());
 
             if (pst.executeUpdate() == 1) {
                 pst.close();
