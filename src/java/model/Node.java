@@ -1,4 +1,4 @@
-package model.list;
+package model;
 
 public class Node {
     private Object data;

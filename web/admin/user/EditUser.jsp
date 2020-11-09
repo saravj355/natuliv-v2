@@ -17,7 +17,7 @@
                 </div>
                 <c:choose>
                     <c:when test="${ !empty sessionScope.user}">
-                        <form action="${pageContext.servletContext.contextPath}/admin/products/edit" method="post" class="p-4">
+                        <form action="${pageContext.servletContext.contextPath}/admin/users/edit" method="post" class="p-4">
                             <input name="userId" value="${user.getId()}" type="hidden">
                             <div class="form-group">                                            
                                 <label >Nombre:</label>

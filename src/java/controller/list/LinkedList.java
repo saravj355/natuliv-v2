@@ -1,27 +1,28 @@
 package controller.list;
 
-import model.list.Node;
+import model.User;
+import model.Node;
 
-public class List {
+public class LinkedList {
 
     private Node head;
     private int length;
 
-    public List() {
-        length = 0;
-        head = new Node();
+    public LinkedList() {
+        this.length = 0;
+        this.head = new Node();
     }
 
     public int getLength() {
         return length;
     }
 
-    public boolean addData(Object data) {
+    public boolean add(User user) {
         Node lastNode = getLastNode();
 
-        if (data != null && lastNode != null) {
-            lastNode.setNode(new Node(data));
-            length++;
+        if (user != null && lastNode != null) {
+            lastNode.setNode(new Node(user));
+            this.length++;
             return true;
         }
         return false;
@@ -56,4 +57,9 @@ public class List {
         }
         return data;
     }
+
+    
+    
+    
+
 }

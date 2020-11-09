@@ -12,7 +12,7 @@ public class Administrator {
     
     public Administrator() {
     }
-    
+
     public List<User> findUsers() {        
         UserDao getUsersList = new UserDao();        
         return getUsersList.getUsers();
