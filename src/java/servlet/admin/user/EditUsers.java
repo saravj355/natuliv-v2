@@ -29,8 +29,6 @@ public class EditUsers extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
-        response.setHeader("Cache-Control", "no-cache, no store, must-revalidate");
-
         HttpSession session = request.getSession();
 
         if (session.getAttribute("name") == null) {

@@ -1,5 +1,6 @@
 package servlet.admin.user;
 
+import controller.list.LinkedList;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
@@ -34,6 +35,11 @@ public class ListUsers extends HttpServlet {
         List<User> listUsers = administratorController.findUsers();
 
         session.setAttribute("LIST_ALL_USERS", listUsers);
+
+        LinkedList users = new LinkedList();
+        for (int i = 0; i < listUsers.size(); i++) {
+            users.add(listUsers.get(i));
+        }
 
         rd = request.getRequestDispatcher("/admin/user/listusers.jsp");
         rd.include(request, response);
