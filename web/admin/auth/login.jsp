@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
     <jsp:include page="../../shared/head.jsp"/>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/admin/assets/css/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/admin/shared/css/style.css">
     
     <body>
         <!-- ***** login Administration ***** --->

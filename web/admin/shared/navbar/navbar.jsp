@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="${pageContext.request.contextPath}/admin/assets/css/style.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/admin/shared/css/style.css">
 <header>
     <nav class="navbar sticky-top stroke py-0 bg-dark">
         <a href="${pageContext.request.contextPath}/admin" class="btn btn-light ml-5" id="hide-this"><i class="fas fa-arrow-left arrow mr-1"></i>Volver al inicio</a>

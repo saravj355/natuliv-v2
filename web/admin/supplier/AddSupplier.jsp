@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/navbar.css">
 
 <body>
-    <jsp:include page="../navbar/navbar.jsp"/>
+    <jsp:include page="../shared/navbar/navbar.jsp"/>
     <div class="container">
         <div class="row">
             <div class="card mx-auto w-50 mt-5 bg-light border-dark">

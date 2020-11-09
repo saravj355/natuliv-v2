@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/navbar.css">
 
 <body>
-    <jsp:include page="../navbar/navbar.jsp"/>
+    <jsp:include page="../shared/navbar/navbar.jsp"/>
     <h1 class="text-center mt-5 text-dark">Usuarios</h1>
     <hr>
     <div class="container mt-5">

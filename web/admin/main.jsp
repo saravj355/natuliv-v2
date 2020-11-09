@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/navbar.css">
 
 <body>
-    <jsp:include page="navbar/navbar.jsp"/>
+    <jsp:include page="shared/navbar/navbar.jsp"/>
     <div class="container mb-3">
         <div class="row justify-content-center">
             <div class="col">

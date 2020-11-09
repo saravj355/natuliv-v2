@@ -14,7 +14,7 @@ public class LinkedList {
     }
 
     public int getLength() {
-        return length;
+        return this.length;
     }
 
     public boolean add(User user) {
@@ -30,8 +30,8 @@ public class LinkedList {
 
     private Node getLastNode() {
         Node lastNode = null;
-        if (head != null) {
-            lastNode = head;
+        if (this.head != null) {
+            lastNode = this.head;
             while (lastNode.getNode() != null) {
                 lastNode = lastNode.getNode();
             }
