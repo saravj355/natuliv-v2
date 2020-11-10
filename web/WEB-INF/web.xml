@@ -53,7 +53,7 @@
     </servlet>
     <servlet>
         <servlet-name>logout</servlet-name>
-        <servlet-class>servlet.admin.auth.logout</servlet-class>
+        <servlet-class>servlet.admin.auth.Logout</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>AddUsers</servlet-name>

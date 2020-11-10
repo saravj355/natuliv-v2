@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author sarav
  */
-public class logout extends HttpServlet {
+public class Logout extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
