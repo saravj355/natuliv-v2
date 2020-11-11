@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/navbar.css">
 <header>
     <nav class="navbar sticky-top py-0 stroke">
-        <a class="navbar-brand mx-auto" href="${pageContext.request.contextPath}/index.jsp">
+        <a class="navbar-brand mx-auto" href="${pageContext.request.contextPath}/app">
             <img src="${pageContext.request.contextPath}/assets/img/logo.png" class="d-inline-block align-top logo" alt="logo" loading="lazy">
         </a>
         <ul class="nav justify-content-end account">
@@ -14,4 +14,4 @@
             </li>
         </ul>
     </nav>
-</header>
+</header><
