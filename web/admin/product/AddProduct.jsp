@@ -17,6 +17,10 @@
                 </div>
                 <div class="card-body">
                     <form action="${pageContext.servletContext.contextPath}/admin/products/add" method="post" class="p-4">
+                        <div class="form-group">   
+                            <img id="image-render" class="mx-auto" width="100">
+                            <input type="file" name="imagePath" onchange="loadFile(event)" class="form-control-file">
+                        </div> 
                         <div class="form-group">                                            
                             <label >Nombre Producto:</label>
                             <input type="text" name="name" class="form-control">

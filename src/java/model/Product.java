@@ -14,6 +14,7 @@ public class Product {
     private String description;
     private double price;
     private boolean isActive;
+    private String imagePath;
     
     public Product() {}
 
@@ -25,6 +26,14 @@ public class Product {
         this.description = description;
         this.price = price;
         this.isActive = isActive;
+    }
+    
+    public String getImagePath(){
+        return this.imagePath;
+    }
+    
+    public void setImagePath(String imagePath){
+        this.imagePath = imagePath;
     }
     
     public ProductCategory getProductCategory(){

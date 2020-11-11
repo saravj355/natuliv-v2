@@ -20,6 +20,10 @@
                         <form action="${pageContext.servletContext.contextPath}/admin/products/edit" method="post" class="p-4">
                             <input name="productId" value="${product.getId()}" type="hidden">
                             <div class="form-group">                                            
+                                <label>Imagen:</label>
+                                <input type="file" name="imagePath" value="${product.getImagePath()}" class="form-control-file">
+                            </div>
+                            <div class="form-group">                                            
                                 <label >Nombre Producto:</label>
                                 <input type="text" name="name" value="${product.getName()}" class="form-control" readonly>
                             </div> 

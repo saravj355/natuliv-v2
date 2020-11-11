@@ -33,8 +33,6 @@ public class AddProduct extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
-        response.setHeader("Cache-Control", "no-cache, no store, must-revalidate");
-
         HttpSession session = request.getSession();
 
         if (session.getAttribute("name") == null) {
@@ -68,7 +66,10 @@ public class AddProduct extends HttpServlet {
         String name = request.getParameter("name");
         Double price = Double.parseDouble(request.getParameter("price"));
         Boolean isActive = Boolean.parseBoolean(request.getParameter("isActive"));
-
+        String imagePath = request.getParameter("imagePath");
+        
+        String filePath = "public/products/";
+        
         Product product = new Product();
         product.setName(name);
         product.setProductCategoryId(categoryId);
@@ -76,6 +77,7 @@ public class AddProduct extends HttpServlet {
         product.setPrice(price);
         product.setIsActive(isActive);
         product.setSupplierId(supplierId);
+        product.setImagePath(filePath + imagePath);
 
         ProductDao productDao = new ProductDao();
         productDao.insert(product);

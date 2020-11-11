@@ -27,7 +27,7 @@ public class ProductDao {
         try {
             String query = "update product set "
                     + "supplierId=?, productCategoryId=?, "
-                    + "name=?, description=?, price=?, isActive=? where id=?";
+                    + "name=?, description=?, price=?, isActive=?, imagePath=? where id=?";
             pst = this.conn.prepareStatement(query);
             pst.setInt(1, product.getSupplierId());
             pst.setInt(2, product.getProductCategoryId());
@@ -35,7 +35,8 @@ public class ProductDao {
             pst.setString(4, product.getDescription());
             pst.setDouble(5, product.getPrice());
             pst.setBoolean(6, product.isActive());
-            pst.setInt(7, product.getId());
+            pst.setString(7, product.getImagePath());
+            pst.setInt(8, product.getId());
 
             if (pst.executeUpdate() == 1) {
                 pst.close();
@@ -52,7 +53,7 @@ public class ProductDao {
         PreparedStatement pst = null;
         try {
             String query = "insert into product(supplierId, productCategoryId, "
-                    + "name, description, price, isActive) values(?,?,?,?,?,?)";
+                    + "name, description, price, isActive, imagePath) values(?,?,?,?,?,?,?)";
             pst = this.conn.prepareStatement(query);
             pst.setInt(1, product.getSupplierId());
             pst.setInt(2, product.getProductCategoryId());
@@ -60,6 +61,7 @@ public class ProductDao {
             pst.setString(4, product.getDescription());
             pst.setDouble(5, product.getPrice());
             pst.setBoolean(6, product.isActive());
+            pst.setString(7, product.getImagePath());
             if (pst.executeUpdate() == 1) {
                 pst.close();
                 return true;
@@ -75,7 +77,7 @@ public class ProductDao {
         List<Product> products = new ArrayList<Product>();
         try {
             String query = "select id, supplierId, productCategoryId,"
-                    + " name, description, price, isActive from product";
+                    + " name, description, price, isActive, imagePath from product";
             PreparedStatement pst = this.conn.prepareStatement(query);
 
             ResultSet rs = pst.executeQuery();
@@ -92,6 +94,7 @@ public class ProductDao {
                 product.setDescription(rs.getString("description"));
                 product.setPrice(rs.getDouble("price"));
                 product.setIsActive(rs.getBoolean("isActive"));
+                product.setImagePath(rs.getString("imagePath"));
 
                 // enrich product category                
                 ProductCategory productCategory = productCategoryDao
@@ -128,6 +131,7 @@ public class ProductDao {
                 product.setDescription(rs.getString("description"));
                 product.setPrice(rs.getDouble("price"));
                 product.setIsActive(rs.getBoolean("isActive"));
+                product.setImagePath(rs.getString("imagePath"));
 
                 // enrich product category                
                 ProductCategory productCategory = productCategoryDao

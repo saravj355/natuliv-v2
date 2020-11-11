@@ -25,6 +25,7 @@
             <thead class="thead-dark">
                 <tr>
                     <th>Id</th>
+                    <th>Imágen</th>
                     <th>Nombre Producto</th>
                     <th>Descripción</th>
                     <th>Categoría</th>
@@ -40,9 +41,10 @@
                         <c:forEach var="product" items="${sessionScope.LIST_ALL_PRODUCTS}">
                             <tr>
                                 <td><c:out value="${ product.getId() }"/></td>
+                                <td> <img src="${pageContext.request.contextPath}/${product.getImagePath()}" width="100" height="100"/></td>
                                 <td><c:out value="${ product.getName() }"/></td>
                                 <td><c:out value="${ product.getDescription() }"/></td>
-                                <td><c:out value="${ product.getProductCategory().getName() }"/></td>
+                                <td><c:out value="${ product.getProductCategory().getName()}"/></td>
                                 <td>$ <c:out value="${ product.getPrice() }"/>00</td>
                                 <td><c:out value="${ product.getSupplier().getName() }"/></td>
                                 <td><c:out value="${ (product.isActive()) ? 'Disponible':'No disponible'}"/></td>
