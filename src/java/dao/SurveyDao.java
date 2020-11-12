@@ -19,11 +19,10 @@ public class SurveyDao {
     public boolean update(Survey survey){
         PreparedStatement pst = null;   
         try {                
-            String query = "update survey set name=?, description=? where id=?";
+            String query = "update survey set question=? where id=?";
             pst = this.conn.prepareStatement(query);
-            pst.setString(1, survey.getName());
-            pst.setString(2, survey.getDescription());
-            pst.setInt(3, survey.getId());
+            pst.setString(1, survey.getQuestion());
+            pst.setInt(2, survey.getId());
                         
             if(pst.executeUpdate() == 1){                
                 pst.close();
@@ -39,10 +38,9 @@ public class SurveyDao {
     public boolean insert(Survey survey) {
         PreparedStatement pst = null;   
         try {                
-            String query = "insert into survey(name, description) values(?,?)";
+            String query = "insert into survey(question) values(?)";
             pst = this.conn.prepareStatement(query);
-            pst.setString(1, survey.getName());
-            pst.setString(2, survey.getDescription());
+            pst.setString(1, survey.getQuestion());
                         
             if(pst.executeUpdate() == 1){                
                 pst.close();

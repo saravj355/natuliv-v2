@@ -5,16 +5,20 @@ package model;
  * @author sarav
  */
 public class SurveyQuestion {
+
     private int id;
     private int surveyId;
-    private String question;
-    
-    public SurveyQuestion() {}
+    private int userId;
+    private String answer;
 
-    public SurveyQuestion(int id, int surveyId, String question) {
+    public SurveyQuestion() {
+    }
+
+    public SurveyQuestion(int id, int surveyId, int userId, String answer) {
         this.id = id;
         this.surveyId = surveyId;
-        this.question = question;
+        this.userId = userId;
+        this.answer = answer;
     }
 
     public int getId() {
@@ -33,15 +37,20 @@ public class SurveyQuestion {
         this.surveyId = surveyId;
     }
 
-    public String getQuestion() {
-        return question;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setQuestion(String question) {
-        this.question = question;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
-    
-    
-    
+    public String getAnswer() {
+        return answer;
+    }
+
+    public void setAnswer(String answer) {
+        this.answer = answer;
+    }
+
 }

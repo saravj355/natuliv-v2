@@ -54,8 +54,7 @@ public class SurveyDaoTest {
         System.out.println("insert");
         Survey survey = new Survey();
         
-        survey.setName("Natural");
-        survey.setDescription("Esta es otra prueba");
+        survey.setQuestion("¿Que edad tienes?");
         
         SurveyDao instance = new SurveyDao();
         boolean expResult = true;

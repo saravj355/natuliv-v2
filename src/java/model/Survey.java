@@ -6,42 +6,33 @@ package model;
  */
 public class Survey {
     private int id;
-    private String name;
-    private String description;
+    private String question;
 
     public Survey() {}
 
-    public Survey(int id, String name, String description) {
+    public Survey(int id, String question) {
         this.id = id;
-        this.name = name;
-        this.description = description;
+        this.question = question;
     }
 
     public int getId() {
         return id;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    
-    
     public void setId(int id) {
         this.id = id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getQuestion() {
+        return question;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setQuestion(String question) {
+        this.question = question;
     }
     
-    
 }
+
+    
+   
+   
