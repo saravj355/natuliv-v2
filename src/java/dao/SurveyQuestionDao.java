@@ -43,8 +43,8 @@ public class SurveyQuestionDao {
             String query = "insert into survey_question(surveyId, userId, answer) values(?,?,?)";
             pst = this.conn.prepareStatement(query);
             pst.setInt(1, surveyQuestion.getSurveyId());
-            pst.setInt(1, surveyQuestion.getUserId());
-            pst.setString(2, surveyQuestion.getAnswer());
+            pst.setInt(2, surveyQuestion.getUserId());
+            pst.setString(3, surveyQuestion.getAnswer());
                         
             if(pst.executeUpdate() == 1){                
                 pst.close();

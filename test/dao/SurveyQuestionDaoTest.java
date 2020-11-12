@@ -45,6 +45,7 @@ public class SurveyQuestionDaoTest {
         SurveyQuestion surveyQuestion = new SurveyQuestion();
         
         surveyQuestion.setSurveyId(5);
+        surveyQuestion.setUserId(77);
         surveyQuestion.setAnswer("12");
         
         SurveyQuestionDao instance = new SurveyQuestionDao();
