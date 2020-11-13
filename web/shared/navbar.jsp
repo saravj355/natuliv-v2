@@ -6,13 +6,13 @@
         </a>
         <ul class="nav justify-content-center">
             <li class="nav-item">
-                <a class="nav-link active fill" href="#">Inicio</a>
+                <a class="nav-link active fill" href="${pageContext.request.contextPath}/index.jsp">Inicio</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link fill" href="#">Nosotros</a>
+                <a class="nav-link fill" href="${pageContext.request.contextPath}/about.jsp">Nosotros</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link fill" href="#">Comunícate</a>
+                <a class="nav-link fill" href="${pageContext.request.contextPath}/comunicate.jsp">Comunícate</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link fill" href="#">Trabaja con nosotros</a>
