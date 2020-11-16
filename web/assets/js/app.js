@@ -20,10 +20,12 @@ $(document).ready(function () {
     }
 });
 
-var loadFile = function(event) {
-	var imageRender = document.getElementById('image-render');
-	imageRender.src = URL.createObjectURL(event.target.files[0]);
+var loadFile = function (event) {
+    var imageRender = document.getElementById('image-render');
+    imageRender.src = URL.createObjectURL(event.target.files[0]);
 };
+
+
 
 
 

@@ -87,6 +87,23 @@ public class UserDao {
         }
         return null;
     }
+    
+    public User findUserIdByEmail(String email) {
+        try {
+            String query = "SELECT id FROM user where email=?";
+            PreparedStatement pst = this.conn.prepareStatement(query);
+            pst.setString(1, email);
+            ResultSet rs = pst.executeQuery();
+            while (rs.next()) {
+                User user = new User();
+                user.setId(rs.getInt("id"));
+                return user;
+            }
+        } catch (SQLException e) {
+            throw new Error(e);
+        }
+        return null;
+    }
 
     public List<User> getUsers() {
         List<User> users = new ArrayList<User>();

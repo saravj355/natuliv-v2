@@ -18,9 +18,9 @@ public class Administrator {
         return getUsersList.getUsers();
     }
     
-    public List<Product> findProducts() {        
+    public List<Product> findProducts(int page) {        
         ProductDao getProductsList = new ProductDao();        
-        return getProductsList.getProducts();
+        return getProductsList.getProducts(page);
     }
     
     public User findUserById(int id){        

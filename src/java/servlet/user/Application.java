@@ -34,7 +34,7 @@ public class Application extends HttpServlet {
 
         controller.Administrator list = new controller.Administrator();
 
-        List<Product> listProducts = list.findProducts();
+        List<Product> listProducts = list.findProducts(1);
         session.setAttribute("LIST_ALL_PRODUCTS", listProducts);
 
         rd = request.getRequestDispatcher("/mainApp/main.jsp");

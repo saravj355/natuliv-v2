@@ -82,11 +82,13 @@ public class Register extends HttpServlet {
 
         // creates user
         User newUser = Auth.register(name, lastName, email, password, gender);
-
+        
+        User userId = userDao.findUserIdByEmail(email);
         // redirect to app page when user is created
         if (newUser != null) {
+            session.setAttribute("userId", userId.getId());
             session.setAttribute("name", newUser.getName());
-            response.sendRedirect(request.getContextPath() + "/app");
+            response.sendRedirect(request.getContextPath() + "/test?id=" + userId.getId());
         }
     }
 
