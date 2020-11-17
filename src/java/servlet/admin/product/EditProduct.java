@@ -59,7 +59,7 @@ public class EditProduct extends HttpServlet {
 
         session.setAttribute("product", product);
 
-        rd = request.getRequestDispatcher("/admin/product/EditProduct.jsp");
+        rd = request.getRequestDispatcher("/admin/product/editProduct.jsp");
         rd.include(request, response);
     }
 

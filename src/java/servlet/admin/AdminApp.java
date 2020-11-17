@@ -34,7 +34,7 @@ public class AdminApp extends HttpServlet {
             response.sendRedirect(request.getContextPath() + "/admin/login");
         }
 
-        rd = request.getRequestDispatcher("/admin/main.jsp");
+        rd = request.getRequestDispatcher("/admin/index.jsp");
         rd.include(request, response);
 
         processRequest(request, response);

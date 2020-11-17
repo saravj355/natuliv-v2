@@ -43,7 +43,7 @@ public class EditUsers extends HttpServlet {
 
         session.setAttribute("user", user);
 
-        rd = request.getRequestDispatcher("/admin/user/EditUser.jsp");
+        rd = request.getRequestDispatcher("/admin/user/editUser.jsp");
         rd.include(request, response);
     }
 

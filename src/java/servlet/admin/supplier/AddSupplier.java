@@ -36,7 +36,7 @@ public class AddSupplier extends HttpServlet {
             response.sendRedirect(request.getContextPath() + "/admin/login");
         }
 
-        rd = request.getRequestDispatcher("/admin/supplier/AddSupplier.jsp");
+        rd = request.getRequestDispatcher("/admin/supplier/addSupplier.jsp");
         rd.include(request, response);
     }
 

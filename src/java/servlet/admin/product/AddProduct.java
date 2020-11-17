@@ -50,7 +50,7 @@ public class AddProduct extends HttpServlet {
         List<Supplier> supplierList = supplierDao.getSuppliers();
         session.setAttribute("supplierList", supplierList);
 
-        rd = request.getRequestDispatcher("/admin/product/AddProduct.jsp");
+        rd = request.getRequestDispatcher("/admin/product/addProduct.jsp");
         rd.include(request, response);
     }
 

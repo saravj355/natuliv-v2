@@ -27,7 +27,7 @@ public class ListProducts extends HttpServlet {
         List<Product> listProducts = list.findProducts();
         session.setAttribute("LIST_ALL_PRODUCTS", listProducts);
 
-        rd = request.getRequestDispatcher("/admin/product/ListProducts.jsp");
+        rd = request.getRequestDispatcher("/admin/product/listProducts.jsp");
         rd.include(request, response);
     }
 
@@ -35,8 +35,6 @@ public class ListProducts extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-
-        response.setHeader("Cache-Control", "no-cache, no store, must-revalidate");
 
         HttpSession session = request.getSession();
 

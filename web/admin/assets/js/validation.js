@@ -1,9 +1,12 @@
-
-
+//** Validate empty inputs **//
 $(document).ready(function () {
+    //** DOM is ready **//
+    //** verified empty inputs inside a form **//
     $('form[name="form"]').on("submit", function (e) {
+        //** verified empty inputs file **//
         var inputFile = document.getElementById("inputFile");
         var empty = true;
+        //** for each empty input type="text" **//
         $('input[type="text"]').each(function () {
             if ($(this).val() === "") {
                 empty = false;
@@ -19,6 +22,7 @@ $(document).ready(function () {
         }
     });
 
+    //** hide alert message **//
     $(".alert").find(".close").on("click", function (e) {
         e.stopPropagation();
         e.preventDefault();

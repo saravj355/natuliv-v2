@@ -1,0 +1,10 @@
+.navbar-brand{
+    color:#fff;
+    letter-spacing:5px; 
+}
+.navbar-brand:hover{
+    color:#cccccc;
+}
+.navbar .arrow{
+    font-size: 15px;
+}

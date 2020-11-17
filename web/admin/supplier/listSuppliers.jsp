@@ -4,11 +4,8 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
-<jsp:include page="../../shared/head.jsp"/>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/navbar.css">
-
+<jsp:include page="../public/navbar/admin.navbar.jsp" />
 <body>
-    <jsp:include page="../shared/navbar/navbar.jsp"/>
     <h1 class="text-center mt-5 text-dark">Proveedores</h1>
     <hr>
     <div class="container mt-5">
@@ -47,6 +44,5 @@
             </tbody>
         </table>
     </div>
-    <jsp:include page="../../shared/footer.jsp"/>
+    <jsp:include page="../public/footer/admin.footer.jsp" />
 </body>
-</html>

@@ -4,12 +4,9 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
-<jsp:include page="../shared/head.jsp"/>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/navbar.css">
-
+<jsp:include page="./public/navbar/admin.navbar.jsp" />
 <body>
-    <jsp:include page="shared/navbar/navbar.jsp"/>
-    <div class="container mb-3">
+    <div class="container m-5 mx-auto">
         <div class="row justify-content-center">
             <div class="col">
                 <div class="card bg-light">
@@ -52,7 +49,7 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row mt-4">
             <div class="col">
                 <div class="card bg-light">
                     <div class="card-header bg-dark">
@@ -94,20 +91,9 @@
                 </div>
             </div>
         </div>
+        <br>
+        <br>
     </div>
-</div>
-<footer class="bg-dark text-white p-3">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="copyright-text">
-                    <p>© 2020
-                        <a href="#" class="text-white">Natuliv</a>. Todos los derechos reservados.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-<jsp:include page="../shared/footer.jsp"/>
+
+    <jsp:include page="./public/footer/admin.footer.jsp" />
 </body>

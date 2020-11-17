@@ -42,7 +42,7 @@ public class EditSupplier extends HttpServlet {
 
         session.setAttribute("supplier", supplier);
 
-        rd = request.getRequestDispatcher("/admin/supplier/EditSupplier.jsp");
+        rd = request.getRequestDispatcher("/admin/supplier/editSupplier.jsp");
         rd.include(request, response);
     }
 

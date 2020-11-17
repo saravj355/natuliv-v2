@@ -59,16 +59,6 @@
     </div>
     <hr class="featurette-divider">
 
-    <!--    <div class="row featurette">
-            <div class="col-md-7">
-                <h2 class="featurette-heading text-center"><span class="text-muted text-center">¿Conoces la importancia del uso de productos naturales?</span></h2>
-                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper.
-                    Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-            </div>
-            <div class="col-md-5">
-                <img src="${pageContext.request.contextPath}/webPage/assets/img/cuidado.png" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="300" height="300"> 
-            </div>
-        </div>-->
     <jsp:include page="webPage/shared/footer.jsp"/>
     <jsp:include page="shared/footer.jsp"/>
 </body>

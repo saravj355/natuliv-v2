@@ -1,15 +1,8 @@
-<%-- 
-    Document   : index
-    Created on : Oct 24, 2020, 9:38:16 AM
-    Author     : sarav
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <jsp:include page="../../shared/head.jsp"/>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/admin/shared/css/style.css">
-    
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/admin/authentication/admin.login.css">
     <body>
         <!-- ***** login Administration ***** --->
         <div class="container">
@@ -40,7 +33,7 @@
                                         <span class="input-group-text"> <span toggle="#password-field" class="fa fa-fw fa-eye field_icon toggle-password"></span>  </span>
                                     </div>
                                 </div>
-                                <h5 class="errorMessage animate__animated animate__headShake">${errorMessage}</h5>
+                                <h5 class="errorMessage animate__animated animate__headShake text-white">${errorMessage}</h5>
                                 <input type="submit" class="btn mt-4 btn-outline-light" value="Ingresar">
                             </form>
                         </div>

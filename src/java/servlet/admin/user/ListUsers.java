@@ -41,7 +41,7 @@ public class ListUsers extends HttpServlet {
             users.add(listUsers.get(i));
         }
 
-        rd = request.getRequestDispatcher("/admin/user/listusers.jsp");
+        rd = request.getRequestDispatcher("/admin/user/listUsers.jsp");
         rd.include(request, response);
     }
 

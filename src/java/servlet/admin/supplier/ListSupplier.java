@@ -43,7 +43,7 @@ public class ListSupplier extends HttpServlet {
         List<Supplier> supplierList = supplierDao.getSuppliersList();
         session.setAttribute("LIST_ALL_SUPPLIERS", supplierList);
 
-        rd = request.getRequestDispatcher("/admin/supplier/ListSuppliers.jsp");
+        rd = request.getRequestDispatcher("/admin/supplier/listSuppliers.jsp");
         rd.include(request, response);
     }
 
