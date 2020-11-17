@@ -1,10 +1,24 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : Nov 17, 2020, 12:43:40 PM
-    Author     : sarav
-*/
-
+.face {
+    background:url(https://www.kosmeticaworld.com/files/2018/11/Fotolia_226436643_L.jpg) top/100% auto no-repeat;
+}
+.hair{
+    background:url(https://agentluxe.com/wp-content/uploads/2020/06/20200625_150950-1140x660.jpg) top/100% auto no-repeat;
+}
+.body{
+    background:url(https://integrisok.com/-/media/blog/19-jan-feb/jars-with-skincare-products.ashx?revision=007004b7-92c9-4ffa-b02f-47f85cf25894&la=en&hash=287796F1794E41AD4EA1257CC141F4B0F5EA0552) top/100% auto no-repeat;
+}
+.face-mask{
+    background:url(https://www.objetivobienestar.com/uploads/s1/46/56/87/cosmetica-natural-productos-cuidar-tu-piel_1_780x462.jpg) top/100% auto no-repeat;
+}
+.overlay{
+    background: rgba(0,0,0,0.7);
+    padding:1.7em;
+    letter-spacing: 1.2px;
+}
+.overlay h5{
+    font-size:1.5em;
+    font-weight: 300;
+}
+.text{
+    font-size: 20px;
+}

@@ -1,12 +1,10 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<jsp:include page="../shared/head.jsp" />
-<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/auth.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/register.css">
+<jsp:include page="../../../shared/head.jsp"/>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/user/public/authentication/user.register.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/user/public/authentication/auth.css">
 <body>
-    <jsp:include page="../shared/navbar.jsp"/>
-
-    <!-- ******** register ********* -->
+    <jsp:include page="../../../shared/navbar.jsp"/>
     <div class="container animate__animated animate__bounceInRight">
         <div class="card text-center card-shadow m-4">
             <h1 class="card-title">Regístrate</h1>
@@ -81,5 +79,5 @@
             </form>
         </div>
     </div>
-    <jsp:include page="../shared/footer.jsp"/>
+    <jsp:include page="../../../shared/footer.jsp"/>
 </body>

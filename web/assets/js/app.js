@@ -7,10 +7,7 @@ $(".toggle-password").click(function () {
 });
 
 
-var loadFile = function (event) {
-    var imageRender = document.getElementById('image-render');
-    imageRender.src = URL.createObjectURL(event.target.files[0]);
-};
+
 
 
 

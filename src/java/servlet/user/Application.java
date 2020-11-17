@@ -44,7 +44,7 @@ public class Application extends HttpServlet {
                 getProductCategories();
         session.setAttribute("productCategoryList", productCategoryList);
 
-        rd = request.getRequestDispatcher("/mainApp/main.jsp");
+        rd = request.getRequestDispatcher("/app/index.jsp");
         rd.include(request, response);
 
         processRequest(request, response);

@@ -1,13 +1,11 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
-<jsp:include page="../shared/head.jsp" />
-<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/auth.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/login.css">
+<jsp:include page="../../../shared/head.jsp"/>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/user/public/authentication/user.login.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/user/public/authentication/auth.css">
 <body>
-    <jsp:include page="../shared/navbar.jsp"/>
-
-    <!-- ******** login ********* -->
+    <jsp:include page="../../../shared/navbar.jsp"/>
     <div class="container animate__animated animate__pulse">
         <div class="row justify-content-center">
             <div class="col mx-auto text-center">
@@ -56,6 +54,5 @@
             </div>
         </div>
     </div>    
-
-    <jsp:include page="../shared/footer.jsp" />
+    <jsp:include page="../../../shared/footer.jsp"/>
 </body>

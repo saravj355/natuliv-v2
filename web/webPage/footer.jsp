@@ -30,9 +30,9 @@
                     <p><a href="#" class="text-success">Aplicación</a></p>
 
                 </div>
-                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <div class="col-sm-4">
                     <h6 class="text-uppercase font-weight-bold">Contáctanos</h6>
-                    <hr class="line accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 90px;">
+                    <hr class="mx-auto" style="width: 90px;">
                     <p><i class="fas fa-home mr-2"></i>Medellín - Colombia</p>
                     <p><i class="fas fa-envelope mr-2"></i> natuliv@gmail.com</p>
                     <p><i class="fas fa-phone mr-2"></i>+57 000 000 00 00</p>

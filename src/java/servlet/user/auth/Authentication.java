@@ -29,7 +29,7 @@ public class Authentication extends HttpServlet {
 
         response.setHeader("Cache-Control", "no-cache, no store, must-revalidate");
 
-        rd = request.getRequestDispatcher("/auth/login.jsp");
+        rd = request.getRequestDispatcher("/user/public/authentication/user.login.jsp");
         rd.include(request, response);
     }
 
@@ -46,7 +46,7 @@ public class Authentication extends HttpServlet {
         if (email.isEmpty() || password.isEmpty()) {
             request.setAttribute("errorMessage", "Por favor rellene todos los campos.");
             getServletContext().
-                    getRequestDispatcher("/auth/login.jsp")
+                    getRequestDispatcher("/user/public/authentication/user.login.jsp")
                     .forward(request, response);
             return;
         }
@@ -58,7 +58,7 @@ public class Authentication extends HttpServlet {
         if (user == null) {
             request.setAttribute("errorMessage", "La contraseña o el correo electrónico son incorrectos ");
             getServletContext().
-                    getRequestDispatcher("/auth/login.jsp")
+                    getRequestDispatcher("/user/public/authentication/user.login.jsp")
                     .forward(request, response);
             return;
         }

@@ -4,9 +4,7 @@
 
 <!DOCTYPE html>
 <jsp:include page="../shared/head.jsp"/>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/mainApp/assets/css/style.css">
 <body>
-    <jsp:include page="shared/navbar/navbar.jsp"/>
     <div class="m-5">
         <h4 class="text-center mt-5 font-weight-light text-uppercase"><span class="font-weight-normal">${name}</span>! estos productos son para ti</h4>
         <hr class="mb-5 bg-dark w-50 mx-auto">
@@ -88,8 +86,8 @@
             </div>
         </div>
     </div>
-    <jsp:include page="categories.jsp"/>
-    <jsp:include page="tips.jsp"/>
+    <jsp:include page="./public/categories/categories.jsp"/>
+    <jsp:include page="./public/tips/tips.jsp"/>
     <footer class="bg-dark text-white p-3 mt-5">
         <div class="container">
             <div class="row">
@@ -103,6 +101,4 @@
             </div>
         </div>
     </footer>
-    <jsp:include page="../shared/footer.jsp"/>
-    <script src="${pageContext.request.contextPath}/mainApp/assets/js/app.js"></script>
 </body>
