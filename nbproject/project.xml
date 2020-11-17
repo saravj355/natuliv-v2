@@ -24,5 +24,12 @@
             </test-roots>
         </data>
         <libraries xmlns="http://www.netbeans.org/ns/cdnjs-libraries/1"/>
+        <spellchecker-wordlist xmlns="http://www.netbeans.org/ns/spellchecker-wordlist/1">
+            <word>Categorías</word>
+            <word>lorem</word>
+            <word>Natuliv</word>
+            <word>Natutips</word>
+            <word>rostro</word>
+        </spellchecker-wordlist>
     </configuration>
 </project>

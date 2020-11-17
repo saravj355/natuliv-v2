@@ -19,17 +19,12 @@ public class ListProducts extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-         
-        int page = 1;
-        if(request.getParameter("page") != null){
-            page = Integer.parseInt(request.getParameter("page"));
-        }
                 
         HttpSession session = request.getSession();
 
         controller.Administrator list = new controller.Administrator();
 
-        List<Product> listProducts = list.findProducts(page);
+        List<Product> listProducts = list.findProducts();
         session.setAttribute("LIST_ALL_PRODUCTS", listProducts);
 
         rd = request.getRequestDispatcher("/admin/product/ListProducts.jsp");

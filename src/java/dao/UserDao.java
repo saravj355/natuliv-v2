@@ -23,13 +23,12 @@ public class UserDao {
      public boolean update(User user) {
         PreparedStatement pst = null;
         try {
-            String query = "update user set name=?, lastName=?, email=?, gender=? where id=?";
+            String query = "update user set name=?, lastName=?, email=? where id=?";
             pst = this.conn.prepareStatement(query);
             pst.setString(1, user.getName());
             pst.setString(2, user.getLastName());
             pst.setString(3, user.getEmail());
-            pst.setString(4, user.getGender());
-            pst.setInt(5, user.getId());
+            pst.setInt(4, user.getId());
 
             if (pst.executeUpdate() == 1) {
                 pst.close();

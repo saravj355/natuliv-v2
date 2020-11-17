@@ -56,14 +56,13 @@ public class EditUsers extends HttpServlet {
         String name = request.getParameter("name");
         String lastName = request.getParameter("lastName");
         String email = request.getParameter("email");
-        String gender = request.getParameter("gender");
+        
 
         User user = new User();
         user.setId(userId);
         user.setName(name);
         user.setLastName(lastName);
         user.setEmail(email);
-        user.setGender(gender);
         
         UserDao userDao = new UserDao();
         userDao.update(user);

@@ -1,5 +1,6 @@
 package servlet.user;
 
+import dao.ProductCategoryDao;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import model.Product;
+import model.ProductCategory;
 
 @WebServlet(name = "Application", urlPatterns = {"/app"})
 public class Application extends HttpServlet {
@@ -31,11 +33,16 @@ public class Application extends HttpServlet {
 //        if (session.getAttribute("name") == null) {
 //            response.sendRedirect(request.getContextPath() + "/login");
 //        }
-
         controller.Administrator list = new controller.Administrator();
 
-        List<Product> listProducts = list.findProducts(1);
+        List<Product> listProducts = list.findProducts();
         session.setAttribute("LIST_ALL_PRODUCTS", listProducts);
+
+        // Get all the categories
+        ProductCategoryDao productCategoryDao = new ProductCategoryDao();
+        List<ProductCategory> productCategoryList = productCategoryDao.
+                getProductCategories();
+        session.setAttribute("productCategoryList", productCategoryList);
 
         rd = request.getRequestDispatcher("/mainApp/main.jsp");
         rd.include(request, response);

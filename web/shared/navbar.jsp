@@ -42,7 +42,7 @@
             </div>
             <div class="modal-body">
                 <div class="row m-4">
-                    <a href="${pageContext.request.contextPath}/login" class="btn btn-success user-btn">
+                    <a href="${pageContext.request.contextPath}/login" class="btn btn-info user-btn">
                         <i class="fas fa-user user-icon"></i>Usuario
                     </a>
                 </div>

@@ -16,10 +16,17 @@
                     <h5 class="card-title mt-4 text-center fz-100">Agregar Producto</h5>
                 </div>
                 <div class="card-body">
-                    <form action="${pageContext.servletContext.contextPath}/admin/products/add" method="post" class="p-4">
+                    <div id="main_area" class="row-fluid">
+                        <div class="span10 offset1">
+                            <div id="formAlert" class="alert alert-danger hide d-none">  
+                                <h5 class="animate__animated animate__headShake text-center validation">Porfavor llena todos los campos</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <form action="${pageContext.servletContext.contextPath}/admin/products/add" method="post" name="form" class="p-4">
                         <div class="form-group">   
                             <img id="image-render" class="mx-auto" width="100">
-                            <input type="file" name="imagePath" onchange="loadFile(event)" class="form-control-file">
+                            <input type="file" id="inputFile" name="imagePath" onchange="loadFile(event)" class="form-control-file">
                         </div> 
                         <div class="form-group">                                            
                             <label >Nombre Producto:</label>
@@ -59,7 +66,7 @@
                         </div>
                         <div class="form-group">
                             <label>Descripción:</label>
-                            <textarea name="description" class="form-control"></textarea>
+                            <textarea id="textarea" name="description" class="form-control"></textarea>
                         </div>  
                         <div class="form-group">                                            
                             <label>Precio:</label>
@@ -80,6 +87,7 @@
         <a href="${pageContext.servletContext.contextPath}/admin/products" class="text-dark"><i class="fas fa-arrow-circle-left arrow mr-1"></i>Volver</a>
     </div>
     <jsp:include page="../../shared/footer.jsp"/>
+    <script src="${pageContext.request.contextPath}/admin/assets/js/validate.js"></script>
 </body>
 
 

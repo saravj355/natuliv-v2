@@ -15,13 +15,20 @@
                 <div class="card-header bg-dark text-white">
                     <h5 class="card-title mt-4 text-center">Editar Producto</h5>
                 </div>
+                <div id="main_area" class="row-fluid">
+                    <div class="span10 offset1">
+                        <div id="formAlert" class="alert alert-danger hide d-none">  
+                            <h5 class="animate__animated animate__headShake text-center validation">Porfavor llena todos los campos</h5>
+                        </div>
+                    </div>
+                </div>
                 <c:choose>
                     <c:when test="${ !empty sessionScope.product}">
-                        <form action="${pageContext.servletContext.contextPath}/admin/products/edit" method="post" class="p-4">
+                        <form action="${pageContext.servletContext.contextPath}/admin/products/edit" name="form" method="post" class="p-4">
                             <input name="productId" value="${product.getId()}" type="hidden">
-                            <div class="form-group">                                            
-                                <label>Imagen:</label>
-                                <input type="file" name="imagePath" value="${product.getImagePath()}" class="form-control-file">
+                            <div class="form-group">   
+                                <img id="image-render" class="mx-auto" name="imagePath" src="${pageContext.request.contextPath}/${product.getImagePath()}" width="100">
+                                <input type="file" id="inputFile" onchange="loadFile(event)" name="imagePath" class="form-control-file">
                             </div>
                             <div class="form-group">                                            
                                 <label >Nombre Producto:</label>
@@ -61,7 +68,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Descripción:</label>
-                                <textarea name="description" class="form-control">${product.getDescription()}</textarea>
+                                <textarea id="textarea" name="description" class="form-control">${product.getDescription()}</textarea>
                             </div>  
                             <div class="form-group">                                            
                                 <label>Precio:</label>
@@ -84,4 +91,5 @@
         <a href="${pageContext.servletContext.contextPath}/admin/products" class="text-dark"><i class="fas fa-arrow-circle-left arrow mr-1"></i>Volver</a>
     </div>
     <jsp:include page="../../shared/footer.jsp"/>
+    <script src="${pageContext.request.contextPath}/admin/assets/js/validate.js"></script>
 </body>

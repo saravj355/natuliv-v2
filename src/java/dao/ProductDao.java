@@ -73,24 +73,14 @@ public class ProductDao {
         return false;
     }
 
-    public List<Product> getProducts(int page) {
-        
-        int MIN_PAGE = 10;
-        int MIN_PAGE_TOP = MIN_PAGE - 1;       
-        
-        int MIN_PRODUCT_ID = page * MIN_PAGE - MIN_PAGE_TOP;
-        int MAX_PRODUCT_ID = MIN_PRODUCT_ID + MIN_PAGE_TOP;
-        
+    public List<Product> getProducts() {
         
         List<Product> products = new ArrayList<>();
         try {
             String query = "select id, supplierId, productCategoryId,"
                     + " name, description, price, isActive, imagePath "
-                    + " from product "
-                    + "where id >= ? and id < ?";
+                    + " from product";
             PreparedStatement pst = this.conn.prepareStatement(query);
-            pst.setInt(1, MIN_PRODUCT_ID);
-            pst.setInt(2, MAX_PRODUCT_ID);
             
             ResultSet rs = pst.executeQuery();
 
