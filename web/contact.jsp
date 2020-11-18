@@ -1,16 +1,10 @@
-<%-- 
-    Document   : acercade
-    Created on : 9/11/2020, 06:49:20 PM
-    Author     : rodri
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<jsp:include page="./shared/head.jsp"/>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/webPage/assets/css/comunicate.css">
-<body>
-    <jsp:include page="./shared/navbar.jsp"/>
+<jsp:include page="shared/head.jsp"/>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/index.css">
 
+<body>
+    <jsp:include page="shared/navbar.jsp"/>
     <div class="container text-center mt-3">
         <h1>Contáctanos</h1>
         <p>¡Hola! Gracias por comunicarte con nosotros, por favor déjanos el detalle de tu pregunta, novedad o problema. <br>
@@ -75,6 +69,6 @@
             </div>
         </div>
     </div>
-    <jsp:include page="webPage/shared/footer.jsp"/>
-    <jsp:include page="shared/footer.jsp"/>
+    <jsp:include page="./shared//footer.jsp"/>
+    <jsp:include page="./webPage/footer.jsp"/>
 </body>

@@ -2,14 +2,13 @@
 
 <!DOCTYPE html>
 <jsp:include page="shared/head.jsp"/>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/index.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/webPage/css/index.css">
 
 <body>
     <jsp:include page="shared/navbar.jsp"/>
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="${pageContext.request.contextPath}/assets/img/fondo1.jpeg" class="d-block w-100" alt="..."width="1300" height="450">>
+            <div class="carousel-item active carousel-image">
             </div>
             <div class="carousel-item">
                 <img src="${pageContext.request.contextPath}/assets/img/fondo2.jpeg" class="d-block w-100" alt="..."width="1300" height="450">
@@ -58,6 +57,6 @@
         </div> 
     </div>
 
-    <jsp:include page="./shared//footer.jsp"/>
+    <jsp:include page="./shared/footer.jsp"/>
     <jsp:include page="./webPage/footer.jsp"/>
 </body>
