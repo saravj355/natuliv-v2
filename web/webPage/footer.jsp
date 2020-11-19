@@ -52,7 +52,7 @@
             </div>
         </div>
     </div>
-    <div class="footer-copyright text-center py-3 border">© 2020 Copyright:
+    <div class="footer-copyright text-center py-3 border bg-white">© 2020 Copyright:
         <a href="${pageContext.request.contextPath}/login">Natuliv</a>
     </div>
 </footer>

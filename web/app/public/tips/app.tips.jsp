@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="${pageContext.request.contextPath}/app/public/tips/app.tips.css">
 <div class="container">
     <h4 class="text-center mt-5 font-weight-light text-uppercase">Natutips</h4> 
     <hr class="mb-5 bg-dark">

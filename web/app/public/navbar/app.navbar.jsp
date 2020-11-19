@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/navbar.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/shared/navbar.css">
 <header>
     <nav class="navbar sticky-top py-0 stroke">
         <a class="navbar-brand mx-auto" href="${pageContext.request.contextPath}/app">

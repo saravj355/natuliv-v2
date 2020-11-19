@@ -1,7 +1,45 @@
-.carousel-image{
-    background-attachment: fixed; 
+
+h1, h2, h3, h4, h5, h6{
+    font-weight: 300;
 }
 
+.main-title{
+    font-size:1.5em;
+}
+.content-text{
+    margin:6em;
+    font-size:10px;
+    margin-top: 12px;
 
+}
+
+.main-text{
+    font-size: 15px;
+}
+
+.container-image{
+    background-image: url('../img/crema.gif');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+}
+
+.arrow {
+    animation: slide 1s ease-in-out infinite;
+    margin-left: 9px;
+}
+/*
+Arrow animation
+* 'Saber más'
+*/
+@keyframes slide {
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(10px, 0);
+    }   
+} 
 
 

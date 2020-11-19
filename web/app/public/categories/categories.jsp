@@ -1,5 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
+<link rel="stylesheet" href="${pageContext.request.contextPath}/app/public/categories/app.categories.css">
 <div class="container">
     <h4 class="text-center mt-5 font-weight-light text-uppercase">Categorías</h4>
     <hr class="mb-5 bg-dark">

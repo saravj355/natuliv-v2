@@ -1,19 +1,19 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <jsp:include page="shared/head.jsp"/>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/index.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/webPage/css/contact.css">
 
 <body>
     <jsp:include page="shared/navbar.jsp"/>
     <div class="container text-center mt-3">
         <h1>Contáctanos</h1>
-        <p>¡Hola! Gracias por comunicarte con nosotros, por favor déjanos el detalle de tu pregunta, novedad o problema. <br>
+        <p>¡Hola! Gracias por comunicarte con nosotros, por favor déjanos tu pregunta, novedad o problema. <br>
             Realiza el formulario con tus datos. <br>
-            Recuerda que la respuesta por este medio puede tardar entre 1-5 días hábiles sin contar sábados, domingos y festivos, 
+            La respuesta por este medio puede tardar entre 1-5 días hábiles sin contar sábados, domingos y festivos, 
             responderemos lo más pronto posible, y entre más concreto seas con la información de la novedad será más fácil 
             y rápido darte solución. 
         <div class="card mx-auto">
-            <div class="card-body mx-auto">
+            <div class="card-body">
                 <form>
                     <div class="form-group">
                         <input class="form-control" type="text" placeholder="Nombre" required>
@@ -29,7 +29,7 @@
             </div>
         </div>
     </div>
-    <div class="container-center text-center mt-3">
+    <div class="container-center text-center mt-4">
         <h3 class="m-2">También puedes encontrarnos como: </h3>
         <div class="container">
             <div class="card-deck mb-3 text-center">

@@ -4,7 +4,9 @@
 
 <!DOCTYPE html>
 <jsp:include page="../shared/head.jsp"/>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/app/css/app.index.css">
 <body>
+    <jsp:include page="public/navbar/app.navbar.jsp"/>
     <div class="m-5">
         <h4 class="text-center mt-5 font-weight-light text-uppercase"><span class="font-weight-normal">${name}</span>! estos productos son para ti</h4>
         <hr class="mb-5 bg-dark w-50 mx-auto">
@@ -73,10 +75,10 @@
             </div>
             <div class="controller">
                 <a class="carousel-control-prev carousel-control" href="#carouselProducts" role="button" data-slide="prev">
-                    <img src="${pageContext.request.contextPath}/mainApp/assets/img/arrow-circle-left.png" width="40">
+                    <img src="" width="40">
                 </a>
                 <a class="carousel-control-next carousel-control" href="#carouselProducts" role="button" data-slide="next">
-                    <img src="${pageContext.request.contextPath}/mainApp/assets/img/arrow-circle-right.png" width="40">
+                    <img src="" width="40">
                 </a>
             </div>
             <div class="text text-center mx-auto w-50 m-5">
@@ -87,7 +89,7 @@
         </div>
     </div>
     <jsp:include page="./public/categories/categories.jsp"/>
-    <jsp:include page="./public/tips/tips.jsp"/>
+    <jsp:include page="./public/tips/app.tips.jsp"/>
     <footer class="bg-dark text-white p-3 mt-5">
         <div class="container">
             <div class="row">
@@ -101,4 +103,5 @@
             </div>
         </div>
     </footer>
+    <jsp:include page="../shared/footer.jsp"/>
 </body>
