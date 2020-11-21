@@ -49,8 +49,6 @@ public class ListUsers extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        response.setHeader("Cache-Control", "no-cache, no store, must-revalidate");
-
         processRequest(request, response);
     }
 
@@ -63,6 +61,5 @@ public class ListUsers extends HttpServlet {
     @Override
     public String getServletInfo() {
         return "Short description";
-    }// </editor-fold>
-
+    }
 }

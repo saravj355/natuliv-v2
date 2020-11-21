@@ -1,17 +1,18 @@
 package model;
 
 public class Node {
+
     private Object data;
     private Node node;
-    
-    public Node(){
+
+    public Node() {
         data = null;
         Node node = null;
     }
-    
-    public Node(Object data){
+
+    public Node(Object data) {
         this();
-        this.data = data;  
+        this.data = data;
     }
 
     public Object getData() {
@@ -29,5 +30,4 @@ public class Node {
     public void setNode(Node node) {
         this.node = node;
     }
-    
 }

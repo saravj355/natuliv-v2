@@ -5,10 +5,12 @@ package model;
  * @author sarav
  */
 public class ProductCategory {
+
     private int id;
     private String name;
-    
-    public ProductCategory() {}
+
+    public ProductCategory() {
+    }
 
     public ProductCategory(int id, String name) {
         this.id = id;
@@ -30,7 +32,4 @@ public class ProductCategory {
     public void setName(String name) {
         this.name = name;
     }
-    
-    
-    
 }

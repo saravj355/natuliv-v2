@@ -5,6 +5,7 @@ package model;
  * @author sarav
  */
 public class Product {
+
     private int id;
     private int supplierId;
     private Supplier supplier;
@@ -15,8 +16,9 @@ public class Product {
     private double price;
     private boolean isActive;
     private String imagePath;
-    
-    public Product() {}
+
+    public Product() {
+    }
 
     public Product(int id, int supplierId, int productCategoryId, String name, String description, double price, boolean isActive) {
         this.id = id;
@@ -27,31 +29,31 @@ public class Product {
         this.price = price;
         this.isActive = isActive;
     }
-    
-    public String getImagePath(){
+
+    public String getImagePath() {
         return this.imagePath;
     }
-    
-    public void setImagePath(String imagePath){
+
+    public void setImagePath(String imagePath) {
         this.imagePath = imagePath;
     }
-    
-    public ProductCategory getProductCategory(){
+
+    public ProductCategory getProductCategory() {
         return this.productCategory;
     }
-    
-    public void setProductCategory(ProductCategory productCategory){
-        this.productCategory = productCategory;        
-    }  
-    
-    public Supplier getSupplier(){
+
+    public void setProductCategory(ProductCategory productCategory) {
+        this.productCategory = productCategory;
+    }
+
+    public Supplier getSupplier() {
         return this.supplier;
     }
-    
-    public void setSupplier(Supplier supplier){
-        this.supplier = supplier;        
-    }  
-    
+
+    public void setSupplier(Supplier supplier) {
+        this.supplier = supplier;
+    }
+
     public int getId() {
         return id;
     }
@@ -107,10 +109,4 @@ public class Product {
     public void setIsActive(boolean isActive) {
         this.isActive = isActive;
     }
-  
-
-    
-    
-    
-    
 }

@@ -74,14 +74,14 @@ public class ProductDao {
     }
 
     public List<Product> getProducts() {
-        
+
         List<Product> products = new ArrayList<>();
         try {
             String query = "select id, supplierId, productCategoryId,"
                     + " name, description, price, isActive, imagePath "
                     + " from product";
             PreparedStatement pst = this.conn.prepareStatement(query);
-            
+
             ResultSet rs = pst.executeQuery();
 
             ProductCategoryDao productCategoryDao = new ProductCategoryDao();
@@ -151,5 +151,4 @@ public class ProductDao {
         }
         return null;
     }
-
 }

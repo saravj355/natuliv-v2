@@ -21,7 +21,6 @@ public class EditUsers extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-
     }
 
     @Override
@@ -52,28 +51,27 @@ public class EditUsers extends HttpServlet {
             throws ServletException, IOException {
 
         request.setCharacterEncoding("UTF-8");
+
         int userId = Integer.parseInt(request.getParameter("userId"));
         String name = request.getParameter("name");
         String lastName = request.getParameter("lastName");
         String email = request.getParameter("email");
-        
 
         User user = new User();
         user.setId(userId);
         user.setName(name);
         user.setLastName(lastName);
         user.setEmail(email);
-        
+
         UserDao userDao = new UserDao();
         userDao.update(user);
 
         response.sendRedirect(request.getContextPath() + "/admin/users");
-
     }
 
     @Override
     public String getServletInfo() {
         return "Short description";
-    }// </editor-fold>
+    }
 
 }

@@ -19,15 +19,12 @@ public class Authentication extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-
-        response.setHeader("Cache-Control", "no-cache, no store, must-revalidate");
 
         rd = request.getRequestDispatcher("/user/public/authentication/user.login.jsp");
         rd.include(request, response);
@@ -36,6 +33,7 @@ public class Authentication extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
 
         HttpSession session = request.getSession(true);
 
@@ -70,6 +68,5 @@ public class Authentication extends HttpServlet {
     @Override
     public String getServletInfo() {
         return "Short description";
-    }// </editor-fold>
-
+    }
 }

@@ -30,8 +30,8 @@ public class Login {
     }
 
     public void loginApplication(String email, String password) {
-        this.setEmail(email); 
-        this.setPassword(password); 
+        this.setEmail(email);
+        this.setPassword(password);
         this.submitLogin();
     }
 

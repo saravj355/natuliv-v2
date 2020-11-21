@@ -64,6 +64,6 @@ public class AddSupplier extends HttpServlet {
     @Override
     public String getServletInfo() {
         return "Short description";
-    }// </editor-fold>
+    }
 
 }

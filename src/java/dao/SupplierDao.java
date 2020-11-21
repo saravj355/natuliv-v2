@@ -62,8 +62,8 @@ public class SupplierDao {
         return false;
     }
 
-     public List<Supplier> getSuppliers(){
-        List<Supplier> suppliers = new ArrayList<Supplier>();        
+    public List<Supplier> getSuppliers() {
+        List<Supplier> suppliers = new ArrayList<Supplier>();
         try {
             String query = "SELECT id, name, address, contactNumber FROM supplier";
             PreparedStatement pst = this.conn.prepareStatement(query);
@@ -77,13 +77,13 @@ public class SupplierDao {
             return suppliers;
         } catch (SQLException e) {
             throw new Error("Error: Class SupplierDao. "
-                    + "method:getSuppliers" + e.toString());            
-        }       
-        
+                    + "method:getSuppliers" + e.toString());
+        }
+
     }
-     
-      public List<Supplier> getSuppliersList(){
-        List<Supplier> suppliers = new ArrayList<Supplier>();        
+
+    public List<Supplier> getSuppliersList() {
+        List<Supplier> suppliers = new ArrayList<Supplier>();
         try {
             String query = "SELECT id, name, address, contactNumber FROM supplier";
             PreparedStatement pst = this.conn.prepareStatement(query);
@@ -94,15 +94,15 @@ public class SupplierDao {
                 supplier.setName(rs.getString("name"));
                 supplier.setAddress(rs.getString("address"));
                 supplier.setContactNumber(rs.getString("contactNumber"));
-                
+
                 suppliers.add(supplier);
             }
             return suppliers;
         } catch (SQLException e) {
             throw new Error("Error: Class SupplierDao. "
-                    + "method:getSuppliers" + e.toString());            
-        }       
-        
+                    + "method:getSuppliers" + e.toString());
+        }
+
     }
 
     public Supplier getSupplierById(int supplierId) {
@@ -125,5 +125,4 @@ public class SupplierDao {
         }
         return null;
     }
-
 }

@@ -67,9 +67,9 @@ public class AddProduct extends HttpServlet {
         Double price = Double.parseDouble(request.getParameter("price"));
         Boolean isActive = Boolean.parseBoolean(request.getParameter("isActive"));
         String imagePath = request.getParameter("imagePath");
-        
+
         String filePath = "public/products/";
-        
+
         Product product = new Product();
         product.setName(name);
         product.setProductCategoryId(categoryId);
@@ -88,6 +88,5 @@ public class AddProduct extends HttpServlet {
     @Override
     public String getServletInfo() {
         return "Short description";
-    }// </editor-fold>
-
+    }
 }

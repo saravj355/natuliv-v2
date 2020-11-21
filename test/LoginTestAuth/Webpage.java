@@ -50,7 +50,7 @@ public class Webpage {
                 + "ul.nav.justify-content-end.account > li > a"));
 
         dropdown.click();
-        
+
         Thread.sleep(1000);
 
         // searchs button 'iniciar sesión' dropdown navbar
@@ -58,7 +58,7 @@ public class Webpage {
                 + " ul.nav.justify-content-end.account > li > ul > a"));
 
         loginDropdown.click();
-        
+
         Thread.sleep(1000);
 
         // active the element 'Usuario' from the modal
@@ -68,13 +68,13 @@ public class Webpage {
         // searchs button 'Usuario' from the modal
         WebElement userModalLogin = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/div[1]/a"));
         userModalLogin.click();
-        
+
         Thread.sleep(1000);
 
         // Login instance
         Login login = new Login(driver);
 
         // sends as parameters the email and password
-        login.loginApplication("lina123@gmail.com", "lina123"); 
+        login.loginApplication("lina123@gmail.com", "lina123");
     }
 }

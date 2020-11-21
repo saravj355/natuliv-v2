@@ -30,9 +30,10 @@ public class Application extends HttpServlet {
 
         HttpSession session = request.getSession();
 
-//        if (session.getAttribute("name") == null) {
-//            response.sendRedirect(request.getContextPath() + "/login");
-//        }
+        if (session.getAttribute("name") == null) {
+            response.sendRedirect(request.getContextPath() + "/login");
+        }
+
         controller.Administrator list = new controller.Administrator();
 
         List<Product> listProducts = list.findProducts();
@@ -59,6 +60,5 @@ public class Application extends HttpServlet {
     @Override
     public String getServletInfo() {
         return "Short description";
-    }// </editor-fold>
-
+    }
 }

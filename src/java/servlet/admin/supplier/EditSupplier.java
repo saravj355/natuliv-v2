@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import model.Supplier;
 
-
 public class EditSupplier extends HttpServlet {
 
     RequestDispatcher rd = null;
@@ -25,8 +24,6 @@ public class EditSupplier extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-
-        response.setHeader("Cache-Control", "no-cache, no store, must-revalidate");
 
         HttpSession session = request.getSession();
 
@@ -51,6 +48,7 @@ public class EditSupplier extends HttpServlet {
             throws ServletException, IOException {
 
         request.setCharacterEncoding("UTF-8");
+
         int supplierId = Integer.parseInt(request.getParameter("supplierId"));
         String name = request.getParameter("name");
         String address = request.getParameter("address");
@@ -71,6 +69,5 @@ public class EditSupplier extends HttpServlet {
     @Override
     public String getServletInfo() {
         return "Short description";
-    }// </editor-fold>
-
+    }
 }

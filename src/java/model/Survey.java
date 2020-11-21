@@ -21,7 +21,7 @@ public class Survey {
     }
 
     public Survey(int id, int userId, String answer1, String answer2, String answer3,
-    String answer4, String answer5, String answer6, String answer7, String answer8) {
+            String answer4, String answer5, String answer6, String answer7, String answer8) {
         this.id = id;
         this.userId = userId;
         this.answer1 = answer1;

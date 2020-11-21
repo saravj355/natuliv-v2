@@ -3,6 +3,10 @@ package controller.list;
 import model.User;
 import model.Node;
 
+/**
+ *
+ * @author sarav
+ */
 public class LinkedList {
 
     private Node head;

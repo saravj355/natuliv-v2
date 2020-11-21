@@ -4,6 +4,10 @@ import dao.UserDao;
 import model.User;
 import utils.PasswordHash;
 
+/**
+ *
+ * @author sarav
+ */
 public class Auth {
 
     public static User login(String email, String password) {

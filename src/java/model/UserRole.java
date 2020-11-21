@@ -5,11 +5,13 @@ package model;
  * @author sarav
  */
 public class UserRole {
+
     private int id;
     private String name;
     private String keyName;
-    
-    public UserRole() {}
+
+    public UserRole() {
+    }
 
     public UserRole(int id, String name, String keyName) {
         this.id = id;
@@ -40,6 +42,4 @@ public class UserRole {
     public void setKeyName(String keyName) {
         this.keyName = keyName;
     }
-    
-    
 }

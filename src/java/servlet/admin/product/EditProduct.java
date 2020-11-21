@@ -26,7 +26,6 @@ public class EditProduct extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-
     }
 
     @Override
@@ -68,6 +67,7 @@ public class EditProduct extends HttpServlet {
             throws ServletException, IOException {
 
         request.setCharacterEncoding("UTF-8");
+
         int productId = Integer.parseInt(request.getParameter("productId"));
         int categoryId = Integer.parseInt(request.getParameter("categoryId"));
         int supplierId = Integer.parseInt(request.getParameter("supplierId"));
@@ -76,7 +76,7 @@ public class EditProduct extends HttpServlet {
         Double price = Double.parseDouble(request.getParameter("price"));
         Boolean isActive = Boolean.parseBoolean(request.getParameter("isActive"));
         String imagePath = request.getParameter("imagePath");
-        
+
         String filePath = "public/products/";
 
         Product product = new Product();
@@ -93,12 +93,10 @@ public class EditProduct extends HttpServlet {
         productDao.update(product);
 
         response.sendRedirect(request.getContextPath() + "/admin/products");
-
     }
 
     @Override
     public String getServletInfo() {
         return "Short description";
-    }// </editor-fold>
-
+    }
 }

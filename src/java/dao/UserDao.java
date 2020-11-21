@@ -20,7 +20,7 @@ public class UserDao {
         this.conn = new ConnectionDB().getConnectionDB();
     }
 
-     public boolean update(User user) {
+    public boolean update(User user) {
         PreparedStatement pst = null;
         try {
             String query = "update user set name=?, lastName=?, email=? where id=?";
@@ -86,7 +86,7 @@ public class UserDao {
         }
         return null;
     }
-    
+
     public User findUserIdByEmail(String email) {
         try {
             String query = "SELECT id FROM user where email=?";
@@ -151,5 +151,4 @@ public class UserDao {
         }
         return null;
     }
-
 }

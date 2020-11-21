@@ -5,12 +5,14 @@ package model;
  * @author sarav
  */
 public class Supplier {
+
     private int id;
     private String name;
     private String address;
     private String contactNumber;
-       
-    public Supplier() {}
+
+    public Supplier() {
+    }
 
     public Supplier(int id, String name, String address, String contactNumber) {
         this.id = id;
@@ -50,7 +52,4 @@ public class Supplier {
     public void setContactNumber(String contactNumber) {
         this.contactNumber = contactNumber;
     }
-    
-    
-    
 }

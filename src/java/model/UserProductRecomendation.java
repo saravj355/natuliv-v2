@@ -5,11 +5,13 @@ package model;
  * @author sarav
  */
 public class UserProductRecomendation {
+
     private int id;
     private int productId;
     private int userId;
-    
-    public UserProductRecomendation() {}
+
+    public UserProductRecomendation() {
+    }
 
     public UserProductRecomendation(int id, int productId, int userId) {
         this.id = id;
@@ -40,5 +42,4 @@ public class UserProductRecomendation {
     public void setUserId(int userId) {
         this.userId = userId;
     }
-    
 }
