@@ -42,5 +42,6 @@
             </div>
         </div>  
         <jsp:include page="../../shared/footer.jsp"/>
+        <script src="${pageContext.request.contextPath}/assets/js/app.js"></script>
     </body>
 </html>

@@ -45,7 +45,7 @@
                                     </div>
                                 </div>
                                 <h5 class="errorMessage animate__animated animate__headShake">${errorMessage}</h5>
-                                <button type="submit" class="btn btn-submit">Iniciar Sesión</button>
+                                <button type="submit" name="btnLogin" class="btn btn-submit">Iniciar Sesión</button>
                             </form>
                             <p>¿Aún no tienes cuenta? <a href="${pageContext.request.contextPath}/signup">Regístrate</a></p>
                         </div>
@@ -55,4 +55,5 @@
         </div>
     </div>    
     <jsp:include page="../../../shared/footer.jsp"/>
+    <script src="${pageContext.request.contextPath}/assets/js/app.js"></script>
 </body>

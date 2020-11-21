@@ -17,9 +17,9 @@
                         <p class="text-center">¿Cuál es tu rango de edad?</p>
                         <div class="row">
                             <div class="col">
-                                <c:forTokens items = "18 - 25; 36- 50" delims = ";" var = "age">
+                                <c:forTokens items = "18 - 25;36- 50" delims = ";" var = "age">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" value="${age}" name="question1">
+                                        <input class="form-check-input" type="radio" value="${age}" name="answer1">
                                         <label class="form-check-label">
                                             <c:out value = "${age}"/>
                                         </label>
@@ -28,9 +28,9 @@
                             </div>
                             <div class="col">
                                 <div class="float-right">
-                                    <c:forTokens items = "26 - 35; 50 ó más" delims = ";" var = "age">
+                                    <c:forTokens items = "26 - 35;50 ó más" delims = ";" var = "age">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" value="${age}" name="question1">
+                                            <input class="form-check-input" type="radio" value="${age}" name="answer1">
                                             <label class="form-check-label">
                                                 <c:out value = "${age}"/>
                                             </label>
@@ -45,9 +45,9 @@
                         <p class="text-center">¿Has usado cosméticos naturales?</p>
                         <div class="row">
                             <div class="col">
-                                <c:forTokens items = "Si; Si, pero los uso muy poco" delims = ";" var = "naturalCosmetics">
+                                <c:forTokens items = "Si;Si, pero los uso muy poco" delims = ";" var = "naturalCosmetics">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" value="${naturalCosmetics}" name="question2">
+                                        <input class="form-check-input" type="radio" value="${naturalCosmetics}" name="answer2">
                                         <label class="form-check-label">
                                             <c:out value = "${naturalCosmetics}"/>
                                         </label>
@@ -56,9 +56,9 @@
                             </div>
                             <div class="col">
                                 <div class="float-right">
-                                    <c:forTokens items = "No; Depronto alguna vez" delims = ";" var = "naturalCosmetics">
+                                    <c:forTokens items = "No;Depronto alguna vez" delims = ";" var = "naturalCosmetics">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" value="${naturalCosmetics}" name="question2">
+                                            <input class="form-check-input" type="radio" value="${naturalCosmetics}" name="answer2">
                                             <label class="form-check-label">
                                                 <c:out value = "${naturalCosmetics}"/>
                                             </label>
@@ -73,9 +73,9 @@
                         <p class="text-center">¿Has usado cosméticos con algún químico?</p>
                         <div class="row">
                             <div class="col">
-                                <c:forTokens items = "Si; Si, pero los uso muy poco" delims = ";" var = "naturalCosmetics">
+                                <c:forTokens items = "Si;Si, pero los uso muy poco" delims = ";" var = "naturalCosmetics">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" value="${naturalCosmetics}" name="question3">
+                                        <input class="form-check-input" type="radio" value="${naturalCosmetics}" name="answer3">
                                         <label class="form-check-label">
                                             <c:out value = "${naturalCosmetics}"/>
                                         </label>
@@ -84,9 +84,9 @@
                             </div>
                             <div class="col">
                                 <div class="float-right">
-                                    <c:forTokens items = "No; No estoy completamente seguro" delims = ";" var = "naturalCosmetics">
+                                    <c:forTokens items = "No;No estoy completamente seguro" delims = ";" var = "naturalCosmetics">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" value="${naturalCosmetics}" name="question3">
+                                            <input class="form-check-input" type="radio" value="${naturalCosmetics}" name="answer3">
                                             <label class="form-check-label">
                                                 <c:out value = "${naturalCosmetics}"/>
                                             </label>
@@ -114,7 +114,7 @@
                             <c:forEach var = "naturalProductsFrecuency" begin = "1" end = "10">
                                 <div class="col">
                                     <div class="form-check">
-                                        <input type="radio" value="${naturalProductsFrecuency}" name="question4">
+                                        <input type="radio" value="${naturalProductsFrecuency}" name="answer4">
                                     </div>
                                 </div>
                             </c:forEach>
@@ -127,7 +127,7 @@
                             <div class="col">
                                 <c:forTokens items = "Normal,Mixta" delims = "," var = "skinType">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" value="${skinType}" name="question5">
+                                        <input class="form-check-input" type="radio" value="${skinType}" name="answer5">
                                         <label class="form-check-label">
                                             <c:out value = "${skinType}"/>
                                         </label>
@@ -138,7 +138,7 @@
                                 <div class="float-right">
                                     <c:forTokens items = "Grasa,Seca" delims = "," var = "skinType">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" value="${skinType}" name="question5">
+                                            <input class="form-check-input" type="radio" value="${skinType}" name="answer5">
                                             <label class="form-check-label">
                                                 <c:out value = "${skinType}"/>
                                             </label>
@@ -155,7 +155,7 @@
                             <div class="col">
                                 <c:forTokens items = "Normal,Mixto" delims = "," var = "hairType">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" value="${hairType}" name="question6">
+                                        <input class="form-check-input" type="radio" value="${hairType}" name="answer6">
                                         <label class="form-check-label">
                                             <c:out value = "${hairType}"/>
                                         </label>
@@ -166,7 +166,7 @@
                                 <div class="float-right">
                                     <c:forTokens items = "Graso,Seco" delims = "," var = "hairType">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" value="${hairType}" name="question6">
+                                            <input class="form-check-input" type="radio" value="${hairType}" name="answer6">
                                             <label class="form-check-label">
                                                 <c:out value = "${hairType}"/>
                                             </label>
@@ -181,9 +181,9 @@
                         <p class="text-center">¿Conoces los beneficios que contienen los productos naturales?</p>
                         <div class="row">
                             <div class="col">
-                                <c:forTokens items = "Si; Si, pero no conozco mucho" delims = ";" var = "naturalCosmetics">
+                                <c:forTokens items = "Si;Si, pero no conozco mucho" delims = ";" var = "naturalCosmetics">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" value="${naturalCosmetics}" name="question7">
+                                        <input class="form-check-input" type="radio" value="${naturalCosmetics}" name="answer7">
                                         <label class="form-check-label">
                                             <c:out value = "${naturalCosmetics}"/>
                                         </label>
@@ -192,9 +192,9 @@
                             </div>
                             <div class="col">
                                 <div class="float-right">
-                                    <c:forTokens items = "No; No estoy completamente seguro" delims = ";" var = "naturalCosmetics">
+                                    <c:forTokens items = "No;No estoy completamente seguro" delims = ";" var = "naturalCosmetics">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" value="${naturalCosmetics}" name="question7">
+                                            <input class="form-check-input" type="radio" value="${naturalCosmetics}" name="answer7">
                                             <label class="form-check-label">
                                                 <c:out value = "${naturalCosmetics}"/>
                                             </label>
@@ -209,9 +209,9 @@
                         <p class="text-center">¿Que tipo de productos para el rostro usas frecuentemente?</p>
                         <div class="row">
                             <div class="col">
-                                <c:forTokens items = "Cremas; Aceites" delims = ";" var = "faceProducts">
+                                <c:forTokens items = "Cremas;Aceites" delims = ";" var = "faceProducts">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" value="${faceProducts}" name="question8">
+                                        <input class="form-check-input" type="radio" value="${faceProducts}" name="answer8">
                                         <label class="form-check-label">
                                             <c:out value = "${faceProducts}"/>
                                         </label>
@@ -220,9 +220,9 @@
                             </div>
                             <div class="col">
                                 <div class="float-right">
-                                    <c:forTokens items = "Tónicos; Gel" delims = ";" var = "faceProducts">
+                                    <c:forTokens items = "Tónicos;Gel" delims = ";" var = "faceProducts">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" value="${faceProducts}" name="question8">
+                                            <input class="form-check-input" type="radio" value="${faceProducts}" name="answer8">
                                             <label class="form-check-label">
                                                 <c:out value = "${faceProducts}"/>
                                             </label>

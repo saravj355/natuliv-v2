@@ -40,13 +40,6 @@ public class SurveyDaoTest {
 
     @Test
     public void testUpdate() {
-        System.out.println("update");
-        Survey survey = null;
-        SurveyDao instance = new SurveyDao();
-        boolean expResult = false;
-        boolean result = instance.update(survey);
-        assertEquals(expResult, result);
-        fail("The test case is a prototype.");
     }
 
     @Test
@@ -54,7 +47,15 @@ public class SurveyDaoTest {
         System.out.println("insert");
         Survey survey = new Survey();
         
-        survey.setQuestion("¿Que edad tienes?");
+        survey.setUserId(7);
+        survey.setAnswer1("36- 50");
+        survey.setAnswer2("Si, pero los uso muy poco");
+        survey.setAnswer3("Si");
+        survey.setAnswer4("3");
+        survey.setAnswer5("Mixta");
+        survey.setAnswer6("Normal");
+        survey.setAnswer7("Si, pero no conozco mucho");
+        survey.setAnswer8("Tónicos");
         
         SurveyDao instance = new SurveyDao();
         boolean expResult = true;

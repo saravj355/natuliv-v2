@@ -20,6 +20,10 @@ html {
     font-weight:300;
 }
 
+.toggle-password{
+    cursor:pointer; 
+}
+
 /* 
 * hover card effect 
 */

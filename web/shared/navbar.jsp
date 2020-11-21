@@ -31,7 +31,7 @@
         </ul>
     </nav>
 </header>
-<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="modal" tabindex="-1" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content text-center">
             <div class="modal-header">
@@ -42,7 +42,7 @@
             </div>
             <div class="modal-body">
                 <div class="row m-4">
-                    <a href="${pageContext.request.contextPath}/login" class="btn btn-info user-btn">
+                    <a href="${pageContext.request.contextPath}/login" class="btn btn-info user-btn" id="userModalBtn">
                         <i class="fas fa-user user-icon"></i>Usuario
                     </a>
                 </div>

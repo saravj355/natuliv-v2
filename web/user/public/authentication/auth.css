@@ -57,10 +57,6 @@ form{
     width: 100%;
 }
 
-.toggle-password{
-    cursor:pointer; 
-}
-
 input{
     padding:20px !important;
     z-index:0 !important;

@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="${pageContext.request.contextPath}/webPage/footer.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/webPage/css/footer.css">
 <footer class="page-footer font-small pt-4">
     <div class="container-fluid text-center text-md-left bg-light">
         <div class="row bg-dark">
