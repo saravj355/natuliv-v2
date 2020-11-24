@@ -18,6 +18,7 @@
                             <c:when test="${ !empty sessionScope.LIST_ALL_PRODUCTS}">
                                 <c:forEach var="product" items="${sessionScope.LIST_ALL_PRODUCTS}" end="3">
                                     <div class="col">
+                                        <a class="btn btn-primary" href="${pageContext.request.contextPath}/app?name=${product.getName()}#product">Insert1</a>
                                         <div class="card">
                                             <div class="card-body p-0">
                                                 <div class="content">
@@ -36,72 +37,32 @@
                                                 ${product.getName()}
                                             </div>
                                         </div>
+                                        </a>
                                     </div>
                                 </c:forEach>
                             </c:when>
                         </c:choose>
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <div class="row">
-                        <c:choose>
-                            <c:when test="${ !empty sessionScope.LIST_ALL_PRODUCTS}">
-                                <c:forEach var="product" items="${sessionScope.LIST_ALL_PRODUCTS}" begin="4" end="7">
-                                    <div class="col">
-                                        <div class="card">
-                                            <div class="card-body p-0">
-                                                <div class="content">
-                                                    <div class="content-overlay"></div>
-                                                    <img src="https://thumbs.dreamstime.com/b/fondo-de-madera-del-color-verde-claro-la-menta-textura-modelo-150938907.jpg" class="w-100">
-                                                    <div class="content-details fadeIn-bottom">
-                                                        <h3 class="content-title"> ${product.getName()}</h3>
-                                                        <hr class="bg-white mx-auto mb-4">
-                                                        <p class="content-text">
-                                                            ${product.getDescription()}<br>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card-footer text-center">
-                                                ${product.getName()}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </c:forEach>
-                            </c:when>
-                        </c:choose>
+
+                <div class="modal fade" id="product" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel1"><c:out value="${param['name']}"/></h5>
+                                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&#215;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                Are you sure you want to clear scrap for this table.
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                                <a class="btn btn-danger" href="#">Clear</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="controller">
-                <a class="carousel-control-prev carousel-control" href="#carouselProducts" role="button" data-slide="prev">
-                    <img src="" width="40">
-                </a>
-                <a class="carousel-control-next carousel-control" href="#carouselProducts" role="button" data-slide="next">
-                    <img src="" width="40">
-                </a>
-            </div>
-            <div class="text text-center mx-auto w-50 m-5">
-                <p class="">Natuliv te ofrece la virtud mas esencial del producto natural,
-                    y es que no hay nada mejor que acudir a la naturaleza para cuidarnos, y proteger nuestra piel con eficacia.
-                </p>
-            </div>
-        </div>
-    </div>
-    <jsp:include page="./public/categories/categories.jsp"/>
-    <jsp:include page="./public/tips/app.tips.jsp"/>
-    <footer class="bg-dark text-white p-3 mt-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="copyright-text">
-                        <p>© 2020
-                            <a href="#" class="text-white">Natuliv</a>. Todos los derechos reservados.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <jsp:include page="../shared/footer.jsp"/>
-</body>
+                <jsp:include page="../shared/footer.jsp"/>
+                <script src="${pageContext.request.contextPath}/app/js/app.js"></script>
