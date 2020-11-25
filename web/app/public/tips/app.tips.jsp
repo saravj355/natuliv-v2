@@ -3,9 +3,9 @@
     <h4 class="text-center mt-5 font-weight-light text-uppercase">Natutips</h4> 
     <hr class="mb-5 bg-dark">
     <div class="bg-dark text-white p-5 rounded mx-auto">
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-            esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." 
+        <p>1. Bebe mucha agua
+            El agua es esencial para mantener una piel hidratada, suave, además de saludable y bonita. Ésta también posee efectos calmantes y ayuda a refrescar la piel en los días calurosos.
+            Si tienes una adecuada hidratación mejoras la circulación sanguínea de tu cuerpo y por lo tanto de tu piel.
         </p>
 
         <p class="calification text-center">
