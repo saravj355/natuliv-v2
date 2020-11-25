@@ -23,12 +23,13 @@ public class UserDao {
     public boolean update(User user) {
         PreparedStatement pst = null;
         try {
-            String query = "update user set name=?, lastName=?, email=? where id=?";
+            String query = "update user set name=?, lastName=?, email=?, gender=? where id=?";
             pst = this.conn.prepareStatement(query);
             pst.setString(1, user.getName());
             pst.setString(2, user.getLastName());
             pst.setString(3, user.getEmail());
-            pst.setInt(4, user.getId());
+            pst.setString(4, user.getGender());
+            pst.setInt(5, user.getId());
 
             if (pst.executeUpdate() == 1) {
                 pst.close();
@@ -77,7 +78,7 @@ public class UserDao {
                 user.setLastName(rs.getString("lastName"));
                 user.setEmail(rs.getString("email"));
                 user.setPasswordHash(rs.getString("passwordHash"));
-                user.setEmail(rs.getString("gender"));
+                user.setGender(rs.getString("gender"));
                 user.setUserRoleId(rs.getInt("userRoleId"));
                 return user;
             }

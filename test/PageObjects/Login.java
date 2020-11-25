@@ -1,4 +1,4 @@
-package LoginTestAuth;
+package PageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -13,18 +13,15 @@ public class Login {
     public Login(WebDriver driver) {
         this.driver = driver;
     }
-
-    //Set user name into input text -> login
+    
     public void setEmail(String emailInput) {
         driver.findElement(email).sendKeys(emailInput);
     }
-
-    //Set password into input password -> login
+    
     public void setPassword(String passwordInput) {
         driver.findElement(password).sendKeys(passwordInput);
     }
-
-    //Click on 'iniciar sesión' button -> login
+    
     public void submitLogin() {
         driver.findElement(signIn).click();
     }

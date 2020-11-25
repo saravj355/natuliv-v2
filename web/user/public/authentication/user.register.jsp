@@ -75,7 +75,7 @@
                     </div>
                 </div>
                 <h5 class="errorMessage animate__animated animate__shakeX">${errorMessage}</h5>
-                <input type="submit" class="btn btn-submit" value="Crear Cuenta"/>
+                <input type="submit" class="btn btn-submit" name="btnSignup" value="Crear Cuenta"/>
             </form>
         </div>
     </div>

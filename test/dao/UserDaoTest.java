@@ -36,35 +36,42 @@ public class UserDaoTest {
     }
 
     @Test
-    public void testInsert() {
-
-    }
-
-    @Test
-    public void testLogin() {
+    public void testLoginUser() {
         System.out.println("Login test");
-        User userIntace = new User();
-        User user = Auth.login("lina123@gmail.com", "lina123");
+        User user = Auth.login("saravj971@gmail.com", "1234");
+        
+        System.out.println("Correo:" + user.getEmail());
+        System.out.println("Contraseña:" + user.getPasswordHash());
+
         assertEquals(user, user);
     }
 
     @Test
-    public void testUpdate() {
+    public void testUpdateUser() {
         System.out.println("update");
         User user = new User();
 
-        String passHash = PasswordHash.compute("lina123");
+        String passHash = PasswordHash.compute("1234");
 
-        user.setId(7);
-        user.setName("Lina");
-        user.setLastName("Restrepo");
-        user.setEmail("lina12@gmail.com");
+        user.setId(1);
+        user.setName("Sara");
+        user.setLastName("Valle");
+        user.setEmail("saravj971@gmail.com");
         user.setPasswordHash(passHash);
+        user.setGender("Femenino");
         user.setUserRoleId(2);
 
         UserDao instance = new UserDao();
         boolean expResult = true;
         boolean result = instance.update(user);
+        
+        System.out.println("Nombre:" + user.getName());
+        System.out.println("Apellido:" + user.getLastName());
+        System.out.println("Correo:" + user.getEmail());
+        System.out.println("Contraseña:" + user.getPasswordHash());
+        System.out.println("Género:" + user.getGender());
+        System.out.println("Rol usuario:" + user.getUserRoleId());
+        
         assertEquals(expResult, result);
     }
 
@@ -74,18 +81,25 @@ public class UserDaoTest {
         User user = new User();
 
         String passHash = PasswordHash.compute("1234");
-
-        user.setId(2);
+        user.setId(1);
         user.setName("Sara");
         user.setLastName("Valle");
-        user.setEmail("saravj971@gmail.com");
+        user.setEmail("svj971@gmail.com");
         user.setPasswordHash(passHash);
         user.setGender("Femenino");
-        user.setUserRoleId(1);
+        user.setUserRoleId(2);
 
         UserDao instance = new UserDao();
         boolean expResult = true;
         boolean result = instance.insert(user);
+        
+        System.out.println("Nombre:" + user.getName());
+        System.out.println("Apellido:" + user.getLastName());
+        System.out.println("Correo:" + user.getEmail());
+        System.out.println("Contraseña:" + user.getPasswordHash());
+        System.out.println("Género:" + user.getGender());
+        System.out.println("Rol usuario:" + user.getUserRoleId());
+        
         assertEquals(expResult, result);
     }
 
