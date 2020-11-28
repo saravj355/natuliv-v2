@@ -5,23 +5,25 @@
     <hr class="mb-5 bg-dark">
     <div class="row">
         <div class="col">
-            <div class="card">
-                <div class="card-body p-0 face">
-                    <div class="content">
-                        <div class="content-overlay"></div>
-                        <img src="https://about.canva.com/wp-content/themes/canvaabout/img/proLandingPage/banner-wave-3.svg" class="w-100">
-                        <div class="content-details fadeIn-bottom">
-                            <h3 class="content-title"></h3>
-                            <p class="content-text">
-                                Natuliv te trae estos productos para que consientas tu rostro, y lo cuides <span class="font-weight-bold">sin maltratarlo</span>.
-                            </p>
+            <a href="${pageContext.request.contextPath}/app/face">
+                <div class="card">
+                    <div class="card-body p-0 face">
+                        <div class="content">
+                            <div class="content-overlay"></div>
+                            <img src="https://about.canva.com/wp-content/themes/canvaabout/img/proLandingPage/banner-wave-3.svg" class="w-100">
+                            <div class="content-details fadeIn-bottom">
+                                <h3 class="content-title"></h3>
+                                <p class="content-text">
+                                    Natuliv te trae estos productos para que consientas tu rostro, y lo cuides <span class="font-weight-bold">sin maltratarlo</span>.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card-footer overlay text-uppercase text-center text-white">
+                            <h5>ROSTRO</h5>
                         </div>
                     </div>
-                    <div class="card-footer overlay text-uppercase text-center text-white">
-                        <h5>ROSTRO</h5>
-                    </div>
                 </div>
-            </div>
+            </a>
         </div>
         <div class="col">
             <div class="card">

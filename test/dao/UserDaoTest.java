@@ -38,7 +38,7 @@ public class UserDaoTest {
     @Test
     public void testLoginUser() {
         System.out.println("Login test");
-        User user = Auth.login("saravj971@gmail.com", "1234");
+        User user = Auth.login("laura123@gmail.com", "1234");
         
         System.out.println("Correo:" + user.getEmail());
         System.out.println("Contraseña:" + user.getPasswordHash());
@@ -48,15 +48,15 @@ public class UserDaoTest {
 
     @Test
     public void testUpdateUser() {
-        System.out.println("update");
+        System.out.println("testUpdateUser");
         User user = new User();
 
         String passHash = PasswordHash.compute("1234");
 
-        user.setId(1);
-        user.setName("Sara");
-        user.setLastName("Valle");
-        user.setEmail("saravj971@gmail.com");
+        user.setId(9);
+        user.setName("Laura");
+        user.setLastName("Torres");
+        user.setEmail("laura123@gmail.com");
         user.setPasswordHash(passHash);
         user.setGender("Femenino");
         user.setUserRoleId(2);
@@ -82,9 +82,9 @@ public class UserDaoTest {
 
         String passHash = PasswordHash.compute("1234");
         user.setId(1);
-        user.setName("Sara");
-        user.setLastName("Valle");
-        user.setEmail("svj971@gmail.com");
+        user.setName("Laura");
+        user.setLastName("Torres");
+        user.setEmail("laura12@gmail.com");
         user.setPasswordHash(passHash);
         user.setGender("Femenino");
         user.setUserRoleId(2);

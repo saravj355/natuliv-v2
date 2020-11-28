@@ -38,7 +38,7 @@ public class SurveyDaoTest {
         System.out.println("insert");
         Survey survey = new Survey();
 
-        survey.setUserId(1);
+        survey.setUserId(9);
         survey.setAnswer1("18 - 25");
         survey.setAnswer2("Si, pero los uso muy poco");
         survey.setAnswer3("Si");

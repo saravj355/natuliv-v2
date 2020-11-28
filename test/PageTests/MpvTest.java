@@ -46,6 +46,30 @@ public class MpvTest {
     }
 
     @Test
+    public void surveyTest() throws InterruptedException {
+
+        NavbarMenu navbarMenu = new NavbarMenu(driver);
+
+        navbarMenu.dropdownAction();
+        Thread.sleep(1000);
+
+        navbarMenu.registerBtnDropdown();
+        Thread.sleep(1000);
+
+        Register register = new Register(driver);
+        register.registerApplication("Lina", "Restrepo", "lina22@gmail.com", "lina22", "lina22");
+        Thread.sleep(1000);
+
+        Modal modal = new Modal(driver);
+        modal.modalSubmitTermsConditions();
+        Thread.sleep(1000);
+
+        Survey survey = new Survey(driver);
+        survey.surveyApplication();
+        Thread.sleep(1000);
+    }
+
+    @Test
     public void loginTest() throws InterruptedException {
 
         NavbarMenu navbarMenu = new NavbarMenu(driver);
@@ -62,30 +86,6 @@ public class MpvTest {
 
         Login login = new Login(driver);
         login.loginApplication("lina22@gmail.com", "lina22");
-        Thread.sleep(1000);
-    }
-
-    @Test
-    public void surveyTest() throws InterruptedException {
-
-        NavbarMenu navbarMenu = new NavbarMenu(driver);
-
-        navbarMenu.dropdownAction();
-        Thread.sleep(1000);
-        
-        navbarMenu.registerBtnDropdown();
-        Thread.sleep(1000);
-
-        Register register = new Register(driver);
-        register.registerApplication("Lina", "Restrepo", "lina22@gmail.com", "lina22", "lina22");
-        Thread.sleep(1000);
-
-        Modal modal = new Modal(driver);
-        modal.modalSubmitTermsConditions();
-        Thread.sleep(1000);
-
-        Survey survey = new Survey(driver);
-        survey.surveyApplication();
         Thread.sleep(1000);
     }
 }

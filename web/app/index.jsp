@@ -18,7 +18,7 @@
                             <c:when test="${ !empty sessionScope.LIST_ALL_PRODUCTS}">
                                 <c:forEach var="product" items="${sessionScope.LIST_ALL_PRODUCTS}" end="3">
                                     <div class="col">
-                                        <div class="card">
+                                        <div class="card product_container" product-id="${product.getId()}">
                                             <div class="card-body p-0">
                                                 <div class="content">
                                                     <div class="content-overlay"></div>
@@ -49,7 +49,7 @@
                             <c:when test="${ !empty sessionScope.LIST_ALL_PRODUCTS}">
                                 <c:forEach var="product" items="${sessionScope.LIST_ALL_PRODUCTS}" begin="4" end="7">
                                     <div class="col">
-                                        <div class="card">
+                                        <div class="card product_container" product-id="${product.getId()}">
                                             <div class="card-body p-0">
                                                 <div class="content">
                                                     <div class="content-overlay"></div>
@@ -90,20 +90,91 @@
             </div>
         </div>
     </div>
-    <jsp:include page="./public/categories/categories.jsp"/>
-    <jsp:include page="./public/tips/app.tips.jsp"/>
-    <footer class="bg-dark text-white p-3 mt-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="copyright-text">
-                        <p>© 2020
-                            <a href="#" class="text-white">Natuliv</a>. Todos los derechos reservados.
-                        </p>
-                    </div>
-                </div>
+
+
+    <div class="modal" tabindex="-1" role="dialog" id="productInfoModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" id="productInfoModalContent">
+
             </div>
         </div>
-    </footer>
+    </div>
+
+
+    <jsp:include page="./public/categories/categories.jsp"/>
+    <jsp:include page="./public/tips/app.tips.jsp"/>
+    <jsp:include page="./public/footer.jsp"/>
     <script src="${pageContext.request.contextPath}/app/js/app.js"></script>
     <jsp:include page="../shared/footer.jsp"/>
+
+
+    <script>
+        $(document).ready(function () {
+
+
+            $('.product_container').click(function () {
+                const productId = $(this).attr('product-id');
+                getProductInfo(productId);
+            });
+
+            function renderProductInfoModal(product) {
+                const template = '<div class="modal-header">'+
+                                '<h5 class="modal-title">'+ product.name +'</h5>'+
+                                '<button type="button" class="close" data-dismiss="modal" aria-label="Close">'+
+                                    '<span aria-hidden="true">&times;</span>'+
+                                '</button>'+
+                            '</div>'+
+                            '<div class="modal-body">'+
+                                '<p>' + product.description + '</p>'+
+                                '<p> PRECIO:' + product.price + '</p>'+
+                                '<img src="http://localhost:8080/Natuliv/'+ product.imagePath +'"/>'
+                            '</div>'+
+                            '<div class="modal-footer">'+
+                                '<button type="button" class="btn btn-primary">Save changes</button>'+
+                                '<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>'+
+                            '</div>';
+    
+                $('#productInfoModalContent').html(template);
+                $('#productInfoModal').modal('show');
+                
+                
+            }
+            function getProductInfo(productId) {
+                const request = doRequest({
+                    'url': './api/GetProductInformation?productId='+productId
+                });
+
+                request.done(function (response) {
+                    renderProductInfoModal(response);;
+                });
+            }
+
+
+            function doRequest(args) {
+                if (!args.method)
+                    args.method = "POST";
+                if (!args.async)
+                    args.async = false;
+
+                if (args.send_file) {
+                    return $.ajax({
+                        method: args.method,
+                        url: args.url,
+                        async: args.async,
+                        data: args.data,
+                        processData: false,
+                        contentType: false,
+                        cache: false,
+                        enctype: 'multipart/form-data',
+                    });
+                }
+                return $.ajax({
+                    method: args.method,
+                    url: args.url,
+                    async: args.async,
+                    data: {data: args.data}
+                });
+            }
+        });
+
+    </script>

@@ -151,4 +151,45 @@ public class ProductDao {
         }
         return null;
     }
+    
+    public List<Product> getProductsByCategoryId(int categoryId) {
+
+        List<Product> products = new ArrayList<>();
+        try {
+            String query = "select * from product where productCategoryId=?";
+            PreparedStatement pst = this.conn.prepareStatement(query);
+            pst.setInt(1, categoryId);
+
+            ResultSet rs = pst.executeQuery();
+
+            ProductCategoryDao productCategoryDao = new ProductCategoryDao();
+            SupplierDao supplierDao = new SupplierDao();
+
+            while (rs.next()) {
+                Product product = new Product();
+                product.setId(rs.getInt("id"));
+                product.setSupplierId(rs.getInt("supplierId"));
+                product.setProductCategoryId(rs.getInt("productCategoryId"));
+                product.setName(rs.getString("name"));
+                product.setDescription(rs.getString("description"));
+                product.setPrice(rs.getDouble("price"));
+                product.setIsActive(rs.getBoolean("isActive"));
+                product.setImagePath(rs.getString("imagePath"));
+
+                // enrich product category                
+                ProductCategory productCategory = productCategoryDao
+                        .getProductCategoryById(product.getProductCategoryId());
+                product.setProductCategory(productCategory);
+
+                // enrich product brand
+                Supplier supplier = supplierDao
+                        .getSupplierById(product.getSupplierId());
+                product.setSupplier(supplier);
+                products.add(product);
+            }
+            return products;
+        } catch (SQLException e) {
+            throw new Error("Error: Clase ProductDao, method:getProductsByCategoryId" + e.toString());
+        }
+    }
 }

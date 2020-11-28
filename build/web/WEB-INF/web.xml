@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <!-- API servlet -->
+    <servlet>
+        <servlet-name>GetProductInformation</servlet-name>
+        <servlet-class>servlet.api.GetProductInformation</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetProductInformation</servlet-name>
+        <url-pattern>/api/GetProductInformation</url-pattern>
+    </servlet-mapping>
+    <!-- API servlet -->
     <!-- user mapping -->
     <servlet>
         <servlet-name>Authentication</servlet-name>
@@ -13,10 +23,6 @@
     <servlet>
         <servlet-name>Login</servlet-name>
         <servlet-class>servlet.admin.auth.Login</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>Administration</servlet-name>
-        <servlet-class>servlet.admin.AdminApp</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ListUsers</servlet-name>
@@ -59,6 +65,10 @@
         <servlet-name>AddUsers</servlet-name>
         <servlet-class>servlet.admin.user.EditUsers</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Face</servlet-name>
+        <servlet-class>servlet.user.Categories.Face</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Authentication</servlet-name>
         <url-pattern>/login</url-pattern>
@@ -71,10 +81,6 @@
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/admin/login</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>Administration</servlet-name>
-        <url-pattern>/admin</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ListUsers</servlet-name>
@@ -116,6 +122,11 @@
         <servlet-name>AddUsers</servlet-name>
         <url-pattern>/admin/users/edit</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Face</servlet-name>
+        <url-pattern>/app/face</url-pattern>
+    </servlet-mapping>
+    
     <session-config>
         <session-timeout>
             30

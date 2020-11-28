@@ -41,5 +41,11 @@ public class Administrator {
         SupplierDao supplierDao = new SupplierDao();
         return supplierDao.getSupplierById(id);
     }
+    
+    public List<Product> findProductsByCategoryId(int categoryId) {
+        ProductDao getProductsList = new ProductDao();
+        return getProductsList.getProductsByCategoryId(categoryId);
+    }
+    
 
 }

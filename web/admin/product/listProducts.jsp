@@ -26,7 +26,7 @@
             </thead>
             <tbody>
                 <c:choose>
-                    <c:when test="${ !empty sessionScope.LIST_ALL_PRODUCTS}">
+                    <c:when test="${!empty sessionScope.LIST_ALL_PRODUCTS}">
                         <c:forEach var="product" items="${sessionScope.LIST_ALL_PRODUCTS}">
                             <tr>
                                 <td><c:out value="${ product.getId() }"/></td>
