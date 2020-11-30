@@ -67,7 +67,7 @@
     </servlet>
     <servlet>
         <servlet-name>Face</servlet-name>
-        <servlet-class>servlet.user.Categories.Face</servlet-class>
+        <servlet-class>servlet.user.category.Categories</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Authentication</servlet-name>
@@ -126,7 +126,6 @@
         <servlet-name>Face</servlet-name>
         <url-pattern>/app/face</url-pattern>
     </servlet-mapping>
-    
     <session-config>
         <session-timeout>
             30

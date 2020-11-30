@@ -32,7 +32,7 @@ public class Register extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
-        rd = request.getRequestDispatcher("/user/public/authentication/user.register.jsp");
+        rd = request.getRequestDispatcher("/authentication/register.jsp");
         rd.include(request, response);
     }
 
@@ -55,7 +55,7 @@ public class Register extends HttpServlet {
                 || password.isEmpty() || confirmPassword.isEmpty() || gender == null) {
 
             request.setAttribute("errorMessage", "Por favor llene todos los campos.");
-            getServletContext().getRequestDispatcher("/user/public/authentication/user.register.jsp").forward(request, response);
+            getServletContext().getRequestDispatcher("/authentication/register.jsp").forward(request, response);
             return;
         }
 
@@ -63,7 +63,7 @@ public class Register extends HttpServlet {
         if (!password.equals(confirmPassword)) {
             request.setAttribute("errorMessage", "La contraseña no coincide");
             getServletContext().
-                    getRequestDispatcher("/user/public/authentication/user.register.jsp")
+                    getRequestDispatcher("/authentication/register.jsp")
                     .forward(request, response);
             return;
         }
@@ -75,7 +75,7 @@ public class Register extends HttpServlet {
         if (user != null) {
             request.setAttribute("errorMessage", "Este correo ya está asociado a una cuenta");
             getServletContext().
-                    getRequestDispatcher("/user/public/authentication/user.register.jsp")
+                    getRequestDispatcher("/authentication/register.jsp")
                     .forward(request, response);
             return;
         }

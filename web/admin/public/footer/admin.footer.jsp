@@ -15,5 +15,3 @@
 </footer>
 
 <jsp:include page="../../../shared/footer.jsp" />
-<script src="${pageContext.request.contextPath}/admin/assets/js/app.js"></script>
-<script src="${pageContext.request.contextPath}/admin/assets/js/validation.js"></script>
