@@ -7,20 +7,27 @@ $(document).ready(function () {
     });
 
     function renderProductInfoModal(product) {
-        const template = '<div class="modal-header">' +
-                '<h5 class="modal-title">' + product.name + '</h5>' +
-                '<button type="button" class="close" data-dismiss="modal" aria-label="Close">' +
-                '<span aria-hidden="true">&times;</span>' +
-                '</button>' +
+        const template = 
+                '<div class="modal-header">' +
+                    '<h5 class="modal-title">' + product.supplier.name + '</h5>' +
+                    '<button type="button" class="close" data-dismiss="modal" aria-label="Close">' +
+                        '<span aria-hidden="true">&times;</span>' +
+                    '</button>' +
                 '</div>' +
                 '<div class="modal-body">' +
-                '<p>' + product.description + '</p>' +
-                '<p> PRECIO:' + product.price + '.000</p>' +
-                '<img src="http://localhost:8080/Natuliv/' + product.imagePath + '"/>'
-        '</div>' +
+                    '<div class="row">' +
+                        '<div class="col text-center">' +
+                            '<img class="w-100 rounded" src="http://localhost:8080/Natuliv/' + product.imagePath + '"/>' +
+                        '</div>' +
+                        '<div class="col">' +
+                            '<h5 class="modal-title text-center mb-4">' + product.name + '</h5>' +
+                            '<p>' + product.description + '</p>' +
+                            '<p> Precio:' + product.price + '.000</p>' +
+                        '</div>' +
+                    '</div>' +
+                '</div>' +
                 '<div class="modal-footer">' +
-                '<button type="button" class="btn btn-primary">Save changes</button>' +
-                '<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>' +
+                    '<button type="button" class="btn btn-primary" data-dismiss="modal" aria-label="Close">Aceptar</button>' 
                 '</div>';
 
         $('#productInfoModalContent').html(template);

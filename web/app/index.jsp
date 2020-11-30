@@ -93,6 +93,13 @@
 <jsp:include page="./imports/categories/index.jsp"/>
 <jsp:include page="./imports/tips/index.jsp"/>
 
+<div class="modal" tabindex="-1" role="dialog" id="productInfoModal">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content" id="productInfoModalContent">
+        </div>
+    </div>
+</div>
+
 
 <jsp:include page="./imports/footer/index.jsp"/>
 <script src="${pageContext.request.contextPath}/app/src/js/productInfo.js"></script>
