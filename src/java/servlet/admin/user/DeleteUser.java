@@ -1,23 +1,18 @@
-package servlet.admin.supplier;
+package servlet.admin.user;
 
-import dao.SupplierDao;
+import dao.SurveyDao;
+import dao.UserDao;
 import java.io.IOException;
-import java.util.List;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import model.Supplier;
 
 /**
  *
  * @author sarav
  */
-public class ListSupplier extends HttpServlet {
-
-    RequestDispatcher rd = null;
+public class DeleteUser extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -27,21 +22,16 @@ public class ListSupplier extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+        int userId = Integer.parseInt(request.getParameter("id"));
 
-        HttpSession session = request.getSession();
+        SurveyDao surveyDao = new SurveyDao();
+        surveyDao.deleteSurveyAnswersByUser(userId);
 
-        if (session.getAttribute("name") == null) {
-            response.sendRedirect(request.getContextPath() + "/admin/login");
-        }
+        UserDao userDao = new UserDao();
+        userDao.deleteUser(userId);
 
-        //Get all the suppliers
-        SupplierDao supplierDao = new SupplierDao();
-        List<Supplier> supplierList = supplierDao.getSuppliersList();
-        session.setAttribute("LIST_ALL_SUPPLIERS", supplierList);
-
-        rd = request.getRequestDispatcher("/admin/views/supplier/listSuppliers.jsp");
-        rd.include(request, response);
+        response.sendRedirect(request.getContextPath() + "/admin/users");
+        processRequest(request, response);
     }
 
     @Override
@@ -53,6 +43,6 @@ public class ListSupplier extends HttpServlet {
     @Override
     public String getServletInfo() {
         return "Short description";
-    }// </editor-fold>
+    }
 
 }

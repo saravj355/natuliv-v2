@@ -26,7 +26,7 @@ public class Login extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
-        rd = request.getRequestDispatcher("/admin/authentication/admin.login.jsp");
+        rd = request.getRequestDispatcher("/admin/authentication/login.jsp");
         rd.include(request, response);
 
         processRequest(request, response);
@@ -44,7 +44,7 @@ public class Login extends HttpServlet {
         if (email.isEmpty() || password.isEmpty()) {
             request.setAttribute("errorMessage", "Por favor llene todos los campos.");
             getServletContext().
-                    getRequestDispatcher("/admin/authentication/admin.login.jsp")
+                    getRequestDispatcher("/admin/authentication/login.jsp")
                     .forward(request, response);
             return;
         }
@@ -55,7 +55,7 @@ public class Login extends HttpServlet {
         if (admin == null) {
             request.setAttribute("errorMessage", "La contraseña o el correo electrónico son incorrectos.");
             getServletContext().
-                    getRequestDispatcher("/admin/authentication/admin.login.jsp")
+                    getRequestDispatcher("/admin/authentication/login.jsp")
                     .forward(request, response);
             return;
         }

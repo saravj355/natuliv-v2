@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
-    <jsp:include page="../shared/head.jsp"/>
+    <jsp:include page="../../../shared/head.jsp"/>
     <style>
         body{
             background:#d2e3ff !important;
@@ -261,12 +261,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-footer text-center bg">
+                <div class="card-footer text-center">
                     <input type="submit" class="btn btn-dark w-25" value="Enviar">
                 </div>
             </form>
         </div>
-        <jsp:include page="../../public/footer/index.jsp"/>
+        <jsp:include page="../../imports/footer/index.jsp"/>
         <script src="${pageContext.request.contextPath}/app/src/js/validation.js"></script>
     </body>
 </html>

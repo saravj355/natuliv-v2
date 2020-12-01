@@ -50,5 +50,7 @@
         </div>
     </div>
 </div>  
-<jsp:include page="../../shared/footer.jsp"/>
-<script src="../../shared/src/js/app.js"></script>
+
+<jsp:include page="../../shared/scripts.jsp"/>
+<script src="../src/js/app.js"></script>
+

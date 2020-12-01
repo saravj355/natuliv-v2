@@ -73,6 +73,24 @@ public class ProductDao {
         return false;
     }
 
+    public boolean delete(int id) {
+        PreparedStatement pst = null;
+        try {
+            String query = "delete from product where id=?";
+            pst = this.conn.prepareStatement(query);
+            pst.setInt(1, id);
+
+            if (pst.executeUpdate() == 1) {
+                pst.close();
+                return true;
+            }
+        } catch (SQLException e) {
+            System.out.println("Error: Clase ProductDao, method:update");
+            e.printStackTrace();
+        }
+        return false;
+    }
+
     public List<Product> getProducts() {
 
         List<Product> products = new ArrayList<>();
@@ -151,7 +169,7 @@ public class ProductDao {
         }
         return null;
     }
-    
+
     public List<Product> getProductsByCategoryId(int categoryId) {
 
         List<Product> products = new ArrayList<>();

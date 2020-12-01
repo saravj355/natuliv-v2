@@ -4,7 +4,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
-<jsp:include page="../public/navbar/admin.navbar.jsp" />
+<jsp:include page="../../imports/navbar/navbar.jsp" />
 <body>
     <h1 class="text-center mt-5 text-dark">Proveedores</h1>
     <hr>
@@ -44,5 +44,6 @@
             </tbody>
         </table>
     </div>
-    <jsp:include page="../public/footer/admin.footer.jsp" />
+    <jsp:include page="../../../shared/scripts.jsp" />
+    <script src="${pageContext.request.contextPath}/admin/src/js/validation.js"></script>
 </body>

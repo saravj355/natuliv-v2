@@ -4,7 +4,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
-<jsp:include page="../public/navbar/admin.navbar.jsp" />
+<jsp:include page="../../imports/navbar/navbar.jsp" />
 <body>
     <div class="container">
         <div class="row">
@@ -45,5 +45,6 @@
         </div>
         <a href="${pageContext.servletContext.contextPath}/admin/suppliers" class="text-dark"><i class="fas fa-arrow-circle-left arrow mr-1"></i>Volver</a>
     </div>
-    <jsp:include page="../public/footer/admin.footer.jsp" />
+    <jsp:include page="../../../shared/scripts.jsp" />
+    <script src="${pageContext.request.contextPath}/admin/src/js/validation.js"></script>
 </body>

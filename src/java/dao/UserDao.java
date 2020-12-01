@@ -35,8 +35,7 @@ public class UserDao {
                 return true;
             }
         } catch (SQLException e) {
-            System.out.println("Error: Clase UserDao, method:update");
-            e.printStackTrace();
+            throw new Error(e);
         }
         return false;
     }
@@ -58,8 +57,24 @@ public class UserDao {
                 return true;
             }
         } catch (SQLException e) {
-            System.out.println("Error: Clase UserDao, method:insert");
-            e.printStackTrace();
+            throw new Error(e);
+        }
+        return false;
+    }
+
+    public boolean deleteUser(int id) {
+        PreparedStatement pst = null;
+        try {
+            String query = "delete from user where id=?";
+            pst = this.conn.prepareStatement(query);
+            pst.setInt(1, id);
+
+            if (pst.executeUpdate() == 1) {
+                pst.close();
+                return true;
+            }
+        } catch (SQLException e) {
+            throw new Error(e);
         }
         return false;
     }

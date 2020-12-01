@@ -4,7 +4,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
-<jsp:include page="../public/navbar/admin.navbar.jsp" />
+<jsp:include page="../../imports/navbar/navbar.jsp" />
 <body>
     <div class="container">
         <div class="row">
@@ -76,7 +76,6 @@
                                 <label class="radio-inline mr-2"><input type="radio" name="isActive" value="true" ${product.isActive() ? 'checked' :''} > Si</label>
                                 <label class="radio-inline"><input type="radio" name="isActive" value="false" ${product.isActive() ? '' :'checked'} > No</label>
                             </div>
-
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary">Guardar</button>
                             </div>
@@ -87,5 +86,6 @@
         </div>
         <a href="${pageContext.servletContext.contextPath}/admin/products" class="text-dark"><i class="fas fa-arrow-circle-left arrow mr-1"></i>Volver</a>
     </div>
-    <jsp:include page="../public/footer/admin.footer.jsp" />
+    <jsp:include page="../../../shared/scripts.jsp" />
+    <script src="${pageContext.request.contextPath}/admin/src/js/validation.js"></script>
 </body>

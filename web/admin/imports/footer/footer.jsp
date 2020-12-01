@@ -1,6 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<footer class="bg-dark text-white p-3 fixed-bottom">
+<footer class="bg-dark text-white p-3">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -14,4 +14,5 @@
     </div>
 </footer>
 
-<jsp:include page="../../../shared/footer.jsp" />
+<jsp:include page="../../../shared/scripts.jsp" />
+<script src="${pageContext.request.contextPath}/admin/src/js/app.js"></script>

@@ -30,15 +30,12 @@ public class Categories extends HttpServlet {
 
         HttpSession session = request.getSession();
 
-        int skinProductsCategory = 1;
-        int faceProductsCategory = 2;
-        int hairProductsCategory = 3;
-        int maskProductsCategory = 4;
+        int productsCategoryId = Integer.parseInt(request.getParameter("products"));
 
         controller.Administrator list = new controller.Administrator();
 
-        List<Product> listProducts = list.findProductsByCategoryId(faceProductsCategory);
-        session.setAttribute("LIST_ALL_FACE_PRODUCTS", listProducts);
+        List<Product> listProducts = list.findProductsByCategoryId(productsCategoryId);
+        session.setAttribute("LIST_ALL_PRODUCTS", listProducts);
 
 //        if (session.getAttribute("name") == null) {
 //            response.sendRedirect(request.getContextPath() + "/login");

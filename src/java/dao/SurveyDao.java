@@ -71,4 +71,21 @@ public class SurveyDao {
         }
         return false;
     }
+
+    public boolean deleteSurveyAnswersByUser(int id) {
+        PreparedStatement pst = null;
+        try {
+            String query = "delete from survey where userId=?";
+            pst = this.conn.prepareStatement(query);
+            pst.setInt(1, id);
+
+            if (pst.executeUpdate() == 1) {
+                pst.close();
+                return true;
+            }
+        } catch (SQLException e) {
+            throw new Error(e);
+        }
+        return false;
+    }
 }

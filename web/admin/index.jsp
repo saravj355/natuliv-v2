@@ -4,7 +4,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
-<jsp:include page="./public/navbar/admin.navbar.jsp" />
+<jsp:include page="./imports/navbar/navbar.jsp" />
 <body>
     <div class="container m-5 mx-auto">
         <div class="row justify-content-center">
@@ -94,6 +94,5 @@
         <br>
         <br>
     </div>
-
-    <jsp:include page="./public/footer/admin.footer.jsp" />
+    <jsp:include page="./imports/footer/footer.jsp" />
 </body>

@@ -42,7 +42,7 @@ public class EditUsers extends HttpServlet {
 
         session.setAttribute("user", user);
 
-        rd = request.getRequestDispatcher("/admin/user/editUser.jsp");
+        rd = request.getRequestDispatcher("/admin/views/user/editUser.jsp");
         rd.include(request, response);
     }
 
@@ -65,6 +65,7 @@ public class EditUsers extends HttpServlet {
 
         UserDao userDao = new UserDao();
         userDao.update(user);
+
 
         response.sendRedirect(request.getContextPath() + "/admin/users");
     }

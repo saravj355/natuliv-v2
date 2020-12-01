@@ -14,12 +14,13 @@
     }
 </style>
 <c:set var="counter" value="0" scope="page" />
-<h4 class="text-center mt-5 font-weight-light text-uppercase"><span class="font-weight-normal">${name}</span>! Mira todos los productos de rostro que tenemos para ti!</h4>
+
 <div class="container-products m-5">
+    <h4 class="text-center mt-5 font-weight-light text-uppercase"><span class="font-weight-normal">${name}</span>! Mira todos los productos que tenemos para ti!</h4>
     <div class="row">
         <c:choose>
-            <c:when test="${ !empty sessionScope.LIST_ALL_FACE_PRODUCTS}">
-                <c:forEach var="product" items="${sessionScope.LIST_ALL_FACE_PRODUCTS}">
+            <c:when test="${ !empty sessionScope.LIST_ALL_PRODUCTS}">
+                <c:forEach var="product" items="${sessionScope.LIST_ALL_PRODUCTS}">
                     <div class="card">
                         <div class="w-100 bg-pink text-center">
                             <img src="${pageContext.request.contextPath}/${product.getImagePath()}" height="300" class="card-img w-50">
@@ -52,8 +53,12 @@
                                 </div>
                                 <div id="collapse_more_info_<c:out value="${counter}"/>" class="collapse show" aria-labelledby="collapse_text_<c:out value="${counter}"/>" data-parent="#accordion_<c:out value="${counter}"/>">
                                     <div class="card-body">
-                                        <p class="card-text font-weight-bold">Dirección: <span class="font-weight-light"><c:out value="${ product.getSupplier().getAddress() }"/></span></p>
-                                        <p class="card-text font-weight-bold">Número de contacto: <span class="font-weight-light"><c:out value="${ product.getSupplier().getContactNumber() }"/></span></p>
+                                        <p class="card-text font-weight-bold">Dirección: 
+                                            <span class="font-weight-light"><c:out value="${ product.getSupplier().getAddress() }"/></span>
+                                        </p>
+                                        <p class="card-text font-weight-bold">Número de contacto: 
+                                            <span class="font-weight-light"><c:out value="${ product.getSupplier().getContactNumber() }"/></span>
+                                        </p>
                                     </div>
                                 </div>
                             </div>

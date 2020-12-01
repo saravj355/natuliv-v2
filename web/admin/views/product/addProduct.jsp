@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 
 <body>
-    <jsp:include page="../public/navbar/admin.navbar.jsp" />
+    <jsp:include page="../../imports/navbar/navbar.jsp" />
     <div class="container">
         <div class="row">
             <div class="card mx-auto w-50 mt-4 bg-light border-dark">
@@ -84,7 +84,8 @@
         </div>
         <a href="${pageContext.servletContext.contextPath}/admin/products" class="text-dark"><i class="fas fa-arrow-circle-left arrow mr-1"></i>Volver</a>
     </div>
-    <jsp:include page="../public/footer/admin.footer.jsp" />
+    <jsp:include page="../../../shared/scripts.jsp" />
+    <script src="${pageContext.request.contextPath}/admin/src/js/validation.js"></script>
 </body>
 
 

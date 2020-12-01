@@ -32,7 +32,7 @@ public class SurveyAnswer extends HttpServlet {
             response.sendRedirect(request.getContextPath() + "/login");
         }
 
-        rd = request.getRequestDispatcher("/survey/index.jsp");
+        rd = request.getRequestDispatcher("/app/views/survey/index.jsp");
         rd.include(request, response);
     }
 

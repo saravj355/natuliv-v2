@@ -5,6 +5,10 @@
         <servlet-name>GetProductInformation</servlet-name>
         <servlet-class>servlet.api.GetProductInformation</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DeleteUser</servlet-name>
+        <servlet-class>servlet.admin.user.DeleteUser</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>GetProductInformation</servlet-name>
         <url-pattern>/api/GetProductInformation</url-pattern>
@@ -124,7 +128,11 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>Face</servlet-name>
-        <url-pattern>/app/face</url-pattern>
+        <url-pattern>/app/categories</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteUser</servlet-name>
+        <url-pattern>/admin/users/delete</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

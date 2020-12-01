@@ -4,7 +4,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
-<jsp:include page="../public/navbar/admin.navbar.jsp" />
+<jsp:include page="../../imports/navbar/navbar.jsp" />
 <body>
     <h1 class="text-center mt-5 text-dark">Usuarios</h1>
     <hr>
@@ -30,7 +30,10 @@
                                 <td><c:out value="${ user.getLastName() }"/></td>
                                 <td><c:out value="${ user.getEmail() }"/></td>
                                 <td><c:out value="${ user.getGender() }"/></td>
-                                <td><a href="${pageContext.request.contextPath}/admin/users/edit?id=${user.getId()}" class="btn btn-info">Editar</a></td>
+                                <td>
+                                    <a href="${pageContext.request.contextPath}/admin/users/edit?id=${user.getId()}" class="btn btn-info">Editar</a>
+                                    <a href="${pageContext.request.contextPath}/admin/users/delete?id=${user.getId()}" class="btn btn-danger">Eliminar</a>
+                                </td>
                             </tr>
                         </c:forEach>                                           
                     </c:when>
@@ -43,5 +46,6 @@
             </tbody>
         </table>
     </div>
-    <jsp:include page="../public/footer/admin.footer.jsp" />
+    <jsp:include page="../../../shared/scripts.jsp" />
+    <script src="${pageContext.request.contextPath}/admin/src/js/validation.js"></script>
 </body>
