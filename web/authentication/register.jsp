@@ -79,5 +79,5 @@
             </form>
         </div>
     </div>
-    <script src="${pageContext.request.contextPath}/public/js/validation.js"></script>
+    <script src="${pageContext.request.contextPath}/public/js/app.js"></script>
 </body>

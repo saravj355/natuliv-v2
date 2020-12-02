@@ -21,6 +21,11 @@ public class Administrator {
         UserDao getUsersList = new UserDao();
         return getUsersList.getUsers();
     }
+    
+    public List<User> searchUsers(String search) {
+        UserDao getSearchUserList = new UserDao();
+        return getSearchUserList.searchUser(search);
+    }
 
     public List<Product> findProducts() {
         ProductDao getProductsList = new ProductDao();

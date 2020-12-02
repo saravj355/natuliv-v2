@@ -23,7 +23,7 @@
                 <c:forEach var="product" items="${sessionScope.LIST_ALL_PRODUCTS}">
                     <div class="card">
                         <div class="w-100 bg-pink text-center">
-                            <img src="${pageContext.request.contextPath}/${product.getImagePath()}" height="300" class="card-img w-50">
+                            <img src="${pageContext.request.contextPath}/${product.getImagePath()}" height="300" class="card-img w-50" alt="image-product">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title"><c:out value="${product.getName()}"/></h5>

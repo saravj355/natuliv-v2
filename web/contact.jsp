@@ -1,10 +1,17 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<jsp:include page="shared/head.jsp"/>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/webPage/css/contact.css">
+<jsp:include page="./shared/head.jsp"/>
+<style>
+    body{
+        background-image: url('public/img/contact-bg.png');
+        background-repeat: no-repeat;
+        background-size:100%;
+    }
+</style>
 
 <body>
     <jsp:include page="shared/navbar.jsp"/>
+
     <div class="container text-center mt-3">
         <h1>Contáctanos</h1>
         <p>¡Hola! Gracias por comunicarte con nosotros, por favor déjanos tu pregunta, novedad o problema. <br>
@@ -24,7 +31,7 @@
                     <div class="form-group">
                         <textarea class="form-control" placeholder="Ingresa el mensaje" required ></textarea>
                     </div>
-                    <button class="btn btn-success" type="submit">Enviar</button></p>
+                    <button class="btn btn-info" type="submit">Enviar</button></p>
                 </form>
             </div>
         </div>
@@ -41,7 +48,7 @@
                         <p>+57 311 413 59 44</p>
                         <i class="fas fa-envelope"></i>
                         <p>juan_hernandez23182@elpoli.edu.co </p>
-                        <button type="button" class="btn btn-outline-success">Administrador</button>
+                        <button type="button" class="btn btn-info">Administrador</button>
                     </div>
                 </div>
                 <div class="card mb-4 shadow-sm">
@@ -52,7 +59,7 @@
                         <p>+57 302 457 72 28</p>
                         <i class="fas fa-envelope"></i>
                         <p>sara_valle23201@elpoli.edu.co </p>
-                        <button type="button" class="btn btn-outline-success">Administrador</button>
+                        <button type="button" class="btn btn-info">Administrador</button>
                     </div>
                 </div>
                 <div class="card mb-4 shadow-sm">
@@ -63,12 +70,11 @@
                         <p>+57 350 566 51 87</p>
                         <i class="fas fa-envelope"></i>
                         <p>evelyn_rodriguez23201@elpoli.edu.co </p>
-                        <button type="button" class="btn btn-outline-success">Administrador</button>
+                        <button type="button" class="btn btn-info">Administrador</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <jsp:include page="./shared//footer.jsp"/>
-    <jsp:include page="./webPage/footer.jsp"/>
+    <jsp:include page="./shared/footer.jsp"/>
 </body>

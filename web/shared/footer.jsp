@@ -45,14 +45,14 @@
                 <h5 class="text-uppercase">Nosotros</h5>
                 <ul class="list-unstyled">
                     <p class="mb-2"><i class="fas fa-home mr-2"></i>Medellín - Colombia</p>
-                    <a href="https://gmail.com" target="_blank" class="text-dark"><i class="fas fa-envelope mr-2 text-decoration-none"></i>natuliv@gmail.com</a>
+                    <a href="https://gmail.com" target="_blank" class="text-decoration-none text-dark"><i class="fas fa-envelope mr-2 text-decoration-none"></i>natuliv@gmail.com</a>
                     <p class="mt-2"><i class="fas fa-phone mr-2"></i>+57 000 000 00 00</p>
                 </ul>
             </div>
         </div>
     </div>
     <div class="footer-copyright text-center py-3 border bg-white">© 2020 Copyright:
-        <a href="${pageContext.request.contextPath}/login">Natuliv</a>
+        <a href="${pageContext.request.contextPath}/login" class="brand-name">Natuliv</a>
     </div>
 </footer>
 

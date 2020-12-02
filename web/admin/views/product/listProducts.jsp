@@ -31,7 +31,7 @@
                     <c:forEach var="product" items="${sessionScope.LIST_ALL_PRODUCTS}">
                         <tr>
                             <td><c:out value="${ product.getId() }"/></td>
-                            <td> <img src="${pageContext.request.contextPath}/${product.getImagePath()}" width="100" height="100"/></td>
+                            <td> <img src="${pageContext.request.contextPath}/${product.getImagePath()}" width="100" height="100" alt="product-image"/></td>
                             <td width="200"><c:out value="${ product.getName() }"/></td>
                             <td width="300"><c:out value="${ product.getDescription() }"/></td>
                             <td><c:out value="${ product.getProductCategory().getName()}"/></td>

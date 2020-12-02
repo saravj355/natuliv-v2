@@ -20,7 +20,7 @@
                                         <div class="card-body p-0">
                                             <div class="content">
                                                 <div class="content-overlay"></div>
-                                                <img src="https://thumbs.dreamstime.com/b/fondo-de-madera-del-color-verde-claro-la-menta-textura-modelo-150938907.jpg" class="w-100">
+                                                <img src="https://thumbs.dreamstime.com/b/fondo-de-madera-del-color-verde-claro-la-menta-textura-modelo-150938907.jpg" class="w-100" alt="transparent-image-overlay">
                                                 <div class="content-details fadeIn-bottom">
                                                     <h3 class="content-title"> ${product.getName()}</h3>
                                                     <hr class="bg-white mx-auto mb-4">
@@ -51,7 +51,7 @@
                                         <div class="card-body p-0">
                                             <div class="content">
                                                 <div class="content-overlay"></div>
-                                                <img src="https://thumbs.dreamstime.com/b/fondo-de-madera-del-color-verde-claro-la-menta-textura-modelo-150938907.jpg" class="w-100">
+                                                <img src="https://thumbs.dreamstime.com/b/fondo-de-madera-del-color-verde-claro-la-menta-textura-modelo-150938907.jpg" class="w-100" alt="transparent-image-overlay">
                                                 <div class="content-details fadeIn-bottom">
                                                     <h3 class="content-title"> ${product.getName()}</h3>
                                                     <hr class="bg-white mx-auto mb-4">
@@ -74,12 +74,8 @@
             </div>
         </div>
         <div class="controller">
-            <a class="carousel-control-prev carousel-control" href="#carouselProducts" role="button" data-slide="prev">
-                <img src="" width="40">
-            </a>
-            <a class="carousel-control-next carousel-control" href="#carouselProducts" role="button" data-slide="next">
-                <img src="" width="40">
-            </a>
+            <a class="carousel-control-prev carousel-control" href="#carouselProducts" role="button" data-slide="prev"></a>
+            <a class="carousel-control-next carousel-control" href="#carouselProducts" role="button" data-slide="next"></a>
         </div>
         <div class="text text-center mx-auto w-50 m-5">
             <p>Natuliv te ofrece la virtud mas esencial del producto natural,

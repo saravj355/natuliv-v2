@@ -38,7 +38,7 @@
                     <div class="card-body p-0 skin">
                         <div class="content">
                             <div class="content-overlay"></div>
-                            <img src="https://about.canva.com/wp-content/themes/canvaabout/img/proLandingPage/banner-wave-3.svg" class="w-100">
+                            <img src="https://about.canva.com/wp-content/themes/canvaabout/img/proLandingPage/banner-wave-3.svg" class="w-100" alt="product-image">
                             <div class="content-details fadeIn-bottom">
                                 <h3 class="content-title"></h3>
                                 <p class="content-text">
@@ -60,7 +60,7 @@
                     <div class="card-body p-0 face">
                         <div class="content">
                             <div class="content-overlay"></div>
-                            <img src="https://about.canva.com/wp-content/themes/canvaabout/img/proLandingPage/banner-wave-3.svg" class="w-100">
+                            <img src="https://about.canva.com/wp-content/themes/canvaabout/img/proLandingPage/banner-wave-3.svg" class="w-100" alt="product-image">
                             <div class="content-details fadeIn-bottom">
                                 <h3 class="content-title"></h3>
                                 <p class="content-text">
@@ -83,7 +83,7 @@
                     <div class="card-body p-0 hair">
                         <div class="content">
                             <div class="content-overlay"></div>
-                            <img src="https://about.canva.com/wp-content/themes/canvaabout/img/proLandingPage/banner-wave-3.svg" class="w-100">
+                            <img src="https://about.canva.com/wp-content/themes/canvaabout/img/proLandingPage/banner-wave-3.svg" class="w-100" alt="product-image">
                             <div class="content-details fadeIn-bottom">
                                 <h3 class="content-title"></h3>
                                 <p class="content-text">
@@ -106,7 +106,7 @@
                     <div class="card-body p-0 face-mask">
                         <div class="content">
                             <div class="content-overlay"></div>
-                            <img src="https://about.canva.com/wp-content/themes/canvaabout/img/proLandingPage/banner-wave-3.svg" class="w-100">
+                            <img src="https://about.canva.com/wp-content/themes/canvaabout/img/proLandingPage/banner-wave-3.svg" class="w-100" alt="product-image">
                             <div class="content-details fadeIn-bottom">
                                 <h3 class="content-title"></h3>
                                 <p class="content-text">

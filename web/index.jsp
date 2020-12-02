@@ -3,18 +3,20 @@
 <!DOCTYPE html>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/public/css/index.css">
 <jsp:include page="./shared/head.jsp"/>
+
 <body>
     <jsp:include page="shared/navbar.jsp"/>
+    
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="${pageContext.request.contextPath}/public/img/carrousel1.png" class="w-100" alt="...">
+                <img src="${pageContext.request.contextPath}/public/img/carrousel1.png" class="w-100" alt="image-carrousel">
             </div>
             <div class="carousel-item">
-                <img src="${pageContext.request.contextPath}/public/img/carrousel2.jpeg" class="w-100" alt="..." height="525">
+                <img src="${pageContext.request.contextPath}/public/img/carrousel2.jpeg" class="w-100" alt="image-carrousel" height="525">
             </div>
             <div class="carousel-item">
-                <img src="${pageContext.request.contextPath}/public/img/carrousel3.jpeg" class="w-100" alt="..." height="525">
+                <img src="${pageContext.request.contextPath}/public/img/carrousel3.jpeg" class="w-100" alt="image-carrousel" height="525">
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -31,15 +33,15 @@
         <h3 class="text-center mb-3">En Natuliv encuentras productos de excelente calidad de empresas Colombianas como: </h3> 
         <div class="row">
             <div class="col-lg-4">
-                <img src="${pageContext.request.contextPath}/public/img/pielPerfectta.jpeg" class="rounded-circle mx-auto" width="140" height="130">
+                <img src="${pageContext.request.contextPath}/public/img/pielPerfectta.jpeg" class="rounded-circle mx-auto" alt="image-brand" width="140" height="130">
                 <h4>Piel Perfectta</h4>
                 <p> Elabora productos naturales, tanto para el cuidado del cabello, rostro y piel corporal.
                     Cuenta con excelentes testimonios por parte de sus clientes. <br>
                     ¡Ánimate a experimentar y cambiar tu vida para tener una Piel Perfectta!</p>
                 <button type="button" class="btn btn-outline-success">Conocer más &raquo;</button>
-            </div><!-- /.col-lg-4 -->
+            </div>
             <div class="col-lg-4">
-                <img src="${pageContext.request.contextPath}/public/img/cocosecha.jpg" class="rounded-circle mx-auto" width="140" height="130">
+                <img src="${pageContext.request.contextPath}/public/img/cocosecha.jpg" class="rounded-circle mx-auto" alt="image-brand" width="140" height="130">
                 <h4>Cocosecha</h4>
                 <p> Empresa Colombiana que ofrece productos 100% naturales para el uso personal.
                     Al ensayar sus elaboraciones, notas cambios y resultados muy ligeros y óptimos. <br>
@@ -47,7 +49,7 @@
                 <button type="button" class="btn btn-outline-success">Conocer más &raquo;</button>
             </div>
             <div class="col-lg-4">
-                <img src="${pageContext.request.contextPath}/public/img/encantoNatural.jpg" class="rounded-circle mx-auto" width="150" height="130">
+                <img src="${pageContext.request.contextPath}/public/img/encantoNatural.jpg" class="rounded-circle mx-auto" alt="image-brand" width="150" height="130">
                 <h4>Encanto Natural</h4>
                 <p> Fabrica productos naturales para el cuidado facial, corporal y del cabello.
                     Brindando múltiples beneficios para quienes usen dichos productos. <br>

@@ -23,7 +23,7 @@
                     </div>
                     <form action="${pageContext.servletContext.contextPath}/admin/products/add" method="post" name="form" class="p-4">
                         <div class="form-group">   
-                            <img id="image-render" class="mx-auto" width="100">
+                            <img id="image-render" class="mx-auto" width="100" alt="product-image">
                             <input type="file" id="inputFile" name="imagePath" onchange="loadFile(event)" class="form-control-file">
                         </div> 
                         <div class="form-group">                                            

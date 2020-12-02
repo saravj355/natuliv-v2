@@ -16,7 +16,7 @@
                     <div class="card-body p-0">
                         <div class="content">
                             <div class="content-overlay"></div>
-                            <img src="https://www.martinmolina.com/wp-content/uploads/2020/03/OGMM5G0-1024x683.jpg" class="w-100">
+                            <img src="https://www.martinmolina.com/wp-content/uploads/2020/03/OGMM5G0-1024x683.jpg" class="w-100" alt="container-user">
                             <div class="content-details fadeIn-bottom">
                                 <h3 class="content-title">Listado de usuarios</h3>
                                 <p class="content-text">Busca información de los usuarios registrados en Natuliv.</p>
@@ -36,7 +36,7 @@
                     <div class="card-body p-0">
                         <div class="content">
                             <div class="content-overlay"></div>
-                            <img src="https://www.sinnaps.com/wp-content/uploads/2018/12/estrategia-de-producto.jpg" class="w-100">
+                            <img src="https://www.sinnaps.com/wp-content/uploads/2018/12/estrategia-de-producto.jpg" class="w-100" alt="container-products">
                             <div class="content-details fadeIn-bottom">
                                 <h3 class="content-title">Listado de productos</h3>
                                 <p class="content-text">Actualiza, agrega y busca información de los productos patrocinados por Natuliv.</p>
@@ -58,7 +58,7 @@
                     <div class="card-body p-0">
                         <div class="content">
                             <div class="content-overlay"></div>
-                            <img src="https://destinonegocio.com/wp-content/uploads/2015/03/formar-una-empresa.jpg" class="w-100">
+                            <img src="https://destinonegocio.com/wp-content/uploads/2015/03/formar-una-empresa.jpg" class="w-100" alt="container-suppliers">
                             <div class="content-details fadeIn-bottom">
                                 <h3 class="content-title">Listado de proveedores</h3>
                                 <p class="content-text">Agrega y edita información de los proveedores patrocinados por Natuliv.</p>
@@ -78,7 +78,7 @@
                     <div class="card-body p-0">
                         <div class="content">
                             <div class="content-overlay"></div>
-                            <img src="https://decorozo.com/wp-content/uploads/2018/08/Estadisticas.jpg" class="w-100">
+                            <img src="https://decorozo.com/wp-content/uploads/2018/08/Estadisticas.jpg" class="w-100" alt="container-survey">
                             <div class="content-details fadeIn-bottom">
                                 <h3 class="content-title">Resultados del cuestionario</h3>
                                 <p class="content-text">Visualiza los resultados de las encuestas realizadas por los usuarios</p>

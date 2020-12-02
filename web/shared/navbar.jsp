@@ -22,7 +22,7 @@
         <ul class="nav justify-content-end account">
             <li class="nav-item">
                 <a class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                   href="#">Cuenta<img class="icon" src="${pageContext.request.contextPath}/public/img/user.png"></a>
+                   href="#">Cuenta<img class="icon" src="${pageContext.request.contextPath}/public/img/user.png" alt="icon navbar-user"></a>
                 <ul class="dropdown-menu dropdown-menu-right">
                     <a href="#" data-toggle="modal" data-target="#modal" class="dropdown-item">Iniciar Sesion</a>
                     <div class="dropdown-divider"></div>

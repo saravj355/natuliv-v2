@@ -14,7 +14,7 @@ public class Survey {
     By answer6 = By.xpath("/html/body/div[2]/form/div[1]/div[6]/div/div[2]/div/div[2]/input");
     By answer7 = By.xpath("/html/body/div[2]/form/div[1]/div[7]/div/div[1]/div[2]/input");
     By answer8 = By.xpath("/html/body/div[2]/form/div[1]/div[8]/div/div[2]/div/div[1]/input");
-    By btnSurvey = By.cssSelector("body > div.card.shadow-lg.rounded.bg-light.w-50.mx-auto > form > div.card-footer.text-center.bg > input");
+    By btnSurvey = By.cssSelector("body > div.card.shadow-lg.rounded.bg-light.w-50.mx-auto > form > div.card-footer.text-center > input");
 
     public Survey(WebDriver driver) {
         this.driver = driver;

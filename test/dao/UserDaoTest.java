@@ -53,7 +53,7 @@ public class UserDaoTest {
 
         String passHash = PasswordHash.compute("1234");
 
-        user.setId(9);
+        user.setId(12);
         user.setName("Laura");
         user.setLastName("Torres");
         user.setEmail("laura123@gmail.com");

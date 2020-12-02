@@ -13,7 +13,7 @@
                         <div class="card-body">
                             <div class="flip-container">
                                 <div class="flip-this">
-                                    <img class="img-fluid brand-img mx-auto d-block" src="${pageContext.request.contextPath}/public/img/logo.png">
+                                    <img class="img-fluid brand-img mx-auto d-block" src="${pageContext.request.contextPath}/public/img/logo.png" alt="logo">
                                 </div>
                             </div>
                         </div>
@@ -53,4 +53,4 @@
             </div>
         </div>
     </div> 
-    <script src="${pageContext.request.contextPath}/public/js/validation.js"></script>
+    <script src="${pageContext.request.contextPath}/public/js/app.js"></script>

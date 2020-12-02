@@ -8,6 +8,12 @@
 <body>
     <h1 class="text-center mt-5 text-dark">Usuarios</h1>
     <hr>
+    <div class="m-3">
+        <form class="form-inline float-right" action="${pageContext.request.contextPath}/admin/users/search">
+            <input type="text" name="search" class="form-control mr-3" placeholder="Busca un usuario">
+            <input type="submit" value="Buscar" class="btn btn-success">
+        </form>
+    </div>
     <div class="container mt-5">
         <table class="table table-striped text-center">
             <thead class="thead-dark">

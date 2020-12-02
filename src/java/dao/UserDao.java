@@ -79,6 +79,33 @@ public class UserDao {
         return false;
     }
 
+    public List<User> searchUser(String search) {
+        List<User> users = new ArrayList<User>();
+        try {
+            String query = "select * from user WHERE name like '%" + search + "%' "
+                    + "or lastName like '%" + search + "%' or email like '%" + search + "%' or gender like '%" + search + "%'";
+            PreparedStatement pst = this.conn.prepareStatement(query);
+
+            ResultSet rs = pst.executeQuery();
+
+            while (rs.next()) {
+                User user = new User();
+                user.setId(rs.getInt("id"));
+                user.setName(rs.getString("name"));
+                user.setLastName(rs.getString("lastName"));
+                user.setEmail(rs.getString("email"));
+                user.setGender(rs.getString("gender"));
+                users.add(user);
+            }
+            return users;
+
+        } catch (SQLException e) {
+            System.out.println("Error: Clase UserDao, method:getUsers");
+            e.printStackTrace();
+        }
+        return users;
+    }
+
     public User findUserByEmail(String email) {
         try {
             String query = "SELECT * FROM user WHERE email=?";

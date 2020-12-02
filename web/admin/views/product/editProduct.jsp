@@ -24,7 +24,7 @@
                         <form action="${pageContext.servletContext.contextPath}/admin/products/edit" name="form" method="post" class="p-4">
                             <input name="productId" value="${product.getId()}" type="hidden">
                             <div class="form-group">   
-                                <img id="image-render" class="mx-auto" name="imagePath" src="${pageContext.request.contextPath}/${product.getImagePath()}" width="100">
+                                <img id="image-render" class="mx-auto" name="imagePath" src="${pageContext.request.contextPath}/${product.getImagePath()}" width="100" alt="product-image">
                                 <input type="file" id="inputFile" onchange="loadFile(event)" name="imagePath" class="form-control-file">
                             </div>
                             <div class="form-group">                                            
