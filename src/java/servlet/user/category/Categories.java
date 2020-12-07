@@ -37,9 +37,9 @@ public class Categories extends HttpServlet {
         List<Product> listProducts = list.findProductsByCategoryId(productsCategoryId);
         session.setAttribute("LIST_ALL_PRODUCTS", listProducts);
 
-//        if (session.getAttribute("name") == null) {
-//            response.sendRedirect(request.getContextPath() + "/login");
-//        }
+        if (session.getAttribute("name") == null) {
+            response.sendRedirect(request.getContextPath() + "/login");
+        }
         rd = request.getRequestDispatcher("/app/views/category/index.jsp");
         rd.include(request, response);
     }

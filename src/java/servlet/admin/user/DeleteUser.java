@@ -22,6 +22,8 @@ public class DeleteUser extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        
         int userId = Integer.parseInt(request.getParameter("id"));
 
         SurveyDao surveyDao = new SurveyDao();

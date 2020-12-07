@@ -22,7 +22,12 @@ public class DataSurvey extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        
         HttpSession session = request.getSession();
+        
+        if (session.getAttribute("name") == null) {
+            response.sendRedirect(request.getContextPath() + "/admin/login");
+        }
 
         UserDao userDao = new UserDao();
         int femaleGenderQuantity = userDao.getFemaleUsersQuantity();

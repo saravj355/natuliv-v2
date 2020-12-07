@@ -1,7 +1,6 @@
 package servlet.admin.product;
 
 import dao.ProductDao;
-import dao.UserDao;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -27,6 +26,8 @@ public class DeleteProduct extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        
         int productId = Integer.parseInt(request.getParameter("id"));
 
         ProductDao productDao = new ProductDao();
