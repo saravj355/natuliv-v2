@@ -193,4 +193,36 @@ public class UserDao {
         }
         return null;
     }
+
+    public int getFemaleUsersQuantity() {
+        PreparedStatement pst = null;
+        int count = 0;
+        try {
+            String query = "SELECT COUNT(*) FROM user WHERE gender='Femenino' and userRoleId = 2";
+            pst = this.conn.prepareStatement(query);
+            ResultSet rs = pst.executeQuery();
+            while (rs.next()) {
+                count = rs.getInt(1);
+            }
+        } catch (SQLException e) {
+            throw new Error(e);
+        }
+        return count;
+    }
+    
+     public int getMaleUsersQuantity() {
+        PreparedStatement pst = null;
+        int count = 0;
+        try {
+            String query = "SELECT COUNT(*) FROM user WHERE gender='Masculino' and userRoleId = 2";
+            pst = this.conn.prepareStatement(query);
+            ResultSet rs = pst.executeQuery();
+            while (rs.next()) {
+                count = rs.getInt(1);
+            }
+        } catch (SQLException e) {
+            throw new Error(e);
+        }
+        return count;
+    }
 }

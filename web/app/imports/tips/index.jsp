@@ -16,7 +16,7 @@
 <div class="container">
     <h4 class="text-center mt-5 font-weight-light text-uppercase">Natutips</h4> 
     <hr class="mb-5 bg-dark">
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div id="carouselTips" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <div class="text-white p-5 rounded mx-auto tips-container">
@@ -47,7 +47,7 @@
                 </div>
             </div>
         </div>
-        <a class="carousel-control-next tips-carousel" href="#carouselExampleControls" role="button" data-slide="next">
+        <a class="carousel-control-next tips-carousel" href="#carouselTips" role="button" data-slide="next">
             <img src="${pageContext.request.contextPath}/app/src/img/arrow-circle-right.png" width="70">
         </a>
     </div>

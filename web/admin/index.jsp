@@ -86,7 +86,7 @@
                         </div>
                     </div>
                     <div class="card-footer text-center bg-dark">
-                        <a href="${pageContext.request.contextPath}/admin/suppliers" class="btn btn-outline-light m-2 w-50">Ver Análisis</a>
+                        <a href="${pageContext.request.contextPath}/admin/survey" class="btn btn-outline-light m-2 w-50">Ver Análisis</a>
                     </div>
                 </div>
             </div>

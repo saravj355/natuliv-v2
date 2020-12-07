@@ -41,7 +41,7 @@
                                     </p>
                                 </div>
                                 <div class="col">
-                                    <a href="https://pielperfectta.com" target="_blank" class="card-text float-right"><c:out value="${ product.getSupplier().getName() }"/></a>
+                                    <a href="https://www.nihlo.com.co/" target="_blank" class="card-text float-right"><c:out value="${ product.getSupplier().getName() }"/></a>
                                 </div>
                             </div>
                             <p class="card-text"><c:out value="${product.getDescription()}"/></p>

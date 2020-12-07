@@ -11,11 +11,13 @@
                 <a class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                    href="#">${name}<img class="icon" src="${pageContext.request.contextPath}/public/img/user.png" alt="icon-user-navbar"></a>
                 <ul class="dropdown-menu dropdown-menu-right">
+                    <a href="#" data-toggle="modal" data-target="#help" class="dropdown-item">Ayuda</a>
                     <a href="${pageContext.request.contextPath}/logout" class="dropdown-item">Cerrar Sesion</a>
                 </ul>
             </li>
         </ul>
     </nav>
 </header>
+
 
 

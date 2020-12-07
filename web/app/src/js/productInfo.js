@@ -32,7 +32,8 @@ $(document).ready(function () {
                               '<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">' +
                                     '<h6 class="font-weight-bold m-3">Empresa: <span class="font-weight-light">'+ product.supplier.name +'</span></h6>' +
                                     '<h6 class="font-weight-bold m-3">Dirección: <span class="font-weight-light">'+ product.supplier.address +'</span></h6>' +
-                                    '<h6 class="font-weight-bold m-3">Sitio Web: <a class="font-weight-light" href="https://www.ecosadhana.co/" target="_blank">Eco Sadhana</a></h6>' +
+                                    '<h6 class="font-weight-bold m-3">Número Contacto: <span class="font-weight-light">'+ product.supplier.contactNumber +'</span></h6>' +
+                                    '<h6 class="font-weight-bold m-3">Sitio Web: <a class="font-weight-light" href="https://www.ecosadhana.co/" target="_blank">'+ product.supplier.name +'</a></h6>' +
                                '</div>' +
                               '<div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">' +
                                 '<p class="m-3">Puedes lavar tu rostro frotándolo suavemente directamente en el rostro.' +
