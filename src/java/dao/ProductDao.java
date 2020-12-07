@@ -91,6 +91,50 @@ public class ProductDao {
         return false;
     }
 
+    public List<Product> searchProduct(String search) {
+        List<Product> products = new ArrayList<Product>();
+        try {
+            String query = "select * from product WHERE name like '%" + search + "%' "
+                    + "or price like '%" + search + "%'";
+            PreparedStatement pst = this.conn.prepareStatement(query);
+
+            ResultSet rs = pst.executeQuery();
+
+            ProductCategoryDao productCategoryDao = new ProductCategoryDao();
+            SupplierDao supplierDao = new SupplierDao();
+
+            while (rs.next()) {
+                Product product = new Product();
+                product.setId(rs.getInt("id"));
+                product.setImagePath(rs.getString("imagePath"));
+                product.setName(rs.getString("name"));
+                product.setDescription(rs.getString("description"));
+                product.setProductCategoryId(rs.getInt("productCategoryId"));
+                product.setPrice(rs.getDouble("price"));
+                product.setSupplierId(rs.getInt("supplierId"));
+                product.setIsActive(rs.getBoolean("isActive"));
+
+                // enrich product category                
+                ProductCategory productCategory = productCategoryDao
+                        .getProductCategoryById(product.getProductCategoryId());
+                product.setProductCategory(productCategory);
+
+                // enrich product brand
+                Supplier supplier = supplierDao
+                        .getSupplierById(product.getSupplierId());
+                product.setSupplier(supplier);
+
+                products.add(product);
+            }
+            return products;
+
+        } catch (SQLException e) {
+            System.out.println("Error: Clase UserDao, method:getUsers");
+            e.printStackTrace();
+        }
+        return products;
+    }
+
     public List<Product> getProducts() {
 
         List<Product> products = new ArrayList<>();

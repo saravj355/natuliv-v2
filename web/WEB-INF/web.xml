@@ -9,6 +9,10 @@
         <servlet-name>DeleteUser</servlet-name>
         <servlet-class>servlet.admin.user.DeleteUser</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SearchProduct</servlet-name>
+        <servlet-class>servlet.admin.product.SearchProduct</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>GetProductInformation</servlet-name>
         <url-pattern>/api/GetProductInformation</url-pattern>
@@ -133,6 +137,10 @@
     <servlet-mapping>
         <servlet-name>DeleteUser</servlet-name>
         <url-pattern>/admin/users/delete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchProduct</servlet-name>
+        <url-pattern>/admin/products/search</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

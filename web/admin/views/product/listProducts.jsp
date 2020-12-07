@@ -10,6 +10,10 @@
     <hr>
     <div class="ml-5 mr-5">
         <a href="${pageContext.request.contextPath}/admin/products/add" class="btn btn-success float-right mb-3">+ Agregar Producto</a>
+        <form class="form-inline" action="${pageContext.request.contextPath}/admin/products/search">
+            <input type="text" name="search" class="form-control mr-3" placeholder="Busca un producto">
+            <input type="submit" value="Buscar" class="btn btn-success">
+        </form>
     </div>
     <table class="table table-striped text-center">
         <thead class="thead-dark">
@@ -53,10 +57,6 @@
         </c:choose>
     </tbody>
 </table>
-</div>
-<br>
-<br>
-<br>
 <jsp:include page="../../../shared/scripts.jsp" />
 <script src="${pageContext.request.contextPath}/admin/src/js/validation.js"></script>
 </body>

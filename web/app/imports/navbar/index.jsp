@@ -4,7 +4,7 @@
     <nav class="navbar sticky-top py-0 stroke">
         <a href="${pageContext.request.contextPath}/app" class="btn btn-outline-dark ml-5" id="hide-this"><i class="fas fa-arrow-left arrow mr-1"></i>Volver al inicio</a>
         <a class="navbar-brand mx-auto" href="${pageContext.request.contextPath}/app">
-            <img src="${pageContext.request.contextPath}/public/img/logo.png" class="d-inline-block align-top logo" alt="logo" loading="lazy">
+            <img src="${pageContext.request.contextPath}/public/img/logo.png" class="d-inline-block align-top logo" id="logo" alt="logo" loading="lazy">
         </a>
         <ul class="nav justify-content-end account">
             <li class="nav-item">

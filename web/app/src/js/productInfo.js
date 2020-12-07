@@ -22,7 +22,26 @@ $(document).ready(function () {
                         '<div class="col">' +
                             '<h5 class="modal-title text-center mb-4">' + product.name + '</h5>' +
                             '<p>' + product.description + '</p>' +
-                            '<p> Precio:' + product.price + '.000</p>' +
+                            '<nav>' +
+                                '<div class="nav nav-tabs" id="nav-tab" role="tablist">' +
+                                    '<a class="nav-item nav-link active bg-info text-white" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Información</a>' +
+                                    '<a class="nav-item nav-link bg-success text-white" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Modo de Uso</a>' +
+                                '</div>' +
+                            '</nav>' +
+                            '<div class="tab-content" id="nav-tabContent">' +
+                              '<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">' +
+                                    '<h6 class="font-weight-bold m-3">Empresa: <span class="font-weight-light">'+ product.supplier.name +'</span></h6>' +
+                                    '<h6 class="font-weight-bold m-3">Dirección: <span class="font-weight-light">'+ product.supplier.address +'</span></h6>' +
+                                    '<h6 class="font-weight-bold m-3">Sitio Web: <a class="font-weight-light" href="https://www.ecosadhana.co/" target="_blank">Eco Sadhana</a></h6>' +
+                               '</div>' +
+                              '<div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">' +
+                                '<p class="m-3">Puedes lavar tu rostro frotándolo suavemente directamente en el rostro.' +
+                                    'También puedes empapar tus manos del jabón y masajear tu rostro con las yemas de tus dedos.' + 
+                                    'Opcional puedes usar algún producto masajeador, pero no diariamente.' +
+                                '</p>'+
+                              '</div>' +
+                              '<div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>' +
+                            '</div>' +
                         '</div>' +
                     '</div>' +
                 '</div>' +

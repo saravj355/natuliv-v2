@@ -21,7 +21,7 @@ public class Administrator {
         UserDao getUsersList = new UserDao();
         return getUsersList.getUsers();
     }
-    
+
     public List<User> searchUsers(String search) {
         UserDao getSearchUserList = new UserDao();
         return getSearchUserList.searchUser(search);
@@ -30,6 +30,11 @@ public class Administrator {
     public List<Product> findProducts() {
         ProductDao getProductsList = new ProductDao();
         return getProductsList.getProducts();
+    }
+
+    public List<Product> searchProducts(String search) {
+        ProductDao getSearchProductList = new ProductDao();
+        return getSearchProductList.searchProduct(search);
     }
 
     public User findUserById(int id) {
@@ -46,11 +51,10 @@ public class Administrator {
         SupplierDao supplierDao = new SupplierDao();
         return supplierDao.getSupplierById(id);
     }
-    
+
     public List<Product> findProductsByCategoryId(int categoryId) {
         ProductDao getProductsList = new ProductDao();
         return getProductsList.getProductsByCategoryId(categoryId);
     }
-    
 
 }

@@ -40,6 +40,8 @@
         </div>
         <a href="${pageContext.servletContext.contextPath}/admin/suppliers" class="text-dark"><i class="fas fa-arrow-circle-left arrow mr-1"></i>Volver</a>
     </div>
+    <jsp:include page="../../../shared/scripts.jsp" />
+    <script src="${pageContext.request.contextPath}/admin/src/js/validation.js"></script>
 </body>
 
 

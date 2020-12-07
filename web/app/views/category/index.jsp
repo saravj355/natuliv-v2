@@ -6,7 +6,7 @@
 <jsp:include page="../../imports/navbar/index.jsp"/>
 <style>
     .bg-pink{
-        background:#ebddea;
+        background:#ededed;
     }
     .card{
         width:520px;
@@ -51,7 +51,7 @@
                                         Ver más información
                                     </button>
                                 </div>
-                                <div id="collapse_more_info_<c:out value="${counter}"/>" class="collapse show" aria-labelledby="collapse_text_<c:out value="${counter}"/>" data-parent="#accordion_<c:out value="${counter}"/>">
+                                <div id="collapse_more_info_<c:out value="${counter}"/>" class="collapse" aria-labelledby="collapse_text_<c:out value="${counter}"/>" data-parent="#accordion_<c:out value="${counter}"/>">
                                     <div class="card-body">
                                         <p class="card-text font-weight-bold">Dirección: 
                                             <span class="font-weight-light"><c:out value="${ product.getSupplier().getAddress() }"/></span>

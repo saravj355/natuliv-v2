@@ -8,6 +8,8 @@ $(document).ready(function () {
         $('#hide-this').css('display', 'none');
         $('#logo-margin').css('margin-left', '6.5em');
     }
+
+    $('#collapse').collapse("hide");
 });
 
 var loadFile = function (event) {

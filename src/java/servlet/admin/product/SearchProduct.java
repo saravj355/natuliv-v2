@@ -1,22 +1,22 @@
-package servlet.admin.user;
+package servlet.admin.product;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import model.Product;
 import model.User;
 
 /**
  *
  * @author sarav
  */
-@WebServlet(name = "SearchUser", urlPatterns = {"/admin/users/search"})
-public class SearchUser extends HttpServlet {
+public class SearchProduct extends HttpServlet {
 
     RequestDispatcher rd = null;
 
@@ -28,18 +28,18 @@ public class SearchUser extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
         HttpSession session = request.getSession();
 
         String search = request.getParameter("search");
 
         controller.Administrator administratorController = new controller.Administrator();
-        List<User> listUsersSearch = administratorController.searchUsers(search);
+        List<Product> listProductsSearch = administratorController.searchProducts(search);
 
-        session.setAttribute("LIST_ALL_USERS", listUsersSearch);
+        session.setAttribute("LIST_ALL_PRODUCTS", listProductsSearch);
 
-        rd = request.getRequestDispatcher("/admin/views/user/listUsers.jsp");
+        rd = request.getRequestDispatcher("/admin/views/product/listProducts.jsp");
         rd.forward(request, response);
+        processRequest(request, response);
     }
 
     @Override

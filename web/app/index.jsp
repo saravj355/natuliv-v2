@@ -3,7 +3,24 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
+<style>
+    .carousel-control img{
+        width:70px;
+        position:relative;
+        bottom:70px;
+    }
+    .carousel-control-prev {
+        left: -40px !important;
+    }
+    .carousel-control-next {
+        right: -40px !important;
+    }
+    .carousel-control{
+        opacity:10 !important;
+        width:6% !important;
+    }
 
+</style>
 <jsp:include page="./imports/navbar/index.jsp"/>
 <div class="m-5">
     <h4 class="text-center mt-5 font-weight-light text-uppercase"><span class="font-weight-normal">${name}</span>! estos productos son para ti</h4>
@@ -14,27 +31,24 @@
                 <div class="row">
                     <c:choose>
                         <c:when test="${ !empty sessionScope.LIST_ALL_PRODUCTS}">
-                            <c:forEach var="product" items="${sessionScope.LIST_ALL_PRODUCTS}" end="3">
+                            <c:forEach var="product" items="${sessionScope.LIST_ALL_PRODUCTS}" begin="30" end="33">
                                 <div class="col">
                                     <div class="card product_container" product-id="${product.getId()}">
-                                        <div class="card-body p-0">
-                                            <div class="content">
-                                                <div class="content-overlay"></div>
-                                                <img src="https://thumbs.dreamstime.com/b/fondo-de-madera-del-color-verde-claro-la-menta-textura-modelo-150938907.jpg" class="w-100" alt="transparent-image-overlay">
-                                                <div class="content-details fadeIn-bottom">
-                                                    <h3 class="content-title"> ${product.getName()}</h3>
-                                                    <hr class="bg-white mx-auto mb-4">
-                                                    <p class="content-text">
-                                                        ${product.getDescription()}<br>
-                                                    </p>
-                                                </div>
+                                        <div class="content">
+                                            <div class="content-overlay"></div>
+                                            <img src="${pageContext.request.contextPath}/${product.getImagePath()}" height="400" class="card-img w-100" alt="image-product">
+                                            <div class="content-details fadeIn-bottom">
+                                                <h3 class="content-title"> ${product.getName()}</h3>
+                                                <hr class="bg-white mx-auto mb-4">
+                                                <p class="content-text">
+                                                    ${product.getDescription()}<br>
+                                                </p>
                                             </div>
                                         </div>
                                         <div class="card-footer text-center">
                                             ${product.getName()}
                                         </div>
                                     </div>
-                                    </a>
                                 </div>
                             </c:forEach>
                         </c:when>
@@ -45,27 +59,52 @@
                 <div class="row">
                     <c:choose>
                         <c:when test="${ !empty sessionScope.LIST_ALL_PRODUCTS}">
-                            <c:forEach var="product" items="${sessionScope.LIST_ALL_PRODUCTS}" begin="4" end="7">
+                            <c:forEach var="product" items="${sessionScope.LIST_ALL_PRODUCTS}" begin="23" end="26">
                                 <div class="col">
                                     <div class="card product_container" product-id="${product.getId()}">
-                                        <div class="card-body p-0">
-                                            <div class="content">
-                                                <div class="content-overlay"></div>
-                                                <img src="https://thumbs.dreamstime.com/b/fondo-de-madera-del-color-verde-claro-la-menta-textura-modelo-150938907.jpg" class="w-100" alt="transparent-image-overlay">
-                                                <div class="content-details fadeIn-bottom">
-                                                    <h3 class="content-title"> ${product.getName()}</h3>
-                                                    <hr class="bg-white mx-auto mb-4">
-                                                    <p class="content-text">
-                                                        ${product.getDescription()}<br>
-                                                    </p>
-                                                </div>
+                                        <div class="content">
+                                            <div class="content-overlay"></div>
+                                            <img src="${pageContext.request.contextPath}/${product.getImagePath()}" height="400" class="card-img w-100" alt="image-product">
+                                            <div class="content-details fadeIn-bottom">
+                                                <h3 class="content-title"> ${product.getName()}</h3>
+                                                <hr class="bg-white mx-auto mb-4">
+                                                <p class="content-text">
+                                                    ${product.getDescription()}<br>
+                                                </p>
                                             </div>
                                         </div>
                                         <div class="card-footer text-center">
                                             ${product.getName()}
                                         </div>
                                     </div>
-                                    </a>
+                                </div>
+                            </c:forEach>
+                        </c:when>
+                    </c:choose>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row">
+                    <c:choose>
+                        <c:when test="${ !empty sessionScope.LIST_ALL_PRODUCTS}">
+                            <c:forEach var="product" items="${sessionScope.LIST_ALL_PRODUCTS}" begin="19" end="22">
+                                <div class="col">
+                                    <div class="card product_container" product-id="${product.getId()}">
+                                        <div class="content">
+                                            <div class="content-overlay"></div>
+                                            <img src="${pageContext.request.contextPath}/${product.getImagePath()}" height="400" class="card-img w-100" alt="image-product">
+                                            <div class="content-details fadeIn-bottom">
+                                                <h3 class="content-title"> ${product.getName()}</h3>
+                                                <hr class="bg-white mx-auto mb-4">
+                                                <p class="content-text">
+                                                    ${product.getDescription()}<br>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer text-center">
+                                            ${product.getName()}
+                                        </div>
+                                    </div>
                                 </div>
                             </c:forEach>
                         </c:when>
@@ -74,8 +113,12 @@
             </div>
         </div>
         <div class="controller">
-            <a class="carousel-control-prev carousel-control" href="#carouselProducts" role="button" data-slide="prev"></a>
-            <a class="carousel-control-next carousel-control" href="#carouselProducts" role="button" data-slide="next"></a>
+            <a class="carousel-control-prev carousel-control" href="#carouselProducts" role="button" data-slide="prev">
+                <img src="${pageContext.request.contextPath}/app/src/img/arrow-circle-left.png">
+            </a>
+            <a class="carousel-control-next carousel-control" href="#carouselProducts" role="button" data-slide="next">
+                <img src="${pageContext.request.contextPath}/app/src/img/arrow-circle-right.png">
+            </a>
         </div>
         <div class="text text-center mx-auto w-50 m-5">
             <p>Natuliv te ofrece la virtud mas esencial del producto natural,
@@ -99,6 +142,7 @@
 
 <jsp:include page="./imports/footer/index.jsp"/>
 <script src="${pageContext.request.contextPath}/app/src/js/productInfo.js"></script>
+<script src="${pageContext.request.contextPath}/app/src/js/app.js"></script>
 
 
 
