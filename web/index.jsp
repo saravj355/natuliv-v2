@@ -13,10 +13,10 @@
                 <img src="${pageContext.request.contextPath}/public/img/carrousel1.png" class="w-100" alt="image-carrousel">
             </div>
             <div class="carousel-item">
-                <img src="${pageContext.request.contextPath}/public/img/carrousel2.jpeg" class="w-100" alt="image-carrousel" height="525">
+                <img src="${pageContext.request.contextPath}/public/img/carrousel2.jpeg" class="w-100" alt="image-carrousel" height="582">
             </div>
             <div class="carousel-item">
-                <img src="${pageContext.request.contextPath}/public/img/carrousel3.jpeg" class="w-100" alt="image-carrousel" height="525">
+                <img src="${pageContext.request.contextPath}/public/img/carrousel3.jpeg" class="w-100" alt="image-carrousel" height="582">
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
