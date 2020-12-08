@@ -38,7 +38,7 @@
                 <p> Elabora productos naturales, tanto para el cuidado del cabello, rostro y piel corporal.
                     Cuenta con excelentes testimonios por parte de sus clientes. <br>
                     ¡Ánimate a experimentar y cambiar tu vida para tener una Piel Perfectta!</p>
-                <button type="button" class="btn btn-outline-success">Conocer más &raquo;</button>
+                <button type="button" class="btn btn-info">Conocer más &raquo;</button>
             </div>
             <div class="col-lg-4">
                 <img src="${pageContext.request.contextPath}/public/img/cocosecha.jpg" class="rounded-circle mx-auto" alt="image-brand" width="140" height="130">
@@ -46,7 +46,7 @@
                 <p> Empresa Colombiana que ofrece productos 100% naturales para el uso personal.
                     Al ensayar sus elaboraciones, notas cambios y resultados muy ligeros y óptimos. <br>
                     Tu mejor opción es Cocosecha</p>
-                <button type="button" class="btn btn-outline-success">Conocer más &raquo;</button>
+                <button type="button" class="btn btn-info">Conocer más &raquo;</button>
             </div>
             <div class="col-lg-4">
                 <img src="${pageContext.request.contextPath}/public/img/encantoNatural.jpg" class="rounded-circle mx-auto" alt="image-brand" width="150" height="130">
@@ -54,7 +54,7 @@
                 <p> Fabrica productos naturales para el cuidado facial, corporal y del cabello.
                     Brindando múltiples beneficios para quienes usen dichos productos. <br>
                     Decide lo sobresaliente, decide a <br> Encanto Natural</p>
-                <button type="button" class="btn btn-outline-success">Conocer más &raquo;</button>
+                <button type="button" class="btn btn-info">Conocer más &raquo;</button>
             </div>
         </div> 
     </div> 
@@ -75,7 +75,8 @@
         <h3 class="title">¡Hola!</h3>
         <hr>
         <p>Disfruta todos los beneficios que tenemos para ti, porque cuidarte es lo más importante para nosotros </p>
-        <a href="${pageContext.request.contextPath}/login" class="btn btn-lg btn-info"><span>Ir a Natuliv </span>
+        <a href="${pageContext.request.contextPath}/login" class="btn btn-info">
+            Ir a Natuliv
             <i class="fas fa-angle-double-right arrow" aria-hidden="true"></i>
         </a>
     </div>
