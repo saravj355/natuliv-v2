@@ -30,6 +30,7 @@ $(document).ready(function () {
                             '</nav>' +
                             '<div class="tab-content" id="nav-tabContent">' +
                               '<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">' +
+                                    '<h6 class="font-weight-bold m-3">Precio: <span class="font-weight-light">'+ product.price +'.000</span></h6>' +
                                     '<h6 class="font-weight-bold m-3">Empresa: <span class="font-weight-light">'+ product.supplier.name +'</span></h6>' +
                                     '<h6 class="font-weight-bold m-3">Dirección: <span class="font-weight-light">'+ product.supplier.address +'</span></h6>' +
                                     '<h6 class="font-weight-bold m-3">Número Contacto: <span class="font-weight-light">'+ product.supplier.contactNumber +'</span></h6>' +
