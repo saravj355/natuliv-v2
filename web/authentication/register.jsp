@@ -43,7 +43,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <select class="custom-select" name="gender" required>
+                        <select class="custom-select" name="gender">
                             <option value="" selected>Género</option>
                             <option value="Femenino">Femenino</option>
                             <option value="Masculino">Masculino</option>

@@ -82,8 +82,8 @@ public class UserDao {
     public List<User> searchUser(String search) {
         List<User> users = new ArrayList<User>();
         try {
-            String query = "select * from user WHERE name like '%" + search + "%' "
-                    + "or lastName like '%" + search + "%' or email like '%" + search + "%' or gender like '%" + search + "%'";
+            String query = "select * from user WHERE (name like '%" + search + "%'"
+                    + "or lastName like '%" + search + "%' or email like '%" + search + "%' or gender like '%" + search + "%') and userRoleId=2";
             PreparedStatement pst = this.conn.prepareStatement(query);
 
             ResultSet rs = pst.executeQuery();

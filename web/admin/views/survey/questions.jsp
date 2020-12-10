@@ -25,7 +25,7 @@
                 <tbody>
                     <tr>
                         <td>¿CUÁL ES TU RANGO DE EDAD?</td>
-                        <td>0</td>
+                        <td>2</td>
                         <td>0</td>
                         <td>0</td>
                         <td>0</td>
@@ -47,9 +47,9 @@
                 <tbody>
                     <tr>
                         <td>¿HAS USADO COSMÉTICOS NATURALES?</td>
+                        <td>1</td>
                         <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
+                        <td>1</td>
                         <td>0</td>
                     </tr>
                 </tbody>
@@ -69,7 +69,7 @@
                 <tbody>
                     <tr>
                         <td>¿HAS USADO COSMÉTICOS CON ALGÚN QUÍMICO?</td>
-                        <td>0</td>
+                        <td>2</td>
                         <td>0</td>
                         <td>0</td>
                         <td>0</td>
@@ -92,8 +92,8 @@
                     <tr>
                         <td>¿CÓMO CONSIDERAS LA PIEL DE TU ROSTRO?</td>
                         <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
+                        <td>1</td>
+                        <td>1</td>
                         <td>0</td>
                     </tr>
                 </tbody>
@@ -113,10 +113,10 @@
                 <tbody>
                     <tr>
                         <td>¿CÓMO CONSIDERAS TU TIPO DE CABELLO?</td>
+                        <td>1</td>
                         <td>0</td>
                         <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
+                        <td>1</td>
                     </tr>
                 </tbody>
             </table>
@@ -137,8 +137,8 @@
                         <td>¿CONOCES LOS BENEFICIOS QUE CONTIENEN LOS PRODUCTOS NATURALES?</td>
                         <td>0</td>
                         <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
+                        <td>1</td>
+                        <td>1</td>
                     </tr>
                 </tbody>
             </table>
@@ -158,11 +158,12 @@
                     <tr>
                         <td>¿QUE TIPO DE PRODUCTOS PARA EL ROSTRO USAS FRECUENTEMENTE?</td>
                         <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
+                        <td>1</td>
+                        <td>1</td>
                         <td>0</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
+</div>
