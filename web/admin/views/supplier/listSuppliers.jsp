@@ -31,6 +31,7 @@
                                 <td><c:out value="${ supplier.getContactNumber()}"/></td>
                                 <td>
                                     <a href="${pageContext.request.contextPath}/admin/suppliers/edit?id=${supplier.getId()}" class="btn btn-info">Editar</a>
+                                    <a href="${pageContext.request.contextPath}/admin/suppliers/delete?id=${supplier.getId()}" class="btn btn-danger">Eliminar</a>
                                 </td>
                             </tr>
                         </c:forEach>                                           

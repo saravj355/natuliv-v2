@@ -17,6 +17,10 @@
         <servlet-name>DataSurvey</servlet-name>
         <servlet-class>servlet.admin.survey.DataSurvey</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DeleteSupplier</servlet-name>
+        <servlet-class>servlet.admin.supplier.DeleteSupplier</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>GetProductInformation</servlet-name>
         <url-pattern>/api/GetProductInformation</url-pattern>
@@ -149,6 +153,10 @@
     <servlet-mapping>
         <servlet-name>DataSurvey</servlet-name>
         <url-pattern>/admin/survey</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteSupplier</servlet-name>
+        <url-pattern>/admin/suppliers/delete</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

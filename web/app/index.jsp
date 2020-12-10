@@ -31,7 +31,7 @@
                 <div class="row">
                     <c:choose>
                         <c:when test="${ !empty sessionScope.LIST_ALL_PRODUCTS}">
-                            <c:forEach var="product" items="${sessionScope.LIST_ALL_PRODUCTS}" begin="30" end="33">
+                            <c:forEach var="product" items="${sessionScope.LIST_ALL_PRODUCTS}" begin="27" end="30">
                                 <div class="col">
                                     <div class="card product_container" product-id="${product.getId()}">
                                         <div class="content">
@@ -59,7 +59,7 @@
                 <div class="row">
                     <c:choose>
                         <c:when test="${ !empty sessionScope.LIST_ALL_PRODUCTS}">
-                            <c:forEach var="product" items="${sessionScope.LIST_ALL_PRODUCTS}" begin="23" end="26">
+                            <c:forEach var="product" items="${sessionScope.LIST_ALL_PRODUCTS}" begin="5" end="9">
                                 <div class="col">
                                     <div class="card product_container" product-id="${product.getId()}">
                                         <div class="content">

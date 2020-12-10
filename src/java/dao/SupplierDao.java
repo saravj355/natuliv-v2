@@ -62,6 +62,24 @@ public class SupplierDao {
         return false;
     }
 
+    public boolean delete(int id) {
+        PreparedStatement pst = null;
+        try {
+            String query = "delete from supplier where id=?";
+            pst = this.conn.prepareStatement(query);
+            pst.setInt(1, id);
+
+            if (pst.executeUpdate() == 1) {
+                pst.close();
+                return true;
+            }
+        } catch (SQLException e) {
+            System.out.println("Error: Clase SupplierDao, method:delete");
+            e.printStackTrace();
+        }
+        return false;
+    }
+
     public List<Supplier> getSuppliers() {
         List<Supplier> suppliers = new ArrayList<Supplier>();
         try {
