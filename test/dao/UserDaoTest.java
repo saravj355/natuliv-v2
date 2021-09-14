@@ -1,6 +1,6 @@
 package dao;
 
-import controller.Auth;
+import controller.UserController;
 import model.User;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -8,7 +8,6 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import utils.PasswordHash;
 
 /**
  *
@@ -38,8 +37,8 @@ public class UserDaoTest {
     @Test
     public void testLoginUser() {
         System.out.println("Login test");
-        User user = Auth.login("laura123@gmail.com", "1234");
-        
+        User user = UserController.login("sofiam123@gmail.com", "1234");
+
         System.out.println("Correo:" + user.getEmail());
         System.out.println("Contraseña:" + user.getPasswordHash());
 
@@ -47,60 +46,56 @@ public class UserDaoTest {
     }
 
     @Test
+    public void testDeleteUser() {
+        System.out.println("Login test");
+        boolean result = UserController.deleteUserById(21);
+
+        assertEquals(true, result);
+    }
+
+    @Test
     public void testUpdateUser() {
         System.out.println("testUpdateUser");
         User user = new User();
 
-        String passHash = PasswordHash.compute("1234");
-
-        user.setId(12);
-        user.setName("Laura");
+        user.setId(21);
+        user.setFirstName("Sofia");
         user.setLastName("Torres");
-        user.setEmail("laura123@gmail.com");
-        user.setPasswordHash(passHash);
+        user.setEmail("sofiam123@gmail.com");
         user.setGender("Femenino");
-        user.setUserRoleId(2);
 
-        UserDao instance = new UserDao();
+        UserController instance = new UserController();
         boolean expResult = true;
-        boolean result = instance.update(user);
-        
-        System.out.println("Nombre:" + user.getName());
+        boolean result = instance.updateUser(user);
+
+        System.out.println("Nombre:" + user.getFirstName());
         System.out.println("Apellido:" + user.getLastName());
         System.out.println("Correo:" + user.getEmail());
-        System.out.println("Contraseña:" + user.getPasswordHash());
-        System.out.println("Género:" + user.getGender());
-        System.out.println("Rol usuario:" + user.getUserRoleId());
-        
+
         assertEquals(expResult, result);
     }
 
     @Test
     public void testInsertUser() {
         System.out.println("testInsertUser");
+
         User user = new User();
-
-        String passHash = PasswordHash.compute("1234");
-        user.setId(1);
-        user.setName("Laura");
-        user.setLastName("Torres");
-        user.setEmail("laura12@gmail.com");
-        user.setPasswordHash(passHash);
+        user.setFirstName("Sofia");
+        user.setLastName("Muñoz");
+        user.setEmail("sofia@support.com");
         user.setGender("Femenino");
-        user.setUserRoleId(2);
+        user.setPassword("1234");
 
-        UserDao instance = new UserDao();
-        boolean expResult = true;
-        boolean result = instance.insert(user);
-        
-        System.out.println("Nombre:" + user.getName());
-        System.out.println("Apellido:" + user.getLastName());
-        System.out.println("Correo:" + user.getEmail());
-        System.out.println("Contraseña:" + user.getPasswordHash());
-        System.out.println("Género:" + user.getGender());
-        System.out.println("Rol usuario:" + user.getUserRoleId());
-        
-        assertEquals(expResult, result);
+        User newUser = UserController.createUser(user, "SUPPORT");
+
+        System.out.println("Nombre:" + newUser.getFirstName());
+        System.out.println("Apellido:" + newUser.getLastName());
+        System.out.println("Correo:" + newUser.getEmail());
+        System.out.println("Contraseña:" + newUser.getPasswordHash());
+        System.out.println("Género:" + newUser.getGender());
+        System.out.println("Rol usuario:" + newUser.getUserRoleId());
+
+        assertEquals(newUser, newUser);
     }
 
 }

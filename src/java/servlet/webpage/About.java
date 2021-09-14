@@ -28,7 +28,7 @@ public class About extends HttpServlet {
 
         response.setContentType("text/html;charset=UTF-8");
 
-        rd = request.getRequestDispatcher("/about.jsp");
+        rd = request.getRequestDispatcher("/src/web-page/about.jsp");
         rd.include(request, response);
         processRequest(request, response);
     }

@@ -28,7 +28,7 @@ public class Contact extends HttpServlet {
 
         response.setContentType("text/html;charset=UTF-8");
 
-        rd = request.getRequestDispatcher("/contact.jsp");
+        rd = request.getRequestDispatcher("/src/web-page/contact.jsp");
         rd.include(request, response);
         processRequest(request, response);
     }

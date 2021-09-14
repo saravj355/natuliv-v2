@@ -1,17 +1,12 @@
 package servlet.admin.user;
 
-import dao.SurveyDao;
-import dao.UserDao;
+import controller.UserController;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author sarav
- */
 public class DeleteUser extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -23,16 +18,12 @@ public class DeleteUser extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
+
         int userId = Integer.parseInt(request.getParameter("id"));
 
-        SurveyDao surveyDao = new SurveyDao();
-        surveyDao.deleteSurveyAnswersByUser(userId);
+        UserController.deleteUserById(userId);
 
-        UserDao userDao = new UserDao();
-        userDao.deleteUser(userId);
-
-        response.sendRedirect(request.getContextPath() + "/admin/users");
+        response.sendRedirect(request.getContextPath() + "/admin/users?role=user");
         processRequest(request, response);
     }
 

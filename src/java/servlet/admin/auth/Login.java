@@ -1,6 +1,6 @@
 package servlet.admin.auth;
 
-import controller.Auth;
+import controller.UserController;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -26,7 +26,7 @@ public class Login extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
-        rd = request.getRequestDispatcher("/admin/authentication/login.jsp");
+        rd = request.getRequestDispatcher("/src/portal-admin/authentication/login.jsp");
         rd.include(request, response);
 
         processRequest(request, response);
@@ -44,24 +44,25 @@ public class Login extends HttpServlet {
         if (email.isEmpty() || password.isEmpty()) {
             request.setAttribute("errorMessage", "Por favor llene todos los campos.");
             getServletContext().
-                    getRequestDispatcher("/admin/authentication/login.jsp")
+                    getRequestDispatcher("/src/portal-admin/authentication/login.jsp")
                     .forward(request, response);
             return;
         }
 
-        User admin = Auth.loginAdministrator(email, password);
+        User admin = UserController.login(email, password);
 
         // user not found. redirect to index page
         if (admin == null) {
             request.setAttribute("errorMessage", "La contraseña o el correo electrónico son incorrectos.");
             getServletContext().
-                    getRequestDispatcher("/admin/authentication/login.jsp")
+                    getRequestDispatcher("/src/portal-admin/authentication/login.jsp")
                     .forward(request, response);
             return;
         }
 
         HttpSession session = request.getSession();
-        session.setAttribute("name", admin.getName());
+        session.setAttribute("firstName", admin.getFirstName());
+        session.setAttribute("user", admin);
 
         response.sendRedirect(request.getContextPath() + "/admin");
     }

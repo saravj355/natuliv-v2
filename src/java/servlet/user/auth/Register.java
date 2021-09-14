@@ -1,7 +1,6 @@
 package servlet.user.auth;
 
-import controller.Auth;
-import dao.UserDao;
+import controller.UserController;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -32,7 +31,7 @@ public class Register extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
-        rd = request.getRequestDispatcher("/authentication/register.jsp");
+        rd = request.getRequestDispatcher("/src/portal-client/authentication/register.jsp");
         rd.include(request, response);
     }
 
@@ -43,19 +42,33 @@ public class Register extends HttpServlet {
 
         HttpSession session = request.getSession(true);
 
-        String name = request.getParameter("name");
+        String firstName = request.getParameter("firstName");
         String lastName = request.getParameter("lastName");
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         String confirmPassword = request.getParameter("confirmPassword");
         String gender = request.getParameter("gender");
+        String userRole = "USER";
 
         //checks empty inputs
-        if (name.isEmpty() || lastName.isEmpty() || email.isEmpty()
+        if (firstName.isEmpty() || lastName.isEmpty() || email.isEmpty()
                 || password.isEmpty() || confirmPassword.isEmpty() || gender == null) {
 
             request.setAttribute("errorMessage", "Por favor llene todos los campos.");
-            getServletContext().getRequestDispatcher("/authentication/register.jsp").forward(request, response);
+            getServletContext().getRequestDispatcher("/src/portal-client/authentication/register.jsp").forward(request, response);
+            return;
+        }
+
+        UserController userController = new UserController();
+
+        User foundUser = userController.findUserByEmail(email);
+
+        //Checks if email already exists
+        if (foundUser != null) {
+            request.setAttribute("errorMessage", "Este correo ya está asociado a una cuenta");
+            getServletContext().
+                    getRequestDispatcher("/src/portal-client/authentication/register.jsp")
+                    .forward(request, response);
             return;
         }
 
@@ -63,32 +76,26 @@ public class Register extends HttpServlet {
         if (!password.equals(confirmPassword)) {
             request.setAttribute("errorMessage", "La contraseña no coincide");
             getServletContext().
-                    getRequestDispatcher("/authentication/register.jsp")
+                    getRequestDispatcher("/src/portal-client/authentication/register.jsp")
                     .forward(request, response);
             return;
         }
 
-        UserDao userDao = new UserDao();
-
-        User user = userDao.findUserByEmail(email);
-        //Checks if email already exists
-        if (user != null) {
-            request.setAttribute("errorMessage", "Este correo ya está asociado a una cuenta");
-            getServletContext().
-                    getRequestDispatcher("/authentication/register.jsp")
-                    .forward(request, response);
-            return;
-        }
+        User user = new User();
+        user.setFirstName(firstName);
+        user.setLastName(lastName);
+        user.setEmail(email);
+        user.setGender(gender);
+        user.setPassword(password);
 
         // creates user
-        User newUser = Auth.register(name, lastName, email, password, gender);
+        User newUser = UserController.createUser(user, userRole);
 
-        User userId = userDao.findUserIdByEmail(email);
         // redirect to app page when user is created
         if (newUser != null) {
-            session.setAttribute("userId", userId.getId());
-            session.setAttribute("name", newUser.getName());
-            response.sendRedirect(request.getContextPath() + "/test?id=" + userId.getId());
+            session.setAttribute("userId", newUser.getId());
+            session.setAttribute("firstName", newUser.getFirstName());
+            response.sendRedirect(request.getContextPath() + "/test?id=" + newUser.getId());
         }
     }
 

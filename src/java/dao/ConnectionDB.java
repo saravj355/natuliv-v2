@@ -2,10 +2,6 @@ package dao;
 
 import java.sql.*;
 
-/**
- *
- * @author sarav
- */
 public class ConnectionDB {
 
     private String USERNAME = "root";
@@ -21,9 +17,7 @@ public class ConnectionDB {
         try {
             Class.forName(CLASSNAME);
             this.conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-        } catch (ClassNotFoundException e) {
-            throw new Error(e);
-        } catch (SQLException e) {
+        } catch (ClassNotFoundException | SQLException e) {
             throw new Error(e);
         }
     }

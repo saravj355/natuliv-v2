@@ -1,9 +1,5 @@
 package model;
 
-/**
- *
- * @author sarav
- */
 public class Product {
 
     private int id;
@@ -13,45 +9,24 @@ public class Product {
     private ProductCategory productCategory;
     private String name;
     private String description;
-    private double price;
+    private int price;
     private boolean isActive;
     private String imagePath;
 
-    public Product() {
-    }
-
-    public Product(int id, int supplierId, int productCategoryId, String name, String description, double price, boolean isActive) {
+    public Product(int id, int supplierId, Supplier supplier, int productCategoryId, ProductCategory productCategory, String name, String description, int price, boolean isActive, String imagePath) {
         this.id = id;
         this.supplierId = supplierId;
+        this.supplier = supplier;
         this.productCategoryId = productCategoryId;
+        this.productCategory = productCategory;
         this.name = name;
         this.description = description;
         this.price = price;
         this.isActive = isActive;
-    }
-
-    public String getImagePath() {
-        return this.imagePath;
-    }
-
-    public void setImagePath(String imagePath) {
         this.imagePath = imagePath;
     }
 
-    public ProductCategory getProductCategory() {
-        return this.productCategory;
-    }
-
-    public void setProductCategory(ProductCategory productCategory) {
-        this.productCategory = productCategory;
-    }
-
-    public Supplier getSupplier() {
-        return this.supplier;
-    }
-
-    public void setSupplier(Supplier supplier) {
-        this.supplier = supplier;
+    public Product() {
     }
 
     public int getId() {
@@ -70,12 +45,28 @@ public class Product {
         this.supplierId = supplierId;
     }
 
+    public Supplier getSupplier() {
+        return supplier;
+    }
+
+    public void setSupplier(Supplier supplier) {
+        this.supplier = supplier;
+    }
+
     public int getProductCategoryId() {
         return productCategoryId;
     }
 
     public void setProductCategoryId(int productCategoryId) {
         this.productCategoryId = productCategoryId;
+    }
+
+    public ProductCategory getProductCategory() {
+        return productCategory;
+    }
+
+    public void setProductCategory(ProductCategory productCategory) {
+        this.productCategory = productCategory;
     }
 
     public String getName() {
@@ -94,11 +85,11 @@ public class Product {
         this.description = description;
     }
 
-    public double getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
@@ -109,4 +100,13 @@ public class Product {
     public void setIsActive(boolean isActive) {
         this.isActive = isActive;
     }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
+    }
+
 }

@@ -1,22 +1,18 @@
 package model;
 
-/**
- *
- * @author sarav
- */
 public class UserRole {
 
     private int id;
-    private String name;
+    private String displayName;
     private String keyName;
 
-    public UserRole() {
+    public UserRole(int id, String displayName, String keyName) {
+        this.id = id;
+        this.displayName = displayName;
+        this.keyName = keyName;
     }
 
-    public UserRole(int id, String name, String keyName) {
-        this.id = id;
-        this.name = name;
-        this.keyName = keyName;
+    public UserRole() {
     }
 
     public int getId() {
@@ -27,12 +23,12 @@ public class UserRole {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getDisplayName() {
+        return displayName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
     }
 
     public String getKeyName() {
@@ -42,4 +38,5 @@ public class UserRole {
     public void setKeyName(String keyName) {
         this.keyName = keyName;
     }
+
 }

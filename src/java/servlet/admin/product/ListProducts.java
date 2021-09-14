@@ -1,5 +1,6 @@
 package servlet.admin.product;
 
+import controller.ProductController;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
@@ -22,12 +23,12 @@ public class ListProducts extends HttpServlet {
 
         HttpSession session = request.getSession();
 
-        controller.Administrator list = new controller.Administrator();
+        ProductController products = new ProductController();
 
-        List<Product> listProducts = list.findProducts();
+        List<Product> listProducts = products.listProducts();
         session.setAttribute("LIST_ALL_PRODUCTS", listProducts);
 
-        rd = request.getRequestDispatcher("/admin/views/product/listProducts.jsp");
+        rd = request.getRequestDispatcher("/src/portal-admin/views/product/listProducts.jsp");
         rd.include(request, response);
     }
 
@@ -38,7 +39,7 @@ public class ListProducts extends HttpServlet {
 
         HttpSession session = request.getSession();
 
-        if (session.getAttribute("name") == null) {
+        if (session.getAttribute("firstName") == null) {
             response.sendRedirect(request.getContextPath() + "/admin/login");
         }
 

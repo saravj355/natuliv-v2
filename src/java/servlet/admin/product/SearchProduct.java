@@ -1,5 +1,6 @@
 package servlet.admin.product;
 
+import controller.ProductController;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
@@ -27,17 +28,17 @@ public class SearchProduct extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
+
         HttpSession session = request.getSession();
 
         String search = request.getParameter("search");
 
-        controller.Administrator administratorController = new controller.Administrator();
-        List<Product> listProductsSearch = administratorController.searchProducts(search);
+        ProductController productController = new ProductController();
+        List<Product> listProductsSearch = productController.searchProduct(search);
 
         session.setAttribute("LIST_ALL_PRODUCTS", listProductsSearch);
 
-        rd = request.getRequestDispatcher("/admin/views/product/listProducts.jsp");
+        rd = request.getRequestDispatcher("/src/portal-admin/views/product/listProducts.jsp");
         rd.forward(request, response);
         processRequest(request, response);
     }

@@ -63,10 +63,11 @@ nav ul > li > .fill:hover:after{
     width:100%;
 }
 
-.user-icon{
-    margin-right: 5px;
-}
-
 .dropdown-menu{
     margin: -0.875rem 45px 0 !important;
+}
+
+.nav-link > i{
+    margin: 0 10px;
+    font-size: 1.5em;
 }

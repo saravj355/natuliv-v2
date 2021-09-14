@@ -1,20 +1,18 @@
 package model;
 
-/**
- *
- * @author sarav
- */
 public class ProductCategory {
 
     private int id;
-    private String name;
+    private String displayName;
+    private String keyName;
 
-    public ProductCategory() {
+    public ProductCategory(int id, String displayName, String keyName) {
+        this.id = id;
+        this.displayName = displayName;
+        this.keyName = keyName;
     }
 
-    public ProductCategory(int id, String name) {
-        this.id = id;
-        this.name = name;
+    public ProductCategory() {
     }
 
     public int getId() {
@@ -25,11 +23,20 @@ public class ProductCategory {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getDisplayName() {
+        return displayName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
     }
+
+    public String getKeyName() {
+        return keyName;
+    }
+
+    public void setKeyName(String keyName) {
+        this.keyName = keyName;
+    }
+
 }

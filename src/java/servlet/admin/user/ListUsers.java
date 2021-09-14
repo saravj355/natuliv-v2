@@ -1,6 +1,5 @@
 package servlet.admin.user;
 
-import controller.list.LinkedList;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
@@ -11,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import model.User;
+import controller.UserController;
 
 /**
  *
@@ -27,21 +27,20 @@ public class ListUsers extends HttpServlet {
 
         HttpSession session = request.getSession();
 
-        if (session.getAttribute("name") == null) {
+        String userRole = request.getParameter("role");
+        System.out.println(userRole);
+
+        if (session.getAttribute("firstName") == null) {
             response.sendRedirect(request.getContextPath() + "/admin/login");
         }
 
-        controller.Administrator administratorController = new controller.Administrator();
-        List<User> listUsers = administratorController.findUsers();
-
+        UserController userController = new UserController();
+        List<User> listUsers = userController.findUsersByKeyNameRole(userRole.toUpperCase());
         session.setAttribute("LIST_ALL_USERS", listUsers);
+                
+        session.setAttribute("role", userRole);
 
-        LinkedList users = new LinkedList();
-        for (int i = 0; i < listUsers.size(); i++) {
-            users.add(listUsers.get(i));
-        }
-
-        rd = request.getRequestDispatcher("/admin/views/user/listUsers.jsp");
+        rd = request.getRequestDispatcher("/src/portal-admin/views/user/listUsers.jsp");
         rd.include(request, response);
     }
 

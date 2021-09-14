@@ -27,7 +27,7 @@ public class Home extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
-        rd = request.getRequestDispatcher("/index.jsp");
+        rd = request.getRequestDispatcher("/src/web-page/main.jsp");
         rd.include(request, response);
         processRequest(request, response);
     }

@@ -1,6 +1,8 @@
 package servlet.admin.product;
 
-import dao.ProductCategoryDao;
+import controller.ProductController;
+import controller.SupplierController;
+import dao.TicketPriorityDao;
 import dao.ProductDao;
 import dao.SupplierDao;
 import java.io.IOException;
@@ -35,22 +37,23 @@ public class AddProduct extends HttpServlet {
 
         HttpSession session = request.getSession();
 
-        if (session.getAttribute("name") == null) {
+        if (session.getAttribute("firstName") == null) {
             response.sendRedirect(request.getContextPath() + "/admin/login");
         }
 
         // Get all the categories
-        ProductCategoryDao productCategoryDao = new ProductCategoryDao();
-        List<ProductCategory> productCategoryList = productCategoryDao.
-                getProductCategories();
+        ProductController productController = new ProductController();
+
+        List<ProductCategory> productCategoryList = productController.listProductCategories();
         session.setAttribute("productCategoryList", productCategoryList);
 
         //Get all the suppliers
-        SupplierDao supplierDao = new SupplierDao();
-        List<Supplier> supplierList = supplierDao.getSuppliers();
+        SupplierController supplierController = new SupplierController();
+        List<Supplier> supplierList = supplierController.listSuppliers();
+
         session.setAttribute("supplierList", supplierList);
 
-        rd = request.getRequestDispatcher("/admin/views/product/addProduct.jsp");
+        rd = request.getRequestDispatcher("/src/portal-admin/views/product/addProduct.jsp");
         rd.include(request, response);
     }
 
@@ -64,23 +67,22 @@ public class AddProduct extends HttpServlet {
         int supplierId = Integer.parseInt(request.getParameter("supplierId"));
         String description = request.getParameter("description");
         String name = request.getParameter("name");
-        Double price = Double.parseDouble(request.getParameter("price"));
-        Boolean isActive = Boolean.parseBoolean(request.getParameter("isActive"));
+        int price = Integer.parseInt(request.getParameter("price"));
         String imagePath = request.getParameter("imagePath");
-
-        String filePath = "public/products/";
+        
+        String filePath = "src/portal-admin/src/img/products/";
 
         Product product = new Product();
         product.setName(name);
         product.setProductCategoryId(categoryId);
         product.setDescription(description);
         product.setPrice(price);
-        product.setIsActive(isActive);
+        product.setIsActive(true);
         product.setSupplierId(supplierId);
         product.setImagePath(filePath + imagePath);
 
-        ProductDao productDao = new ProductDao();
-        productDao.insert(product);
+        ProductController productController = new ProductController();
+        productController.createProduct(product);
 
         response.sendRedirect(request.getContextPath() + "/admin/products");
     }

@@ -1,5 +1,8 @@
 package servlet.admin.supplier;
 
+import controller.ProductController;
+import controller.SupplierController;
+import dao.ProductDao;
 import dao.SupplierDao;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -25,11 +28,11 @@ public class DeleteSupplier extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-         int productId = Integer.parseInt(request.getParameter("id"));
 
-        SupplierDao supplierDao = new SupplierDao();
-        supplierDao.delete(productId);
+        int supplierId = Integer.parseInt(request.getParameter("id"));
+
+        SupplierController supplierController = new SupplierController();
+        supplierController.deleteSupplierById(supplierId);
 
         response.sendRedirect(request.getContextPath() + "/admin/suppliers");
 

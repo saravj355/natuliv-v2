@@ -1,5 +1,6 @@
 package servlet.user.category;
 
+import controller.ProductController;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
@@ -32,15 +33,15 @@ public class Categories extends HttpServlet {
 
         int productsCategoryId = Integer.parseInt(request.getParameter("products"));
 
-        controller.Administrator list = new controller.Administrator();
+        ProductController productController = new ProductController();
 
-        List<Product> listProducts = list.findProductsByCategoryId(productsCategoryId);
-        session.setAttribute("LIST_ALL_PRODUCTS", listProducts);
+        List<Product> products = productController.findProductsByCategoryId(productsCategoryId);
+        session.setAttribute("LIST_ALL_PRODUCTS", products);
 
-        if (session.getAttribute("name") == null) {
+        if (session.getAttribute("firstName") == null) {
             response.sendRedirect(request.getContextPath() + "/login");
         }
-        rd = request.getRequestDispatcher("/app/views/category/index.jsp");
+        rd = request.getRequestDispatcher("/src/portal-client/views/category.jsp");
         rd.include(request, response);
     }
 

@@ -1,5 +1,6 @@
 package servlet.admin;
 
+import controller.UserController;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -30,10 +31,19 @@ public class AdminApp extends HttpServlet {
 
         HttpSession session = request.getSession();
 
-        if (session.getAttribute("name") == null) {
+        if (session.getAttribute("firstName") == null) {
             response.sendRedirect(request.getContextPath() + "/admin/login");
         }
-        rd = request.getRequestDispatcher("/admin/index.jsp");
+
+        UserController userController = new UserController();
+
+        int userFemaleQuantity = userController.getUserQuantityByGender("Femenino");
+        session.setAttribute("FEMALE_USERS_QUANTITY", userFemaleQuantity);
+
+        int userMaleQuantity = userController.getUserQuantityByGender("Masculino");
+        session.setAttribute("MALE_USERS_QUANTITY", userMaleQuantity);
+
+        rd = request.getRequestDispatcher("/src/portal-admin/views/main.jsp");
         rd.include(request, response);
 
         processRequest(request, response);

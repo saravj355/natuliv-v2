@@ -1,5 +1,6 @@
 package servlet.admin.user;
 
+import controller.UserController;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
@@ -33,13 +34,16 @@ public class SearchUser extends HttpServlet {
         HttpSession session = request.getSession();
 
         String search = request.getParameter("search");
+        String keyNameRole = request.getParameter("role");
+        
+        System.out.println(keyNameRole);
 
-        controller.Administrator administratorController = new controller.Administrator();
-        List<User> listUsersSearch = administratorController.searchUsers(search);
+        UserController userController = new UserController();
+        List<User> foundUsers = userController.searchUsers(search, keyNameRole);
 
-        session.setAttribute("LIST_ALL_USERS", listUsersSearch);
+        session.setAttribute("LIST_ALL_USERS", foundUsers);
 
-        rd = request.getRequestDispatcher("/admin/views/user/listUsers.jsp");
+        rd = request.getRequestDispatcher("/src/portal-admin/views/user/listUsers.jsp");
         rd.forward(request, response);
     }
 

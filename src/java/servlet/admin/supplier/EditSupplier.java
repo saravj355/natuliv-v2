@@ -1,5 +1,6 @@
 package servlet.admin.supplier;
 
+import controller.SupplierController;
 import dao.SupplierDao;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
@@ -27,19 +28,19 @@ public class EditSupplier extends HttpServlet {
 
         HttpSession session = request.getSession();
 
-        if (session.getAttribute("name") == null) {
+        if (session.getAttribute("firstName") == null) {
             response.sendRedirect(request.getContextPath() + "/admin/login");
         }
 
-        int id = Integer.parseInt(request.getParameter("id"));
+        int supplierId = Integer.parseInt(request.getParameter("id"));
 
         //Get the supplier data
-        controller.Administrator supplierController = new controller.Administrator();
-        Supplier supplier = supplierController.findSupplierById(id);
+        SupplierController supplierController = new SupplierController();
+        Supplier supplier = supplierController.findSupplierById(supplierId);
 
         session.setAttribute("supplier", supplier);
 
-        rd = request.getRequestDispatcher("/admin/views/supplier/editSupplier.jsp");
+        rd = request.getRequestDispatcher("/src/portal-admin/views/supplier/editSupplier.jsp");
         rd.include(request, response);
     }
 
@@ -53,15 +54,20 @@ public class EditSupplier extends HttpServlet {
         String name = request.getParameter("name");
         String address = request.getParameter("address");
         String contactNumber = request.getParameter("contactNumber");
+        String websiteUrl = request.getParameter("websiteUrl");
+        String logoPath = request.getParameter("logoPath");
 
+        String filePath = "src/portal-admin/src/img/suppliers/";
         Supplier supplier = new Supplier();
         supplier.setId(supplierId);
         supplier.setName(name);
         supplier.setAddress(address);
         supplier.setContactNumber(contactNumber);
+        supplier.setWebsiteUrl(websiteUrl);
+        supplier.setLogoPath(filePath + logoPath);
 
-        SupplierDao supplierDao = new SupplierDao();
-        supplierDao.update(supplier);
+       SupplierController supplierController = new SupplierController();
+        supplierController.updateSupplier(supplier);
 
         response.sendRedirect(request.getContextPath() + "/admin/suppliers");
     }
